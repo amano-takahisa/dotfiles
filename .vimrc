@@ -126,10 +126,23 @@ endif
 
 " Specify a directory for plugins
 call plug#begin()
+" Python autocompletion with VIM
 Plug 'davidhalter/jedi-vim'
+
+" 
 Plug 'tpope/vim-obsession'
+
+" Visible indent
 Plug 'nathanaelkane/vim-indent-guides'
+
+" Color scheme
 Plug 'nanotech/jellybeans.vim'
+
+" Python pep8 indent check
+Plug 'Vimjas/vim-python-pep8-indent'
+
+" Visible white space
+Plug 'ntpeters/vim-better-whitespace'
 
 " Initialize plugin system
 call plug#end()
