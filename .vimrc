@@ -26,6 +26,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " Visible white space
 Plug 'ntpeters/vim-better-whitespace'
 
+" Aautomatic closing of quotes, parenthesis, brackets, etc
+Plug 'Raimondi/delimitMate'
+
 " Initialize plugin system
 call plug#end()
 
