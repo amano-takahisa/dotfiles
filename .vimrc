@@ -83,6 +83,8 @@ set number
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 " 現在の行を強調表示
 set cursorline
+" Highlight column at 80 charactor
+set colorcolumn=80
 " 現在の行を強調表示（縦）
 " set cursorcolumn
 " ビープ音を可視化
