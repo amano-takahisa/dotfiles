@@ -29,6 +29,8 @@ Plug 'ntpeters/vim-better-whitespace'
 " Aautomatic closing of quotes, parenthesis, brackets, etc
 Plug 'Raimondi/delimitMate'
 
+" Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion).
+Plug 'ervandew/supertab'
 " Initialize plugin system
 call plug#end()
 
