@@ -187,6 +187,13 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" Move cursor line to center after seach
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+
+
 
 """""""""""""""""
 " Mouse
