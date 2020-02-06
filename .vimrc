@@ -30,7 +30,14 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Raimondi/delimitMate'
 
 " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion).
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
+
+" autopep8 automatically formats Python code to conform to the PEP 8 style guide
+Plug 'tell-k/vim-autopep8'
+
+" a static syntax and style checker for Python source code
+Plug 'nvie/vim-flake8'
+
 " Initialize plugin system
 call plug#end()
 
@@ -193,6 +200,28 @@ nmap N Nzz
 nmap * *zz
 nmap # #zz
 
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    echo 'Highlight current word: off'
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=1000
+    echo 'Highlight current word: ON'
+    return 1
+  endif
+endfunction
 
 
 """""""""""""""""
