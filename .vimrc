@@ -132,7 +132,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Text format
 """""""""""""""""
 " Insert CR with O without edit mode
-nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+" nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 
 """""""""""""""""
