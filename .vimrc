@@ -134,7 +134,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Insert CR with O without edit mode
 " nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
-
 """""""""""""""""
 " Tab lines
 """""""""""""""""
@@ -171,7 +170,9 @@ if exists("+showtabline")
             if file == ''
                 let file = '[No Name]'
             endif
-            let s .= ' ' . file . ' '
+            "let s .= ' ' . file . ' '
+            let s .= file
+            let s .= (i == t ? '%m' : '')
             let i = i + 1
         endwhile
         let s .= '%T%#TabLineFill#%='
