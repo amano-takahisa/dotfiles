@@ -181,7 +181,7 @@ if exists("+showtabline")
     endfunction
     set stal=2
     set tabline=%!MyTabLine()
-    set showtabline=1
+    set showtabline=2
     highlight link TabNum Special
 endif
 
