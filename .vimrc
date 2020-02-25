@@ -11,9 +11,6 @@ call plug#begin()
 " Python autocompletion with VIM
 Plug 'davidhalter/jedi-vim'
 
-" 
-Plug 'tpope/vim-obsession'
-
 " Visible indent
 Plug 'nathanaelkane/vim-indent-guides'
 
@@ -45,38 +42,33 @@ call plug#end()
 """""""""""""""""
 " Encoding and Charactor
 """""""""""""""""
-"文字コードをUFT-8に設定
+" set charactor encoding UFT-8
 set fenc=utf-8
-" □や○文字が崩れる問題を解決
+" double size charactor width
 set ambiwidth=double
 
 
 """""""""""""""""
 " Buffer files
 """""""""""""""""
-" バックアップファイルを作らない
 set nobackup
-" スワップファイルを作らない
 set noswapfile
-" 編集中のファイルが変更されたら自動で読み直す
 set autoread
-" バッファが編集中でもその他のファイルを開けるように
+" Enable to open file even when buffer is open
 set hidden
 
 
 """""""""""""""""
 " Guide and status (out of edit area)
 """""""""""""""""
-" 入力中のコマンドをステータスに表示する
 set showcmd
-" 行番号を表示
-" ステータスラインを常に表示
+" always show status line
 set laststatus=2
 " Customize status line
 set statusline=%F%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
-" コマンドラインの補完
+" Complete command
 set wildmode=list:longest
-" 行末の1文字先までカーソルを移動できるように
+" cursor can move to one more left from $
 set virtualedit=onemore
 
 
@@ -85,27 +77,25 @@ set virtualedit=onemore
 """""""""""""""""
 " Colorscheme
 colorscheme jellybeans
-" シンタックスハイライトの有効化
 syntax enable
 set number
 " Switch line numbers with F3
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
-" 現在の行を強調表示
+" Highlight current line
 set cursorline
 " Highlight column at 80 charactor
 set colorcolumn=80
-" 現在の行を強調表示（縦）
+" Highlight current column
 " set cursorcolumn
-" ビープ音を可視化
+" visualize beep
 set visualbell
-" 括弧入力時の対応する括弧を表示
+" Highlight [], (), {}
 set showmatch
 
 
 """""""""""""""""
 " caret move
 """""""""""""""""
-" 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
 
@@ -124,17 +114,16 @@ vnoremap <leader>p "_dP
 """""""""""""""""
 " Tab & indents charactor
 """""""""""""""""
-" 不可視文字を可視化(タブが「▸-」と表示される)
+" Show tab charactors as ▸-
 set list listchars=tab:\▸\-
-" Tab文字を半角スペースにする
+" Insert spaces instead of tab
 set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
+" Number of spaces for indent tabs
 set tabstop=4
 " Number of spaces in tab when editing
 set softtabstop=4
-" 行頭でのTab文字の表示幅
+" Tab width
 set shiftwidth=4
-" インデントはスマートインデント
 set smartindent
 " Make indent visible
 let g:indent_guides_enable_on_vim_startup = 1
@@ -203,17 +192,12 @@ endif
 """""""""""""""""
 " Search
 """""""""""""""""
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
 set wrapscan
-" 検索語をハイライト表示
 set hlsearch
-" ESC連打でハイライト解除
+" Highlight off with esc esc.
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " Move cursor line to center after seach
 nmap n nzz
