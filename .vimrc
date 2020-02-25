@@ -133,6 +133,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 """""""""""""""""
 " Insert CR with O without edit mode
 " nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+" Plugin setting: 'tell-k/vim-autopep8'
+" Disable show diff window
+let g:autopep8_disable_show_diff=1
 
 """""""""""""""""
 " Tab lines
