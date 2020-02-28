@@ -35,6 +35,9 @@ Plug 'tell-k/vim-autopep8'
 " a static syntax and style checker for Python source code
 Plug 'nvie/vim-flake8'
 
+" Displays a scrollbar with 'thumb' in curses-based vim
+Plug 'lornix/vim-scrollbar'
+
 " Initialize plugin system
 call plug#end()
 
@@ -49,14 +52,15 @@ set ambiwidth=double
 
 
 """""""""""""""""
-" Buffer files
+" Open - save - close
 """""""""""""""""
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 set nobackup
 set noswapfile
 set autoread
 " Enable to open file even when buffer is open
 set hidden
-
 
 """""""""""""""""
 " Guide and status (out of edit area)
@@ -68,9 +72,9 @@ set laststatus=2
 set statusline=%F%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
 " Complete command
 set wildmode=list:longest
-" cursor can move to one more left from $
-set virtualedit=onemore
 
+" Plugin setting: 'lornix/vim-scrollbar'
+" let g:loaded_scrollbar=1
 
 """""""""""""""""
 " Appearance in text area
@@ -91,7 +95,8 @@ set colorcolumn=80
 set visualbell
 " Highlight [], (), {}
 set showmatch
-
+" cursor can move to one more left from $
+set virtualedit=onemore
 
 """""""""""""""""
 " caret move
