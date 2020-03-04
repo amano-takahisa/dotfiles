@@ -115,6 +115,11 @@ vnoremap <leader>d "_d
 " without yanking it
 vnoremap <leader>p "_dP
 
+" '"*y' or '"+y' will copy text to xclip
+" This enable copy text over ssh
+vmap "+y :!xclip -f -sel clip
+map "+p :r!xclip -o -sel clip
+
 
 """""""""""""""""
 " Tab & indents charactor
