@@ -36,7 +36,14 @@ Plug 'tell-k/vim-autopep8'
 Plug 'nvie/vim-flake8'
 
 " Displays a scrollbar with 'thumb' in curses-based vim
-Plug 'lornix/vim-scrollbar'
+" Plug 'lornix/vim-scrollbar'
+
+" Easy way to define your own |operator|
+" Installed for rhysd/vim-operator-surround dependency
+Plug 'kana/vim-operator-user'
+
+" Complement of surrounding operator
+Plug 'rhysd/vim-operator-surround'
 
 " Initialize plugin system
 call plug#end()
@@ -119,6 +126,14 @@ vnoremap <leader>p "_dP
 " This enable copy text over ssh
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
+
+"""""""""""""""""
+" brackets
+"""""""""""""""""
+" Plugin setting: 'rhysd/vim-operator-surround'
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
 
 
 """""""""""""""""
