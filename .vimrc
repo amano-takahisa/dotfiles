@@ -72,6 +72,14 @@ set autoread
 " Enable to open file even when buffer is open
 set hidden
 
+
+"""""""""""""""""
+" Markdown
+"""""""""""""""""
+" Plugin setting: 'plasticboy/vim-markdown'
+" Disable Folding
+let g:vim_markdown_folding_disabled = 1
+
 " Automatically change the current directory
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
