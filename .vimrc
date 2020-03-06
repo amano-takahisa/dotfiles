@@ -79,6 +79,19 @@ set hidden
 " Plugin setting: 'plasticboy/vim-markdown'
 " Disable Folding
 let g:vim_markdown_folding_disabled = 1
+" Open TOC by default
+function! s:Toc()
+  if &filetype == 'markdown'
+    :Toc
+    set filetype=qf
+    setl nofoldenable
+    syntax on
+  endif
+endfunction
+autocmd VimEnter *.m*  call s:Toc()
+autocmd BufReadPost *.m* call s:Toc()
+autocmd BufWinEnter *.m* call s:Toc()
+" To change Toc left, ref https://github.com/plasticboy/vim-markdown/issues/166#issuecomment-172409388
 
 " Automatically change the current directory
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
