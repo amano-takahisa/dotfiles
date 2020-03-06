@@ -45,6 +45,9 @@ Plug 'kana/vim-operator-user'
 " Complement of surrounding operator
 Plug 'rhysd/vim-operator-surround'
 
+" Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
+Plug 'plasticboy/vim-markdown'
+
 " Initialize plugin system
 call plug#end()
 
@@ -68,6 +71,9 @@ set noswapfile
 set autoread
 " Enable to open file even when buffer is open
 set hidden
+
+" Automatically change the current directory
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 """""""""""""""""
 " Guide and status (out of edit area)
