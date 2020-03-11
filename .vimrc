@@ -48,6 +48,10 @@ Plug 'rhysd/vim-operator-surround'
 " Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
 Plug 'plasticboy/vim-markdown'
 
+" Browse the tags of the current file and get an overview of its structure
+Plug 'majutsushi/tagbar'
+
+
 " Initialize plugin system
 call plug#end()
 
