@@ -51,6 +51,11 @@ Plug 'plasticboy/vim-markdown'
 " Browse the tags of the current file and get an overview of its structure
 Plug 'majutsushi/tagbar'
 
+" REPL commands open a terminal and the proper REPL if not already opened
+" Plug 'kassio/neoterm'
+
+" Make edit buffers play with REPLs nicely.
+" Plug 'rhysd/reply.vim', { 'on': ['Repl', 'ReplAuto'] }
 
 " Initialize plugin system
 call plug#end()
@@ -99,6 +104,21 @@ autocmd BufWinEnter *.m* call s:Toc()
 
 " Automatically change the current directory
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+
+"""""""""""""""""
+" Mode
+"""""""""""""""""
+" exit from terminal mode
+tnoremap <Esc> <C-\><C-n>
+
+"""""""""""""""""
+" Window
+"""""""""""""""""
+" Move from terminal window
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 
 """""""""""""""""
 " Guide and status (out of edit area)
