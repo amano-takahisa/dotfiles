@@ -51,6 +51,8 @@ Plug 'plasticboy/vim-markdown'
 " Browse the tags of the current file and get an overview of its structure
 Plug 'majutsushi/tagbar'
 
+" Diff two separate blocks of text.
+Plug 'AndrewRadev/linediff.vim'
 
 " Initialize plugin system
 call plug#end()
