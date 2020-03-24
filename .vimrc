@@ -54,6 +54,9 @@ Plug 'majutsushi/tagbar'
 " Diff two separate blocks of text.
 Plug 'AndrewRadev/linediff.vim'
 
+" Provides a much simpler way to use some motions in vim
+Plug 'easymotion/vim-easymotion'
+
 " Initialize plugin system
 call plug#end()
 
@@ -152,6 +155,8 @@ set visualbell
 set showmatch
 " cursor can move to one more left from $
 set virtualedit=onemore
+" Set wrap in diff
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
 """""""""""""""""
 " caret move
@@ -275,8 +280,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " Move cursor line to center after seach
 nmap n nzz
 nmap N Nzz
-nmap * *zz
-nmap # #zz
+" nmap * *zz
+" nmap # #zz
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
