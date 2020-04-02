@@ -109,7 +109,7 @@ autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 " Mode
 """""""""""""""""
 " exit from terminal mode
-tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc><Esc> <C-\><C-n>
 
 """""""""""""""""
 " Window
@@ -276,7 +276,7 @@ set incsearch
 set wrapscan
 set hlsearch
 " Highlight off with esc esc.
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <Esc> :nohlsearch<CR><Esc>
 " Move cursor line to center after seach
 nmap n nzz
 nmap N Nzz
