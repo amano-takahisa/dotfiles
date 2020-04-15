@@ -278,10 +278,10 @@ set hlsearch
 " Highlight off with esc esc.
 nnoremap <Esc> :nohlsearch<CR><Esc>
 " Move cursor line to center after seach
-nmap n nzz
-nmap N Nzz
-" nmap * *zz
-" nmap # #zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
