@@ -57,6 +57,9 @@ Plug 'AndrewRadev/linediff.vim'
 " Provides a much simpler way to use some motions in vim
 Plug 'easymotion/vim-easymotion'
 
+" Use different templates
+Plug 'mattn/vim-sonictemplate'
+
 " Initialize plugin system
 call plug#end()
 
@@ -162,7 +165,9 @@ autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 " caret move
 """""""""""""""""
 nnoremap j gj
+nnoremap gj j
 nnoremap k gk
+nnoremap gk k
 
 """""""""""""""""
 " Cut and paste
@@ -214,6 +219,10 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Plugin setting: 'tell-k/vim-autopep8'
 " Disable show diff window
 let g:autopep8_disable_show_diff=1
+" Plugin setting: 'mattn/vim-sonictemplate'
+let g:sonictemplate_vim_template_dir = [
+      \ '~/Templates'
+      \]
 
 """""""""""""""""
 " Tab lines
