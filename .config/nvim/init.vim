@@ -65,6 +65,9 @@ Plug 'easymotion/vim-easymotion'
 " Use different templates
 Plug 'mattn/vim-sonictemplate'
 
+" save session
+Plug 'tpope/vim-obsession'
+
 " Initialize plugin system
 call plug#end()
 
@@ -88,6 +91,8 @@ set autoread
 " Enable to open file even when buffer is open
 set hidden
 
+" Plugin setting: 'tpope/vim-obsession'
+set -g @resurrect-strategy-nvim 'session'
 
 """""""""""""""""
 " Markdown
