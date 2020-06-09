@@ -76,7 +76,6 @@ Check mark on at Canonical Partners.
 sudo apt install \
 dolphin \
 wine64 \
-vim \
 arandr \
 gimp \
 vlc \
@@ -94,7 +93,8 @@ libssl-dev \  # tidyverse for R
 libcurl4-openssl-dev \  # tidyverse for R 
 systemsettings  \ # icons for dolphin
 qt5-gtk2-platformtheme libqt5svg5   \ # icons for dolphin
-qt5ct  # icons for dolphin do export QT_QPA_PLATFORMTHEME=qt5ct
+qt5ct  \ # icons for dolphin do export QT_QPA_PLATFORMTHEME=qt5ct
+neovim
 
 ```
 # setup git
@@ -106,6 +106,8 @@ git config --global user.email 51368373+amano-takahisa@users.noreply.github.com
 ```
 
 # clone my dotfiles
+
+## create symbolic links to config files
 
 # copy ssh files from other PC
 
@@ -141,6 +143,16 @@ geopandas
 2. create useChrome.css to customize treestyle tab.
 https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-horizontal-tabs-at-the-top-of-the-window-1349-1672-2147
 
+
+# install tmux
+build tmux and make symbolic link to the tmux binary.
+Follow the maual to build tmux but after apply patch in next section.
+https://github.com/tmux/tmux#from-version-control
+
+
+```bash
+ln -s tmux ~/bin/tmux
+```
 
 
 # Install Docker
@@ -178,11 +190,6 @@ and start docker when login
 ```bash
 sudo systemctl enable docker
 ```
-
-# install tmux
-build tmux and make symbolic link to the tmux binary.
-Follow the maual to build tmux but after apply patch in next section.
-https://github.com/tmux/tmux#from-version-control
 
 ## double width letter issue on tmux
 apply following patch
