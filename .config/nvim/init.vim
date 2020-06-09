@@ -92,7 +92,7 @@ set autoread
 set hidden
 
 " Plugin setting: 'tpope/vim-obsession'
-set -g @resurrect-strategy-nvim 'session'
+" set -g @resurrect-strategy-nvim 'session'
 
 """""""""""""""""
 " Markdown

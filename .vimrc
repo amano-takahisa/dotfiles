@@ -113,6 +113,27 @@ let g:vim_markdown_conceal_code_blocks = 0
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 """""""""""""""""
+" reStructuredText
+"""""""""""""""""
+" Plugin setting: 'majutsushi/tagbar'
+" Add support for reStructuredText files in tagbar.
+let g:tagbar_type_rst = {
+    \ 'ctagstype': 'rst',
+    \ 'ctagsbin' : '~/Documents/pc/programs/rst2ctags/rst2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+
+
+"""""""""""""""""
 " Mode
 """""""""""""""""
 " exit from terminal mode
@@ -147,6 +168,8 @@ set wildmode=list:longest
 " Colorscheme
 colorscheme jellybeans
 syntax enable
+" syntax highlite for large file
+set redrawtime=10000
 set number
 " Switch line numbers with F3
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
@@ -188,6 +211,24 @@ vnoremap <leader>p "_dP
 " This enable copy text over ssh
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
+
+set pastetoggle=<F12>
+
+" if &term =~ "xterm"
+"     let &t_SI .= "\e[?2004h"
+"         let &t_EI .= "\e[?2004l"
+"         let &pastetoggle = "\e[201~"
+" 
+"     function XTermPasteBegin(ret)
+"         set paste
+"         return a:ret
+"     endfunction
+" 
+"     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+" endif
+
+" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+
 
 """""""""""""""""
 " brackets
@@ -328,16 +369,4 @@ if has('mouse')
 endif
 
 
-if &term =~ "xterm"
-    let &t_SI .= "\e[?2004h"
-        let &t_EI .= "\e[?2004l"
-        let &pastetoggle = "\e[201~"
-
-    function XTermPasteBegin(ret)
-        set paste
-        return a:ret
-    endfunction
-
-    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-endif
 
