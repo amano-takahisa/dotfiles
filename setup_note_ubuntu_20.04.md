@@ -109,6 +109,8 @@ git config --global user.email 51368373+amano-takahisa@users.noreply.github.com
 
 # copy ssh files from other PC
 
+# setup neovim
+
 
 # Install programming tools
 ## install Anaconda3
@@ -127,16 +129,17 @@ conda config
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 conda config --set changeps1 False
-
-
 conda create --name py37 python=3.7
 conda activate py37
-
-# install python packages
 
 conda install -c conda-forge \
 geopandas
 ```
+
+# Firefox
+1. login
+2. create useChrome.css to customize treestyle tab.
+https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-horizontal-tabs-at-the-top-of-the-window-1349-1672-2147
 
 
 
@@ -242,7 +245,7 @@ run
 ```bash
 wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --import
 gpg --fingerprint 51F523511C7028C3
-gpg --export --armor CAEB3DC3BDF7FB45 | sudo apt-key add -
+gpg --export --armor 51F523511C7028C3 | sudo apt-key add -
 
 sudo apt install qgis
 ```
