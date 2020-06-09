@@ -60,6 +60,9 @@ Plug 'easymotion/vim-easymotion'
 " Use different templates
 Plug 'mattn/vim-sonictemplate'
 
+" JSON formatter
+Plug 'elzr/vim-json'
+
 " Initialize plugin system
 call plug#end()
 
