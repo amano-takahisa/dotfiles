@@ -138,7 +138,22 @@ conda activate py37
 conda install -c conda-forge \
 geopandas
 ```
+# PS1
+modify `.bashrc`
 
+```bash
+# 
+if [ "$color_prompt" = yes ]; then
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\e[0m`date +%X%:::z`\e[32m \e[0m$CONDA_DEFAULT_ENV\n\
+${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\n  '
+else
+    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='`date +%X%:::z`\n${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+fi
+unset color_prompt force_color_prompt
+
+```
 
 
 # Install Docker
