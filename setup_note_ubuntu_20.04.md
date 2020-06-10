@@ -217,6 +217,8 @@ wget https://rictyfonts.github.io/files/ricty_generator-4.1.1.sh
 ```
 
 ## Install Cica font
+font files are saved in `cica/dist/`
+
 ```bash
 # https://github.com/miiton/Cica#%E6%89%8B%E5%8B%95%E3%81%A7%E3%82%84%E3%82%8B%E5%A0%B4%E5%90%88
 sudo apt-get update
@@ -247,6 +249,12 @@ fontforge -lang=py -script cica.py
 
 # use windows fonts
 sudo ln -s /media/takahisa/50F442DEF442C5C6/Windows/Fonts /usr/share/fonts/winfonts
+
+# install slack
+```bash
+sudo snap install slack --classic
+```
+
 
 # install gis related packages
 add following lines to `/etc/apt/source.list`

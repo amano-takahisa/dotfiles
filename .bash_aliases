@@ -16,7 +16,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -ahlF --time-style=long-iso'
+alias ll='ls -ahlFv --time-style=long-iso --group-directories-first'
 alias llt='ls -ahlFrt --time-style=long-iso'
 alias la='ls -A'
 alias l='ls -CF'
