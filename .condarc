@@ -1,6 +1,6 @@
 channels:
   - conda-forge
   - defaults
-channel_priority: strict
+# channel_priority: strict
 changeps1: false
 env_prompt: ({name})
