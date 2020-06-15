@@ -180,7 +180,7 @@ CHAR_LAPTOP=$'\uF109'
 
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1="\e[100m${debian_chroot:+($debian_chroot)}\u\e[92m${CHAR_NUCLER} \e[39m\h\e[90;48;5;236m$CHAR_RPIXEL\e[94m \w\e[00m\e[38;5;236m$CHAR_RPIXEL \e[00m\n\
+    PS1="\e[100m${debian_chroot:+($debian_chroot)}\u\e[38;5;166m${CHAR_NUCLER} \e[39m\h\e[90;48;5;236m$CHAR_RPIXEL\e[94m \w\e[00m\e[38;5;236m$CHAR_RPIXEL \e[00m\n\
 `date +%X`\$(parse_conda_env)\$(parse_git_branch)\n\
 $CHAR_PROMPT "
 else
