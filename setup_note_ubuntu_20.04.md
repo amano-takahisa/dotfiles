@@ -136,22 +136,68 @@ conda activate py37
 # install python packages
 
 conda install -c conda-forge \
-geopandas
+geopandas \
+matplotlib \
+seaborn \
 ```
 # PS1
 modify `.bashrc`
 
 ```bash
-# 
+#### Customize PS1 ####
+parse_git_branch() {
+  GIT_CURRRENT_BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"` 
+  if [ -z "$GIT_CURRRENT_BRANCH" ]
+  then
+      :
+  else
+      echo -e "\e[38;5;130m${CHAR_BRANCH} \e[00m${GIT_CURRRENT_BRANCH}"
+  fi
+  #git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$CHAR_BRANCH \1/"
+}
+
+
+parse_conda_env() {
+    if [ -z "$CONDA_DEFAULT_ENV" ]
+    then
+        :
+    else
+        echo -e "\e[32m${CHAR_PYTHON} \e[00m`basename ${CONDA_DEFAULT_ENV}`"
+    fi
+}
+
+CHAR_PYTHON=$'\uE235'
+CHAR_BRANCH=$'\uF418'
+CHAR_PROMPT=$'\uE285\uE285'
+# CHAR_PROMPT=$'\uF101'
+CHAR_RFRAME=$'\uE0C0'
+CHAR_MANTLELAB=$'\uE257'
+CHAR_RPIXEL=$'\uE0C6'
+CHAR_NUCLER=$'\uE7BA'
+CHAR_STAR=$'\u272F'
+CHAR_LAPTOP=$'\uF109'
+
+
 if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\e[0m`date +%X%:::z`\e[32m \e[0m$CONDA_DEFAULT_ENV\n\
-${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\n  '
+    PS1="\e[100m${debian_chroot:+($debian_chroot)}\u\e[92m${CHAR_NUCLER} \e[39m\h\e[90;48;5;236m$CHAR_RPIXEL\e[94m \w\e[00m\e[38;5;236m$CHAR_RPIXEL \e[00m\n\
+`date +%X`\$(parse_conda_env)\$(parse_git_branch)\n\
+$CHAR_PROMPT "
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='`date +%X%:::z`\n${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
 fi
 unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+##############
 
 ```
 
@@ -303,6 +349,5 @@ sudo apt install gnome-tweak-tool
 # google earth engine
 
 # customize gnome panels
-```bash
-sudo apt install 
-```
+## hide top bar
+https://extensions.gnome.org/extension/545/hide-top-bar/
