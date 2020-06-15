@@ -247,6 +247,11 @@ https://github.com/tmux/tmux#from-version-control
 apply following patch
 https://github.com/z80oolong/tmux-eaw-fix
 
+## install tmux plugin manager
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+and on tmux `<prefix> + I` to install plugins.
 
 
 # Font
