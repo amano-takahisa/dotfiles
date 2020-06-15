@@ -95,7 +95,9 @@ libcurl4-openssl-dev \  # tidyverse for R
 systemsettings  \ # icons for dolphin
 qt5-gtk2-platformtheme libqt5svg5   \ # icons for dolphin
 qt5ct \ # icons for dolphin do export QT_QPA_PLATFORMTHEME=qt5ct
-git-flow
+git-flow \
+font-manager \
+gconf2
 
 ```
 # setup git
@@ -171,7 +173,7 @@ CHAR_BRANCH=$'\uF418'
 CHAR_PROMPT=$'\uE285\uE285'
 # CHAR_PROMPT=$'\uF101'
 CHAR_RFRAME=$'\uE0C0'
-CHAR_MANTLELAB=$'\uE257'
+CHAR_MANTLELAB=$'\uE257' # '\uFFB18' not show in terminal :(
 CHAR_RPIXEL=$'\uE0C6'
 CHAR_NUCLER=$'\uE7BA'
 CHAR_STAR=$'\u272F'
@@ -255,6 +257,7 @@ and on tmux `<prefix> + I` to install plugins.
 
 
 # Font
+
 ## Install Ricty
 follow official instruction.
 
@@ -356,3 +359,14 @@ sudo apt install gnome-tweak-tool
 # customize gnome panels
 ## hide top bar
 https://extensions.gnome.org/extension/545/hide-top-bar/
+
+# install shutter
+```
+sudo add-apt-repository ppa:linuxuprising/shutter
+sudo apt install shutter
+```
+if you get error as `Updating from such a repository can't be done securely, and is therefore disabled by default.`, modify `/etc/apt/source.list.d/linuxuprising-ubuntu-shutter-focal.list` as
+
+```
+deb [trusted=yes] http://ppa.launchpad.net/linuxuprising/shutter/ubuntu focal main
+```
