@@ -97,7 +97,8 @@ qt5-gtk2-platformtheme libqt5svg5   \ # icons for dolphin
 qt5ct \ # icons for dolphin do export QT_QPA_PLATFORMTHEME=qt5ct
 git-flow \
 font-manager \
-gconf2
+gconf2 \
+mlocate
 
 ```
 # setup git
