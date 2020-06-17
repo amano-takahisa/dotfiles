@@ -68,16 +68,26 @@ Plug 'mattn/vim-sonictemplate'
 " save session
 Plug 'tpope/vim-obsession'
 
+" a file system explorer for the Vim editor
+Plug 'preservim/nerdtree'
+
+
+" Supports plugins to show icons.
+Plug 'ryanoasis/vim-devicons'
+
 " Initialize plugin system
 call plug#end()
 
 """""""""""""""""
 " Encoding and Charactor
 """""""""""""""""
-" set charactor encoding UFT-8
+" set encoding=UFT-8
 " set fenc=utf-8
 " double size charactor width
 set ambiwidth=double
+
+
+
 
 
 """""""""""""""""
@@ -93,6 +103,29 @@ set hidden
 
 " Plugin setting: 'tpope/vim-obsession'
 " set -g @resurrect-strategy-nvim 'session'
+
+
+"""""""""""""""""
+" file manager
+"""""""""""""""""
+
+" set file icons
+" Plugin setting: 'ryanoasis/vim-devicons'
+" let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+" let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
+" アイコン入力方法 : `[Ctrl+V]` > `[u]` > `e905`
+let g:NERDTreeExtensionHighlightColor = {}
+" let g:NERDTreeExtensionHighlightColor['vue'] = '42B983'`
+" autocmd FileType nerdtree setlocal nolist
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+" Plugin setting: 'preservim/nerdtree'
+" Open NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 """""""""""""""""
 " Markdown
@@ -133,6 +166,12 @@ tnoremap <C-w>j <C-\><C-n><C-w>j
 tnoremap <C-w>k <C-\><C-n><C-w>k
 tnoremap <C-w>l <C-\><C-n><C-w>l
 
+"""""""""""""""""
+" Buffer
+"""""""""""""""""
+" switch buffers
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
 """""""""""""""""
 " Guide and status (out of edit area)
 """""""""""""""""
