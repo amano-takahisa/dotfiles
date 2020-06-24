@@ -22,7 +22,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # tree with ignore some patterns
-alias treee="tree -a -I '.git'"
+alias treee="tree -a -I '.git|__pycache__'"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
