@@ -98,7 +98,8 @@ qt5ct \ # icons for dolphin do export QT_QPA_PLATFORMTHEME=qt5ct
 git-flow \
 font-manager \
 gconf2 \
-mlocate
+mlocate \
+jupyter-core
 
 ```
 # setup git
@@ -140,8 +141,12 @@ conda activate py37
 
 conda install -c conda-forge \
 geopandas \
+rasterio \
 matplotlib \
 seaborn \
+jupyterlab \
+descartes
+
 ```
 # PS1
 modify `.bashrc`
