@@ -86,10 +86,6 @@ call plug#end()
 " double size charactor width
 set ambiwidth=double
 
-
-
-
-
 """""""""""""""""
 " Open - save - close
 """""""""""""""""
