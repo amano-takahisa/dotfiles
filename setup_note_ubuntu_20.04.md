@@ -145,8 +145,8 @@ rasterio \
 matplotlib \
 seaborn \
 jupyterlab \
-descartes
-
+descartes \
+autoflake
 ```
 # PS1
 modify `.bashrc`
