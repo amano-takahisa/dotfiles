@@ -99,7 +99,8 @@ git-flow \
 font-manager \
 gconf2 \
 mlocate \
-jupyter-core
+jupyter-core \
+fontforge
 
 ```
 # setup git
