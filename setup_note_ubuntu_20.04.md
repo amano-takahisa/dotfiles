@@ -99,7 +99,10 @@ git-flow \
 font-manager \
 gconf2 \
 mlocate \
-jupyter-core
+jupyter-core \
+iree \
+neovim \
+r-base
 
 ```
 # setup git
@@ -245,6 +248,14 @@ and start docker when login
 ```bash
 sudo systemctl enable docker
 ```
+# setup neovim
+## Plugin manager
+
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
 
 # install tmux
 build tmux and make symbolic link to the tmux binary.
@@ -326,7 +337,8 @@ run
 ```bash
 wget -O - https://qgis.org/downloads/qgis-2019.gpg.key | gpg --import
 gpg --fingerprint 51F523511C7028C3
-gpg --export --armor CAEB3DC3BDF7FB45 | sudo apt-key add -
+gpg --export --armor 51F523511C7028C3 | sudo apt-key add -
+sudo apt update
 
 sudo apt install qgis
 ```

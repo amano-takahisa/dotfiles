@@ -138,9 +138,9 @@ function! s:Toc()
     syntax on
   endif
 endfunction
-autocmd VimEnter *.m*  call s:Toc()
-autocmd BufReadPost *.m* call s:Toc()
-autocmd BufWinEnter *.m* call s:Toc()
+" autocmd VimEnter *.m*  call s:Toc()
+" autocmd BufReadPost *.m* call s:Toc()
+" autocmd BufWinEnter *.m* call s:Toc()
 " To change Toc left, ref https://github.com/plasticboy/vim-markdown/issues/166#issuecomment-172409388
 let g:vim_markdown_conceal_code_blocks = 0
 
