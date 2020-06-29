@@ -102,7 +102,8 @@ mlocate \
 jupyter-core \
 iree \
 neovim \
-r-base
+r-base \
+fontforge
 
 ```
 # setup git
@@ -148,8 +149,8 @@ rasterio \
 matplotlib \
 seaborn \
 jupyterlab \
-descartes
-
+descartes \
+autoflake
 ```
 # PS1
 modify `.bashrc`
