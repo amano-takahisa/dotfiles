@@ -271,6 +271,13 @@ let g:sonictemplate_vim_template_dir = [
       \ '~/Templates'
       \]
 
+" Plugin setting: 'dense-analysis/ale'
+" set flake8 as linter
+let g:ale_linters = {
+    \ 'python': ['flake8'],
+    \ }
+
+
 """""""""""""""""
 " Tab lines
 """""""""""""""""
