@@ -75,6 +75,8 @@ Plug 'preservim/nerdtree'
 " Supports plugins to show icons.
 Plug 'ryanoasis/vim-devicons'
 
+" Linter and acts as a Vim Language Server Protocol client.
+Plug 'dense-analysis/ale'
 " Initialize plugin system
 call plug#end()
 
