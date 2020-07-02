@@ -150,7 +150,10 @@ matplotlib \
 seaborn \
 jupyterlab \
 descartes \
-autoflake
+autoflake \
+black \
+prospector \
+mypy
 ```
 # PS1
 modify `.bashrc`

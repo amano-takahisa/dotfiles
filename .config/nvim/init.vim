@@ -273,9 +273,12 @@ let g:sonictemplate_vim_template_dir = [
 
 " Plugin setting: 'dense-analysis/ale'
 " set flake8 as linter
+" let g:ale_linters = {
+"     \ 'python': ['autopep8'],
+"     \ }
 let g:ale_linters = {
-    \ 'python': ['flake8'],
-    \ }
+\ 'python': ['mypy', 'black'],
+\ }
 
 
 """""""""""""""""
