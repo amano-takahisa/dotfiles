@@ -103,7 +103,11 @@ jupyter-core \
 iree \
 neovim \
 r-base \
-fontforge
+fontforge \
+libudunits2-dev \ # sf for R
+libgdal-dev \  # sf for R
+
+
 
 ```
 # setup git
