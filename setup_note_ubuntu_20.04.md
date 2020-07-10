@@ -364,11 +364,18 @@ rm rstudio-1.3.959-amd64.deb
 
 # install google chrome
 
-sudo apt install gdebi-core
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb
-
+## from repository
+add the following line in `/etc/apt/sources.list.d/google-chrome.list`
+```
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+```
+get key and install via apt
+```bash
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo apt-key add linux_signing_key.pub
+sudo apt update
+sudo apt install google-chrome-stable
+```
 
 # Install IME
 Settings > Region & Language > Input Sources > Others > Japanese (Mozc)
