@@ -28,3 +28,6 @@ alias treee="tree -a -I '.git|__pycache__|.mypy_cache'"
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# clipboard to system too
+# https://gist.github.com/Brainiarc7/f5eb9a91973b62a0f71b4c4c6fbb9e03
+alias ccc='xclip -sel clip'
