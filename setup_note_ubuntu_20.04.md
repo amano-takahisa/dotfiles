@@ -106,7 +106,7 @@ r-base \
 fontforge \
 libudunits2-dev \ # sf for R
 libgdal-dev \  # sf for R
-
+rename
 
 
 ```
@@ -185,16 +185,16 @@ parse_conda_env() {
     fi
 }
 
-CHAR_PYTHON=$'\uE235'
-CHAR_BRANCH=$'\uF418'
-CHAR_PROMPT=$'\uE285\uE285'
+CHAR_PYTHON=$'\UE235'
+CHAR_BRANCH=$'\UF418'
+CHAR_PROMPT=$'\UE285\UE285'
 # CHAR_PROMPT=$'\uF101'
-CHAR_RFRAME=$'\uE0C0'
-CHAR_MANTLELAB=$'\uE257'
-CHAR_RPIXEL=$'\uE0C6'
-CHAR_NUCLER=$'\uE7BA'
-CHAR_STAR=$'\u272F'
-CHAR_LAPTOP=$'\uF109'
+CHAR_RFRAME=$'\UE0C0'
+CHAR_MANTLELAB=$'\UE257'
+CHAR_RPIXEL=$'\UE0C6'
+CHAR_NUCLER=$'\UE7BA'
+CHAR_STAR=$'\U272F'
+CHAR_LAPTOP=$'\UF109'
 
 
 if [ "$color_prompt" = yes ]; then
