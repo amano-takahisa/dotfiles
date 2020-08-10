@@ -170,6 +170,10 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 " switch buffers
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
+" close buffer without close windows
+" https://stackoverflow.com/a/4468491/
+nnoremap <C-c> :bp<bar>bd #<CR>
+
 """""""""""""""""
 " Guide and status (out of edit area)
 """""""""""""""""
