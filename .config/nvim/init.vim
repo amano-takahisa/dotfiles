@@ -125,6 +125,9 @@ let g:NERDTreeDirArrowCollapsible = ''
 " Open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+" show hidden file by default
+let NERDTreeShowHidden=1
+
 """""""""""""""""
 " Markdown
 """""""""""""""""
