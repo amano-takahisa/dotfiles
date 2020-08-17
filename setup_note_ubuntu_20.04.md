@@ -106,7 +106,8 @@ r-base \
 fontforge \
 libudunits2-dev \ # sf for R
 libgdal-dev \  # sf for R
-rename
+rename \
+tree
 
 
 ```
