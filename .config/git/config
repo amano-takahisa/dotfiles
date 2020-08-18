@@ -1,4 +1,3 @@
-
 [blame]
 	coloring = highlightRecent
 [color "blame"]
@@ -10,3 +9,8 @@
 	verbose = true
 [alias]
 	root = rev-parse --show-toplevel
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+
