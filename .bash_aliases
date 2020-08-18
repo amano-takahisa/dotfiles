@@ -22,7 +22,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # tree with ignore some patterns
-alias treee="tree -ah --du -I '.git|__pycache__|.mypy_cache'"
+alias treee="tree -ah --du -I '.git|__pycache__|.mypy_cache|.eggs|*.egg-info'"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -31,3 +31,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # clipboard to system too
 # https://gist.github.com/Brainiarc7/f5eb9a91973b62a0f71b4c4c6fbb9e03
 alias ccc='xclip -sel clip'
+
+# rm comfirmation prompt by default
+alias rm='rm -I'
