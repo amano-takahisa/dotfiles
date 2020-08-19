@@ -156,7 +156,7 @@ endfunction
 let g:vim_markdown_conceal_code_blocks = 0
 
 " Automatically change the current directory
-autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+" autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 " for markdown preview
 " set to 1, nvim will open the preview window after entering the markdown buffer
@@ -365,6 +365,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Plugin setting: 'tell-k/vim-autopep8'
 " Disable show diff window
 let g:autopep8_disable_show_diff=1
+" add aggressive option (--aggressive)
+let g:autopep8_aggressive=1
+
 " Plugin setting: 'mattn/vim-sonictemplate'
 let g:sonictemplate_vim_template_dir = [
       \ '~/Templates'
@@ -376,7 +379,7 @@ let g:sonictemplate_vim_template_dir = [
 "     \ 'python': ['autopep8'],
 "     \ }
 let g:ale_linters = {
-\ 'python': ['mypy', 'black'],
+\ 'python': ['mypy', 'black', 'autopep8']
 \ }
 
 
