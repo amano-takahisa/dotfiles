@@ -107,7 +107,8 @@ fontforge \
 libudunits2-dev \ # sf for R
 libgdal-dev \  # sf for R
 rename \
-tree
+tree \
+nodejs
 
 
 ```
