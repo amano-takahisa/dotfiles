@@ -1,0 +1,16 @@
+[blame]
+	coloring = highlightRecent
+[color "blame"]
+#	highlightRecent = 240, 12 month ago,242, 11 month ago,243, 10 month ago,244, 9 month ago,245, 8 month ago,246, 7 month ago,247, 6 month ago,248, 5 month ago,249, 4 month ago,250, 3 month ago,251, 2 month ago,252, 1 month ago,255
+	highlightRecent = 235, 6 month ago, 240, 3 month ago, 243, 1 month ago, 250, 1 week ago, 255, 1 day ago, red
+[color]
+	ui = auto
+[commit]
+	verbose = true
+[alias]
+	root = rev-parse --show-toplevel
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+
