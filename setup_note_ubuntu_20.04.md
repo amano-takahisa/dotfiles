@@ -76,6 +76,7 @@ Check mark on at Canonical Partners.
 sudo apt install \
 dolphin \
 wine64 \
+winetricks \
 vim \
 arandr \
 gimp \

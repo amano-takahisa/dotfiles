@@ -24,12 +24,9 @@ case $i in
 esac
 done
 
-echo $PANE_CURRENT_PATH
-echo $PANE_ACTIVE
-exit
-
 # replace full path to home directory with ~
-PRETTY_PATH=$(sed "s:^$HOME:~:" <<< $PANE_CURRENT_PATH)
+# PRETTY_PATH=$(sed "s:^$HOME:~:" <<< $PANE_CURRENT_PATH)
+PRETTY_PATH=$(echo ${PANE_CURRENT_PATH} | sed "s:^${HOME}:~:")
 
 # calculate reset color
 RESET_BORDER_COLOR=$([ $PANE_ACTIVE -eq 1 ] && echo $ACTIVE_BORDER_COLOR || echo $INACTIVE_BORDER_COLOR)
@@ -50,6 +47,9 @@ ZSH_THEME_GIT_PROMPT_BEHIND="↓"
 ZSH_THEME_GIT_PROMPT_STAGED="#[fg=$(color $GREEN)]●#[fg=$RESET_BORDER_COLOR]"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="#[fg=$(color $YELLOW)]●#[fg=$RESET_BORDER_COLOR]"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="#[fg=$(color $RED)]●#[fg=$RESET_BORDER_COLOR]"
+
+echo $ZSH_THEME_GIT_PROMPT_STAGED
+exit
 
 git_branch () {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -105,5 +105,22 @@ git_prompt () {
   echo $_result
 }
 
+
+parse_git_branch() {
+  GIT_CURRRENT_BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"` 
+  CHAR_PYTHON=$'\uE235'
+  CHAR_BRANCH=$'\uF418'
+
+  if [ -z "$GIT_CURRRENT_BRANCH" ]
+  then
+      :
+  else
+      echo -e "\e[38;5;130m${CHAR_BRANCH} \e[00m${GIT_CURRRENT_BRANCH}"
+  fi
+  #git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$CHAR_BRANCH \1/"
+}
+
+
 # final output
 echo " $PRETTY_PATH $(cd $PANE_CURRENT_PATH && git_prompt)"
+# echo -e " $PRETTY_PATH $(parse_git_branch)"
