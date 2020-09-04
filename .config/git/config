@@ -9,8 +9,13 @@
 	verbose = true
 [alias]
 	root = rev-parse --show-toplevel
+	log = log --stat
 [pull]
 	rebase = true
 [rebase]
 	autoStash = true
-
+[user]
+	email = amano.takahisa@gmail.com
+	name = Taka
+[core]
+	editor = ~/bin/nvim

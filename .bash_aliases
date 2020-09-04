@@ -1,7 +1,7 @@
 # Aliases
 
 # use neovim instead of vim
-alias vim='nvim'
+alias vim='/home/takahisa/bin/nvim'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
