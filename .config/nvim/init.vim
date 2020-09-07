@@ -62,6 +62,9 @@ Plug 'plasticboy/vim-markdown'
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+" Automated bullet lists
+Plug 'dkarter/bullets.vim'
+
 " Browse the tags of the current file and get an overview of its structure
 Plug 'majutsushi/tagbar'
 
@@ -385,6 +388,27 @@ let g:ale_linters = {
 \ 'python': ['mypy', 'black', 'autopep8']
 \ }
 
+" Plugin setting: 'dkarter/bullets.vim'
+" let g:bullets_mapping_leader = '<M-b>'
+let g:bullets_mapping_leader = ''
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'scratch'
+    \]
+let g:bullets_checkbox_markers = ' .oX'
+" Example:
+" - [o] parent bullet  [ <- `o` indicates 66% - 99% of children are checked ]
+"   - [ ] child bullet
+"   - [.] child bullet [ <- partial completions don't count as complete ]
+"     - [ ] sub-child bullet [ <- 1/4 of children checked so parent is `.` ]
+"     - [ ] sub-child bullet
+"     - [ ] sub-child bullet
+"     - [X] sub-child bullet
+"   - [X] child bullet
+"   - [X] child bullet
 
 """""""""""""""""
 " Tab lines
