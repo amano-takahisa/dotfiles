@@ -89,6 +89,10 @@ Plug 'ryanoasis/vim-devicons'
 
 " Linter and acts as a Vim Language Server Protocol client.
 Plug 'dense-analysis/ale'
+
+" scrollbar for neovim(nightly)
+" Plug 'Xuyuanp/scrollbar.nvim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -178,7 +182,7 @@ let g:mkdp_auto_close = 0
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
 " move the cursor
 " default: 0
-let g:mkdp_refresh_slow = 0
+let g:mkdp_refresh_slow = 1
 
 " set to 1, the MarkdownPreview command can be use for all files,
 " by default it can be use in markdown file
@@ -288,6 +292,19 @@ set wildmode=list:longest
 
 " Plugin setting: 'lornix/vim-scrollbar'
 " let g:loaded_scrollbar=1
+
+" Plugin setting: 'Xuyuanp/scrollbar.nvim'
+" augroup your_config_scrollbar_nvim
+"     autocmd!
+"     autocmd BufEnter    * silent! lua require('scrollbar').show()
+"     autocmd BufLeave    * silent! lua require('scrollbar').clear()
+" 
+"     autocmd CursorMoved * silent! lua require('scrollbar').show()
+"     autocmd VimResized  * silent! lua require('scrollbar').show()
+" 
+"     autocmd FocusGained * silent! lua require('scrollbar').show()
+"     autocmd FocusLost   * silent! lua require('scrollbar').clear()
+" augroup end
 
 """""""""""""""""
 " Appearance in text area
