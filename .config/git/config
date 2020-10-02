@@ -9,7 +9,8 @@
 	verbose = true
 [alias]
 	root = rev-parse --show-toplevel
-	log = log --stat
+	lo = log --stat --graph --decorate
+    st = status --short --branch
 [pull]
 	rebase = true
 [rebase]
