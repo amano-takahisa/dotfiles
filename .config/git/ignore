@@ -4,3 +4,4 @@ helper.py
 *_taka.txt
 *_taka.ipynb
 .ipynb_checkpoints/
+.vim/
