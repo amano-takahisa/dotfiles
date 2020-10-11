@@ -93,6 +93,12 @@ Plug 'dense-analysis/ale'
 " scrollbar for neovim(nightly)
 " Plug 'Xuyuanp/scrollbar.nvim'
 
+" Vim plugin for preview.
+Plug 'previm/previm'
+
+" Open URI with your favorite browser from your most favorite editor.
+" Plug 'tyru/open-browser.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -147,6 +153,9 @@ let NERDTreeShowHidden=1
 """""""""""""""""
 " Markdown
 """""""""""""""""
+" Plugin setting: 'previm/previm'
+let g:previm_open_cmd = 'firefox'
+
 " Plugin setting: 'plasticboy/vim-markdown'
 " Disable Folding
 let g:vim_markdown_folding_disabled = 1
