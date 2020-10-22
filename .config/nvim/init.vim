@@ -414,6 +414,7 @@ let g:ale_linters = {
 \ 'python': ['mypy', 'black', 'autopep8']
 \ }
 
+
 " Plugin setting: 'dkarter/bullets.vim'
 " let g:bullets_mapping_leader = '<M-b>'
 let g:bullets_mapping_leader = ''
