@@ -5,3 +5,5 @@ helper.py
 *_taka.ipynb
 .ipynb_checkpoints/
 .vim/
+.env/
+.idea/
