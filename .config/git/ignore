@@ -3,6 +3,7 @@ helper.py
 *_taka.sh
 *_taka.txt
 *_taka.ipynb
+*_taka.md
 .ipynb_checkpoints/
 .vim/
 .env/
