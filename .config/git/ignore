@@ -8,3 +8,4 @@ helper.py
 .vim/
 .env/
 .idea/
+out_*/
