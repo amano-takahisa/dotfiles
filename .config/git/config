@@ -21,3 +21,5 @@
 	name = Taka
 [core]
 	editor = ~/bin/nvim
+[fetch]
+    prun = true
