@@ -6,6 +6,7 @@ helper.py
 *_taka.md
 .ipynb_checkpoints/
 .vim/
+venv/
 .env/
 .idea/
 out_*/
