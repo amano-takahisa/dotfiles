@@ -83,7 +83,6 @@ Plug 'tpope/vim-obsession'
 " a file system explorer for the Vim editor
 Plug 'preservim/nerdtree'
 
-
 " Supports plugins to show icons.
 Plug 'ryanoasis/vim-devicons'
 
@@ -98,6 +97,9 @@ Plug 'previm/previm'
 
 " Open URI with your favorite browser from your most favorite editor.
 " Plug 'tyru/open-browser.vim'
+
+" Semshi provides semantic highlighting for Python in Neovim.
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 " Initialize plugin system
 call plug#end()
