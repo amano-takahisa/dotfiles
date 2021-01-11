@@ -9,7 +9,7 @@
 	verbose = true
 [alias]
 	root = rev-parse --show-toplevel
-	loo = log --stat --graph --decorate
+	loo = log --stat --graph --decorate --all
     lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%cr)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
     st = status --short --branch
 [pull]
