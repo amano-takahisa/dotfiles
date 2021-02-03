@@ -101,6 +101,13 @@ Plug 'previm/previm'
 " Semshi provides semantic highlighting for Python in Neovim.
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
+" Gutentags is a plugin that takes care of the much needed management of tags
+" files in Vim. It will (re)generate tag files as you work while staying
+" completely out of your way. It will even do its best to keep those tag files
+" out of your way too. It has no dependencies and just works.
+Plug 'ludovicchabant/vim-gutentags'
+
+
 " Initialize plugin system
 call plug#end()
 
