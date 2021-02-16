@@ -24,5 +24,6 @@
             }
         }
     },
-    "python.jediEnabled": true
+    "python.jediEnabled": false,
+    "python.pythonPath": "python3"
 }
