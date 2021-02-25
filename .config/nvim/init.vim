@@ -107,6 +107,9 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " out of your way too. It has no dependencies and just works.
 Plug 'ludovicchabant/vim-gutentags'
 
+" the premier Vim plugin for Git.
+Plug 'tpope/vim-fugitive'
+
 
 " Initialize plugin system
 call plug#end()
