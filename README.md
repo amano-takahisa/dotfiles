@@ -287,3 +287,20 @@ unset color_prompt force_color_prompt
 
 ```
 
+## GPU
+Install CUDA Toolkit by folliowing [this](https://developer.nvidia.com/cuda-toolkit).
+
+https://github.com/tensorflow/tensorflow/issues/44777#issuecomment-771285431
+```bash
+echo export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64 >> .bashrc
+```
+```
+cd $LD_LIBRARY_PATH
+sudo ln libcusolver.so.11 libcusolver.so.10  # hard link
+```
+
+Install libcudnn8 if necessary
+
+https://github.com/tensorflow/tensorflow/issues/45200#issuecomment-786641172
+
+
