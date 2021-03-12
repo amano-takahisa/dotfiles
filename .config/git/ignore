@@ -11,3 +11,6 @@ venv/
 .idea/
 out_*/
 tags
+tags.lock
+tags.temp
+
