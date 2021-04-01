@@ -66,7 +66,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'dkarter/bullets.vim'
 
 " Browse the tags of the current file and get an overview of its structure
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 
 " Diff two separate blocks of text.
 Plug 'AndrewRadev/linediff.vim'
