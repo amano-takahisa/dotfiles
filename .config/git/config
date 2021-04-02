@@ -1,25 +1,32 @@
 [blame]
 	coloring = highlightRecent
 [color "blame"]
-#	highlightRecent = 240, 12 month ago,242, 11 month ago,243, 10 month ago,244, 9 month ago,245, 8 month ago,246, 7 month ago,247, 6 month ago,248, 5 month ago,249, 4 month ago,250, 3 month ago,251, 2 month ago,252, 1 month ago,255
 	highlightRecent = 235, 6 month ago, 240, 3 month ago, 243, 1 month ago, 250, 1 week ago, 255, 1 day ago, red
 [color]
-	ui = auto
+    ui = auto
+
+# Show diffs of staged files when commit
 [commit]
 	verbose = true
 [alias]
 	root = rev-parse --show-toplevel
 	loo = log --stat --graph --decorate --all
-    lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%cr)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
-    st = status --short --branch
+	lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%cr)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
+	st = status --short --branch
+
+# Do not create merge commit if possible
 [pull]
 	rebase = true
 [rebase]
-	autoStash = true
+    autoStash = true
 [user]
 	email = amano.takahisa@gmail.com
 	name = Taka
+
+# Use vim as a default editor
 [core]
 	editor = ~/bin/nvim
+
+# Remove deleted remote branches when fetch or pull
 [fetch]
-    prun = true
+	prune = true
