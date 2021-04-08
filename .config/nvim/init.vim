@@ -721,3 +721,10 @@ if &term =~ "xterm"
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
+"""""""""""""""""
+" Tags
+"""""""""""""""""
+" Plugin setting: ludovicchabant/vim-gutentags
+" https://github.com/ludovicchabant/vim-gutentags/issues/178#issuecomment-575693926
+" fix error messages when edit git commit messages
+let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
