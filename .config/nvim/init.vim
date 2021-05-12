@@ -110,6 +110,10 @@ Plug 'ludovicchabant/vim-gutentags'
 " the premier Vim plugin for Git.
 Plug 'tpope/vim-fugitive'
 
+" Things you can do with fzf and Vim.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 " Initialize plugin system
 call plug#end()
