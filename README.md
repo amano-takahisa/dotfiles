@@ -215,8 +215,29 @@ sudo apt-get update
 sudo apt install shutter
 ```
 
+
+### wine and kindle
+
+Install wine
+```bash
+sudo dpkg --add-architecture i386
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+# sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport
+sudo apt update && sudo apt install -y --install-recommends winehq-devel
+cd "${HOME}/Downloads"
+wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks
+```
+
+Install kindle
+```bash
+mkdir -p ${WINEPREFIX:-$HOME/.wine}/drive_c/users/$USER/AppData/Local/Amazon/Kindle
+wine KindleForPC-installer-1.30.59056.exe
+```
+
 ### Japanese environments
-## Ubuntu settings
+#### Ubuntu settings
  
 
 - hide top bar
