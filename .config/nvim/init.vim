@@ -26,7 +26,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nanotech/jellybeans.vim'
 
 " Python pep8 indent check
-Plug 'Vimjas/vim-python-pep8-indent'
+" Plug 'Vimjas/vim-python-pep8-indent'
 
 " Visible white space
 Plug 'ntpeters/vim-better-whitespace'
@@ -38,10 +38,10 @@ Plug 'Raimondi/delimitMate'
 " Plug 'ervandew/supertab'
 
 " autopep8 automatically formats Python code to conform to the PEP 8 style guide
-Plug 'tell-k/vim-autopep8'
+" Plug 'tell-k/vim-autopep8'
 
 " a static syntax and style checker for Python source code
-Plug 'nvie/vim-flake8'
+" Plug 'nvie/vim-flake8'
 
 " Displays a scrollbar with 'thumb' in curses-based vim
 " Plug 'lornix/vim-scrollbar'
@@ -75,10 +75,10 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'easymotion/vim-easymotion'
 
 " Use different templates
-Plug 'mattn/vim-sonictemplate'
+" Plug 'mattn/vim-sonictemplate'
 
 " save session
-Plug 'tpope/vim-obsession'
+" Plug 'tpope/vim-obsession'
 
 " a file system explorer for the Vim editor
 Plug 'preservim/nerdtree'
@@ -87,13 +87,13 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 " Linter and acts as a Vim Language Server Protocol client.
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " scrollbar for neovim(nightly)
 " Plug 'Xuyuanp/scrollbar.nvim'
 
 " Vim plugin for preview.
-Plug 'previm/previm'
+" Plug 'previm/previm'
 
 " Open URI with your favorite browser from your most favorite editor.
 " Plug 'tyru/open-browser.vim'
@@ -111,8 +111,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-fugitive'
 
 " Things you can do with fzf and Vim.
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 
 
 " Initialize plugin system
@@ -170,7 +170,7 @@ let NERDTreeShowHidden=1
 " Markdown
 """""""""""""""""
 " Plugin setting: 'previm/previm'
-let g:previm_open_cmd = 'firefox'
+" let g:previm_open_cmd = 'firefox'
 
 " Plugin setting: 'plasticboy/vim-markdown'
 " Disable Folding
@@ -315,21 +315,6 @@ set statusline=%F%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
 " Complete command
 set wildmode=list:longest
 
-" Plugin setting: 'lornix/vim-scrollbar'
-" let g:loaded_scrollbar=1
-
-" Plugin setting: 'Xuyuanp/scrollbar.nvim'
-" augroup your_config_scrollbar_nvim
-"     autocmd!
-"     autocmd BufEnter    * silent! lua require('scrollbar').show()
-"     autocmd BufLeave    * silent! lua require('scrollbar').clear()
-" 
-"     autocmd CursorMoved * silent! lua require('scrollbar').show()
-"     autocmd VimResized  * silent! lua require('scrollbar').show()
-" 
-"     autocmd FocusGained * silent! lua require('scrollbar').show()
-"     autocmd FocusLost   * silent! lua require('scrollbar').clear()
-" augroup end
 
 """""""""""""""""
 " Appearance in text area
@@ -410,25 +395,26 @@ let g:indent_guides_enable_on_vim_startup = 1
 """""""""""""""""
 " Insert CR with O without edit mode
 " nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
+
 " Plugin setting: 'tell-k/vim-autopep8'
 " Disable show diff window
-let g:autopep8_disable_show_diff=1
+" let g:autopep8_disable_show_diff=1
 " add aggressive option (--aggressive)
-let g:autopep8_aggressive=2
+" let g:autopep8_aggressive=2
 
 " Plugin setting: 'mattn/vim-sonictemplate'
-let g:sonictemplate_vim_template_dir = [
-      \ '~/Templates'
-      \]
+" let g:sonictemplate_vim_template_dir = [
+"       \ '~/Templates'
+"       \]
 
 " Plugin setting: 'dense-analysis/ale'
 " set flake8 as linter
 " let g:ale_linters = {
 "     \ 'python': ['autopep8'],
 "     \ }
-let g:ale_linters = {
-\ 'python': ['mypy', 'black', 'autopep8']
-\ }
+" let g:ale_linters = {
+" \ 'python': ['mypy', 'black', 'autopep8']
+" \ }
 
 
 " Plugin setting: 'dkarter/bullets.vim'
@@ -547,17 +533,17 @@ endfunction
 """""""""""""""""
 " Auto completion
 """""""""""""""""
-" Plugin setting: neoclide/coc.nvim
-" https://github.com/neoclide/coc.nvim#example-vim-configuration
-" TextEdit might fail if hidden is not set.
-set hidden
-
+"" Plugin setting: neoclide/coc.nvim
+"" https://github.com/neoclide/coc.nvim#example-vim-configuration
+"" TextEdit might fail if hidden is not set.
+"set hidden
+"
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-" set cmdheight=2
+set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -575,7 +561,7 @@ set shortmess+=c
 "   set signcolumn=yes
 " endif
 set signcolumn=no
-
+"
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
