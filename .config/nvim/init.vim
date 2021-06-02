@@ -26,7 +26,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nanotech/jellybeans.vim'
 
 " Python pep8 indent check
-" Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " Visible white space
 Plug 'ntpeters/vim-better-whitespace'
@@ -38,10 +38,10 @@ Plug 'Raimondi/delimitMate'
 " Plug 'ervandew/supertab'
 
 " autopep8 automatically formats Python code to conform to the PEP 8 style guide
-" Plug 'tell-k/vim-autopep8'
+Plug 'tell-k/vim-autopep8'
 
 " a static syntax and style checker for Python source code
-" Plug 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 
 " Displays a scrollbar with 'thumb' in curses-based vim
 " Plug 'lornix/vim-scrollbar'
@@ -398,9 +398,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " Plugin setting: 'tell-k/vim-autopep8'
 " Disable show diff window
-" let g:autopep8_disable_show_diff=1
+let g:autopep8_disable_show_diff=1
 " add aggressive option (--aggressive)
-" let g:autopep8_aggressive=2
+let g:autopep8_aggressive=2
 
 " Plugin setting: 'mattn/vim-sonictemplate'
 " let g:sonictemplate_vim_template_dir = [
