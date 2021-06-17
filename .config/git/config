@@ -31,3 +31,7 @@
 # Remove deleted remote branches when fetch or pull
 [fetch]
     prune = true
+
+# always show line nunber with grep
+[grep]
+    linenumber = true
