@@ -166,6 +166,9 @@ map <C-n> :NERDTreeToggle<CR>
 " show hidden file by default
 let NERDTreeShowHidden=1
 
+" file filters
+let NERDTreeIgnore = ['^__pycache__$']
+
 """""""""""""""""
 " Markdown
 """""""""""""""""
