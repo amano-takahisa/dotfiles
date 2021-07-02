@@ -35,3 +35,5 @@
 # always show line nunber with grep
 [grep]
     linenumber = true
+[log]
+    date = iso
