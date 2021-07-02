@@ -167,7 +167,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " file filters
-let NERDTreeIgnore = ['^__pycache__$', '.*\.egg-info$']
+let NERDTreeIgnore = ['^__pycache__$', '.*\.egg-info$', '\.mypy_cache']
 
 """""""""""""""""
 " Markdown
