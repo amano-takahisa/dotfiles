@@ -326,6 +326,8 @@ set wildmode=list:longest
 colorscheme jellybeans
 syntax enable
 set number
+set relativenumber
+
 " Switch line numbers with F3
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 " Highlight current line
