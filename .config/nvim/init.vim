@@ -331,6 +331,18 @@ set showcmd
 " Plugin setting: 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 
+" Plugin setting: 'vim-airline/vim-airline'
+" Plugin setting: neoclide/coc.nvim
+" Compatibility of coc and airline
+" ref: h: coc-status
+set statusline^=%{coc#status()}
+let g:airline#extensions#coc#enabled = 0
+let airline#extensions#coc#error_symbol = 'Error:'
+let airline#extensions#coc#warning_symbol = 'Warning:'
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
+
 " Complete command
 set wildmode=list:longest
 
@@ -463,53 +475,58 @@ let g:bullets_checkbox_markers = ' .oX'
 """""""""""""""""
 " Tab lines
 """""""""""""""""
+"
+" Plugin setting: 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 " Rename tabs to show tab number.
 " (Based on http://stackoverflow.com/questions/5927952/whats-implementation-of-vims-default-tabline-function)
-if exists("+showtabline")
-    function! MyTabLine()
-        let s = ''
-        let wn = ''
-        let t = tabpagenr()
-        let i = 1
-        while i <= tabpagenr('$')
-            let buflist = tabpagebuflist(i)
-            let winnr = tabpagewinnr(i)
-            let s .= '%' . i . 'T'
-            let s .= (i == t ? '%1*' : '%2*')
-            let s .= ' '
-            let wn = tabpagewinnr(i,'$')
-
-            let s .= '%#TabNum#'
-            let s .= i
-            " let s .= '%*'
-            let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-            let bufnr = buflist[winnr - 1]
-            let file = bufname(bufnr)
-            let buftype = getbufvar(bufnr, 'buftype')
-            if buftype == 'nofile'
-                if file =~ '\/.'
-                    let file = substitute(file, '.*\/\ze.', '', '')
-                endif
-            else
-                let file = fnamemodify(file, ':p:t')
-            endif
-            if file == ''
-                let file = '[No Name]'
-            endif
-            "let s .= ' ' . file . ' '
-            let s .= file
-            let s .= (i == t ? '%m' : '')
-            let i = i + 1
-        endwhile
-        let s .= '%T%#TabLineFill#%='
-        let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
-        return s
-    endfunction
-    set stal=2
-    set tabline=%!MyTabLine()
-    set showtabline=2
-    highlight link TabNum Special
-endif
+" if exists("+showtabline")
+"     function! MyTabLine()
+"         let s = ''
+"         let wn = ''
+"         let t = tabpagenr()
+"         let i = 1
+"         while i <= tabpagenr('$')
+"             let buflist = tabpagebuflist(i)
+"             let winnr = tabpagewinnr(i)
+"             let s .= '%' . i . 'T'
+"             let s .= (i == t ? '%1*' : '%2*')
+"             let s .= ' '
+"             let wn = tabpagewinnr(i,'$')
+" 
+"             let s .= '%#TabNum#'
+"             let s .= i
+"             " let s .= '%*'
+"             let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+"             let bufnr = buflist[winnr - 1]
+"             let file = bufname(bufnr)
+"             let buftype = getbufvar(bufnr, 'buftype')
+"             if buftype == 'nofile'
+"                 if file =~ '\/.'
+"                     let file = substitute(file, '.*\/\ze.', '', '')
+"                 endif
+"             else
+"                 let file = fnamemodify(file, ':p:t')
+"             endif
+"             if file == ''
+"                 let file = '[No Name]'
+"             endif
+"             "let s .= ' ' . file . ' '
+"             let s .= file
+"             let s .= (i == t ? '%m' : '')
+"             let i = i + 1
+"         endwhile
+"         let s .= '%T%#TabLineFill#%='
+"         let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
+"         return s
+"     endfunction
+"     set stal=2
+"     set tabline=%!MyTabLine()
+"     set showtabline=2
+"     highlight link TabNum Special
+" endif
 
 
 """""""""""""""""
@@ -692,6 +709,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 
 " Mappings for CoCList
 " Show all diagnostics.
