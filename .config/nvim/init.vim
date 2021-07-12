@@ -110,6 +110,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " the premier Vim plugin for Git.
 Plug 'tpope/vim-fugitive'
 
+" nice statusline at the bottom of each vim window
+Plug 'vim-airline/vim-airline'
+
 " Things you can do with fzf and Vim.
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
@@ -312,19 +315,21 @@ nnoremap <C-c> :bp<bar>bd #<CR>
 """""""""""""""""
 set showcmd
 " always show status line
-set laststatus=2
+" set laststatus=2
+" set statusline=%F%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
 " Customize status line
 " ref: https://vi.stackexchange.com/questions/27880/pathshorten-all-but-containing-directory/27881#27881
-function! CondensedPath() abort
-    if expand(':h') == '/'
-        return '/' . expand('%:t')
-    else
-        return pathshorten(expand('%:h')) . '/' . expand('%:t')
-    endif
-endfunction
-set statusline=%{CondensedPath()}%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
+" function! CondensedPath() abort
+"     if expand(':h') == '/'
+"         return '/' . expand('%:t')
+"     else
+"         return pathshorten(expand('%:h')) . '/' . expand('%:t')
+"     endif
+" endfunction
+" set statusline=%{CondensedPath()}%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
 
-" let g:airline_section_c='%{CondensedPath()}'
+" Plugin setting: 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
 
 " Complete command
 set wildmode=list:longest
