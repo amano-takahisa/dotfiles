@@ -314,7 +314,18 @@ set showcmd
 " always show status line
 set laststatus=2
 " Customize status line
-set statusline=%F%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
+" ref: https://vi.stackexchange.com/questions/27880/pathshorten-all-but-containing-directory/27881#27881
+function! CondensedPath() abort
+    if expand(':h') == '/'
+        return '/' . expand('%:t')
+    else
+        return pathshorten(expand('%:h')) . '/' . expand('%:t')
+    endif
+endfunction
+set statusline=%{CondensedPath()}%m%h%w\ %<[%Y]\ %=[%l/%L(%02v)]
+
+" let g:airline_section_c='%{CondensedPath()}'
+
 " Complete command
 set wildmode=list:longest
 
