@@ -409,8 +409,8 @@ map <silent>sr <Plug>(operator-surround-replace)
 """""""""""""""""
 " Tab & indents charactor
 """""""""""""""""
-" Show tab charactors as ▸-
-set list listchars=tab:\▸\-
+" Show tab charactors as |...
+set list listchars=tab:\|\.
 highlight NonText guifg=gray
 " Insert spaces instead of tab
 set expandtab
