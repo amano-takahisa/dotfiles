@@ -72,6 +72,7 @@ Plug 'preservim/tagbar'
 Plug 'AndrewRadev/linediff.vim'
 
 " Provides a much simpler way to use some motions in vim
+" by default, <Leader><Leader> s to jump
 Plug 'easymotion/vim-easymotion'
 
 " Use different templates
