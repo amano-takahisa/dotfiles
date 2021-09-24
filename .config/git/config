@@ -37,3 +37,5 @@
     linenumber = true
 [log]
     date = iso
+[core]
+    commentChar = ";"
