@@ -11,7 +11,7 @@
 [alias]
     root = rev-parse --show-toplevel
     loo = log --stat --graph --decorate --all
-    lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%cr)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
+    lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ar)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
     st = status --short --branch
     sh = show --color-words='[^[:space:]]'
 
@@ -39,3 +39,16 @@
     date = iso
 [core]
     commentChar = ";"
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
