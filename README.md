@@ -263,7 +263,7 @@ unset color_prompt force_color_prompt
 To:
 ```
 parse_git_branch() {
-  GIT_CURRRENT_BRANCH=`git rev-parse --abbrev-ref HEAD` 
+  GIT_CURRRENT_BRANCH=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
   if [ -z "$GIT_CURRRENT_BRANCH" ]
   then
       :
