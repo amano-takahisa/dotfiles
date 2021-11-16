@@ -97,7 +97,7 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'previm/previm'
 
 " Open URI with your favorite browser from your most favorite editor.
-" Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser.vim'
 
 " Semshi provides semantic highlighting for Python in Neovim.
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
@@ -230,11 +230,18 @@ let g:mkdp_open_to_the_world = 0
 " useful when you work in remote vim and preview on local browser
 " more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
 " default empty
-let g:mkdp_open_ip = ''
+" let g:mkdp_open_ip = ''
+let g:mkdp_open_to_the_world = 1
+let g:mkdp_open_ip = '127.0.0.1'
+let g:mkdp_port = 8727
+function! g:EchoUrl(url)
+    :echo a:url
+endfunction
+let g:mkdp_browserfunc = 'g:EchoUrl'
 
 " specify browser to open preview page
 " default: ''
-let g:mkdp_browser = ''
+let g:mkdp_browser = 'firefox'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -243,7 +250,7 @@ let g:mkdp_echo_preview_url = 0
 " a custom vim function name to open preview page
 " this function will receive url as param
 " default is empty
-let g:mkdp_browserfunc = ''
+" let g:mkdp_browserfunc = ''
 
 " options for markdown render
 " mkit: markdown-it options for render
