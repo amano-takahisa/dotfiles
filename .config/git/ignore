@@ -4,6 +4,7 @@ helper.py
 *_taka.txt
 *_taka.ipynb
 *_taka.md
+gitignore/
 .ipynb_checkpoints/
 .vim/
 venv/
