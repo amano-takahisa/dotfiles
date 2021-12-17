@@ -21,6 +21,25 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install git
 ```
+### Setup
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+Setup ssh
+```bash
+# generate ssh key
+ssh-keygen -t ed25519 -C "amano.takahisa@gmail.com"
+# start ssh-agent
+eval "$(ssh-agent -s)"
+# add ssh key to the agent
+ssh-add ~/.ssh/id_ed25519
+```
+Register ssh key to github
+```bash
+cat ~/.ssh/id_ed25519.pub
+# Then select and copy the contents of the id_ed25519.pub file
+# displayed in the terminal to your clipboard
+```
+and paste to GitHub ssh key setting
+
 
 ## dotfiles
 
