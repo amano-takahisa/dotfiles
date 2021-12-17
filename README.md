@@ -10,6 +10,49 @@ sudo ubuntu-drivers autoinstall
 sudo reboot
 ```
 
+## Git
+### Install
+```bash
+sudo apt install git
+```
+or
+```bash
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+```
+
+## dotfiles
+
+```bash
+cd ~
+git clone git@github.com:amano-takahisa/dotfiles.git
+
+ln -s ~/dotfiles/.bash_aliases
+ln -s ~/dotfiles/.tmux.conf
+mkdir .config/git
+ln -s ~/dotfiles/.config/git/config .config/git/config
+ln -s ~/dotfiles/.config/git/ignore .config/git/ignore
+mkdir mkdir .config/nvim
+ln -s ~/dotfiles/.config/nvim/init.vim .config/nvim/init.vim
+ln -s ~/dotfiles/.config/nvim/coc-settings.json .config/nvim/coc-settings.json
+
+```
+
+## tmux
+### Install
+```bash
+sudo apt install tmux
+```
+or, get [AppImage](https://github.com/nelsonenzo/tmux-appimage/releases),
+or [build and install](https://github.com/tmux/tmux#installation).
+
+### Setup
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+and on tmux `<prefix> + I` to install plugins.
+
 ## Install font
 Git and Docker is required.
 https://github.com/miiton/Cica
@@ -55,44 +98,12 @@ curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 ```
-### Git
-```bash
-sudo apt install git
-```
-or
-```bash
-sudo add-apt-repository ppa:git-core/ppa
-sudo apt update
-sudo apt install git
-```
 ### github
 Follow [this](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 and [this](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account).
 
 
-### dotfiles
-```bash
-cd ~
-git clone git@github.com:amano-takahisa/dotfiles.git
 
-ln -s ~/dotfiles/.bash_aliases
-ln -s ~/dotfiles/.tmux.conf
-mkdir .config/git
-ln -s ~/dotfiles/.config/git/config .config/git/config
-ln -s ~/dotfiles/.config/git/ignore .config/git/ignore
-mkdir mkdir .config/nvim
-ln -s ~/dotfiles/.config/nvim/init.vim .config/nvim/init.vim
-ln -s ~/dotfiles/.config/nvim/coc-settings.json .config/nvim/coc-settings.json
-
-```
-
-### tmux
-
-tmux plugins
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-and on tmux `<prefix> + I` to install plugins.
 
 ### Neovim
 
