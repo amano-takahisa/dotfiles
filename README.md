@@ -31,6 +31,14 @@ And follow [this](https://forums.linuxmint.com/viewtopic.php?p=1826052&sid=e168c
 ### Swap ctrl and capslock
 From tweaks, change as you like.
 
+### Setup language support
+Run
+```bash
+gnome-language-selector
+```
+and add language
+
+
 ## Git
 ### Install
 ```bash
@@ -94,6 +102,69 @@ ln -s ~/dotfiles/.config/qt5ct/qss/dolphin_fix_bg.qss .config/qt5ct/qss/dolphin_
 mkdir -p .config/tmux
 ln -s ~/dotfiles/.config/tmux/pane-border-format.sh .config/tmux/pane-border-format.sh
 ```
+## terminal
+### PS1
+Edit `.bashrc` to modify PS1 as follows.
+
+From:
+```
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+```
+
+To:
+```
+parse_git_branch() {
+  GIT_CURRRENT_BRANCH=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  if [ -z "$GIT_CURRRENT_BRANCH" ]
+  then
+      :
+  else
+      echo -e "\e[38;5;130m${CHAR_BRANCH} \e[00m${GIT_CURRRENT_BRANCH}"
+  fi
+  #git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$CHAR_BRANCH \1/"
+}
+
+
+parse_conda_env() {
+    if [ -z "$CONDA_DEFAULT_ENV" ]
+    then
+        :
+    else
+        echo -e "\e[32m${CHAR_PYTHON} \e[00m`basename ${CONDA_DEFAULT_ENV}`"
+    fi
+}
+
+CHAR_PYTHON=$'\uE606'
+CHAR_BRANCH=$'\uE725'
+CHAR_PROMPT=$'\uE285\uE285'
+CHAR_RFRAME=$'\uE0C0'
+CHAR_MANTLELAB=$'\uE257'
+CHAR_RPIXEL=$'\uE0C6'
+CHAR_NUCLER=$'\uE7BA'
+CHAR_STAR=$'\u272F'
+CHAR_LAPTOP=$'\uF109'
+
+
+if [ "$color_prompt" = yes ]; then
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="\e[38;5;208;100m${debian_chroot:+($debian_chroot)}\u${CHAR_MLLOGO} \h\e[90;48;5;236m$CHAR_RPIXEL \e[38;5;208m\w\e[00m\e[38;5;236m$CHAR_RPIXEL \e[00m\n\
+"'`date +%X%:::z`'"\$(parse_conda_env)\$(parse_git_branch)\n\
+$CHAR_PROMPT "
+else
+    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='`date +%X%:::z`\n${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+fi
+unset color_prompt force_color_prompt
+```
+
+### Alias
+Remove alias section from `.bashrc` since alias is managed in `.bash_aliases`
 
 ## tmux
 ### Install
@@ -147,15 +218,29 @@ Install plugins
 ```
 
 ## Docker
+### Install
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+```
+
+***************************************
+
+## Install font
+Git and Docker is required.
+https://github.com/miiton/Cica
+
+
 Install semshi
 https://github.com/numirias/semshi
 Semshi itself will be installed with Plug-vim plugin manager
 ```bash
 conda install -c conda-forge pynvim 
 ```
-## Install font
-Git and Docker is required.
-https://github.com/miiton/Cica
 
 ```bash
 git clone https://github.com/miiton/Cica.git
@@ -320,66 +405,6 @@ https://extensions.gnome.org/extension/545/hide-top-bar/
 
 
 ## Bash
-Edit `.bashrc` to modify PS1 as follows.
-
-From:
-```
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-```
-
-To:
-```
-parse_git_branch() {
-  GIT_CURRRENT_BRANCH=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
-  if [ -z "$GIT_CURRRENT_BRANCH" ]
-  then
-      :
-  else
-      echo -e "\e[38;5;130m${CHAR_BRANCH} \e[00m${GIT_CURRRENT_BRANCH}"
-  fi
-  #git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$CHAR_BRANCH \1/"
-}
-
-
-parse_conda_env() {
-    if [ -z "$CONDA_DEFAULT_ENV" ]
-    then
-        :
-    else
-        echo -e "\e[32m${CHAR_PYTHON} \e[00m`basename ${CONDA_DEFAULT_ENV}`"
-    fi
-}
-
-CHAR_PYTHON=$'\uE606'
-CHAR_BRANCH=$'\uE725'
-CHAR_PROMPT=$'\uE285\uE285'
-CHAR_RFRAME=$'\uE0C0'
-CHAR_MANTLELAB=$'\uE257'
-CHAR_RPIXEL=$'\uE0C6'
-CHAR_NUCLER=$'\uE7BA'
-CHAR_STAR=$'\u272F'
-CHAR_LAPTOP=$'\uF109'
-
-
-if [ "$color_prompt" = yes ]; then
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1="\e[38;5;208;100m${debian_chroot:+($debian_chroot)}\u${CHAR_MLLOGO} \h\e[90;48;5;236m$CHAR_RPIXEL \e[38;5;208m\w\e[00m\e[38;5;236m$CHAR_RPIXEL \e[00m\n\
-"'`date +%X%:::z`'"\$(parse_conda_env)\$(parse_git_branch)\n\
-$CHAR_PROMPT "
-else
-    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='`date +%X%:::z`\n${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
-fi
-unset color_prompt force_color_prompt
-
-```
-
 ## GPU
 Install CUDA Toolkit by folliowing [this](https://developer.nvidia.com/cuda-toolkit).
 
