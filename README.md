@@ -10,6 +10,27 @@ sudo ubuntu-drivers autoinstall
 sudo reboot
 ```
 
+### Install basic tools
+```bash
+sudo apt install \
+    curl \
+    gnome-tweaks \
+    tree
+```
+
+Prepare directory
+```bash
+mkdir ~/bin
+```
+### Fix brightness control (If not work)
+```bash
+sudo apt install inotify-tools
+```
+And follow [this](https://forums.linuxmint.com/viewtopic.php?p=1826052&sid=e168cef1b97e35e9e4eff4f69fc9d99a#p1826052).
+
+### Swap ctrl and capslock
+From tweaks, change as you like.
+
 ## Git
 ### Install
 ```bash
@@ -24,6 +45,7 @@ sudo apt install git
 ### Setup
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 Setup ssh
+
 ```bash
 # generate ssh key
 ssh-keygen -t ed25519 -C "amano.takahisa@gmail.com"
@@ -40,7 +62,6 @@ cat ~/.ssh/id_ed25519.pub
 ```
 and paste to GitHub ssh key setting
 
-
 ## dotfiles
 
 ```bash
@@ -48,14 +69,30 @@ cd ~
 git clone git@github.com:amano-takahisa/dotfiles.git
 
 ln -s ~/dotfiles/.bash_aliases
+ln -s ~/dotfiles/.condarc
+ln -s ~/dotfiles/.cookiecutterrc
 ln -s ~/dotfiles/.tmux.conf
-mkdir .config/git
+ln -s ~/dotfiles/.config/flake8 .config/flake8
+
+mkdir -p .config/git
 ln -s ~/dotfiles/.config/git/config .config/git/config
 ln -s ~/dotfiles/.config/git/ignore .config/git/ignore
-mkdir mkdir .config/nvim
+
+mkdir mypy
+ln -s ~/dotfiles/.config/mypy/config/mypy.ini .config/mypy/config/mypy.ini
+
+mkdir -p .config/nvim/after/ftplugin
 ln -s ~/dotfiles/.config/nvim/init.vim .config/nvim/init.vim
 ln -s ~/dotfiles/.config/nvim/coc-settings.json .config/nvim/coc-settings.json
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/dockerfile.vim .config/nvim/after/ftplugin/dockerfile.vim
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/markdown.vim .config/nvim/after/ftplugin/markdown.vim
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/sh.vim .config/nvim/after/ftplugin/sh.vim
 
+mkdir -p .config/qt5ct/qss
+ln -s ~/dotfiles/.config/qt5ct/qss/dolphin_fix_bg.qss .config/qt5ct/qss/dolphin_fix_bg.qss
+
+mkdir -p .config/tmux
+ln -s ~/dotfiles/.config/tmux/pane-border-format.sh .config/tmux/pane-border-format.sh
 ```
 
 ## tmux
@@ -72,6 +109,50 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 and on tmux `<prefix> + I` to install plugins.
 
+## nodejs
+Required for COC NeoVim
+https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
+```bash
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+## ctags
+Requried for gutentag plugin for Neovim
+```bash
+sudo snap install universal-ctags
+```
+
+## Neovim
+### Install
+https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
+
+```bash
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim
+ln -s /usr/bin/nvim ~/bin/nvim
+```
+### Setup
+Install plugin manager
+https://github.com/junegunn/vim-plug#unix-linux
+
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+Install plugins
+```
+:PlugInstall
+```
+
+## Docker
+Install semshi
+https://github.com/numirias/semshi
+Semshi itself will be installed with Plug-vim plugin manager
+```bash
+conda install -c conda-forge pynvim 
+```
 ## Install font
 Git and Docker is required.
 https://github.com/miiton/Cica
@@ -87,18 +168,11 @@ mv dist/*.ttf ~/.fonts/
 Then set fonts from gnome-tweaks
 
 ## Install softwares and setup
-Prepare directory
-```bash
-mkdir ~/bin
-```
 
 ### Tools from Ubuntu repo
 ```bash
 sudo apt install \
     tree \
-    curl \
-    ctags \
-    gnome-tweaks \
     tmux \
     dolphin \
     htop \
@@ -110,13 +184,6 @@ sudo apt install \
 
 ```
 
-### nodejs
-https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
-```bash
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-```
 ### github
 Follow [this](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 and [this](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account).
@@ -124,30 +191,6 @@ and [this](https://docs.github.com/en/github/authenticating-to-github/adding-a-n
 
 
 
-### Neovim
-
-https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
-
-```bash
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install neovim
-ln -s /usr/bin/nvim ~/bin/nvim
-```
-
-Install plugin manager
-https://github.com/junegunn/vim-plug#unix-linux
-
-```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-Install semshi
-https://github.com/numirias/semshi
-Semshi itself will be installed with Plug-vim plugin manager
-```bash
-conda install -c conda-forge pynvim 
-```
 
 
 ### Docker
