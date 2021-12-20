@@ -40,6 +40,15 @@ gnome-language-selector
 ```
 and add language
 
+### GNOME settings
+- Auto hide Dock
+- Dark window theme
+- Accessibility > Cursor size > enlarge
+- Accessibility > Hearing > enable visual alart
+
+Hide top bar
+https://extensions.gnome.org/extension/545/hide-top-bar/
+
 
 ## Git
 ### Install
