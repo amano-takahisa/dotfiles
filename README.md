@@ -15,7 +15,9 @@ sudo reboot
 sudo apt install \
     curl \
     gnome-tweaks \
-    tree
+    tree \
+    htop \
+
 ```
 
 Prepare directory
@@ -226,138 +228,94 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io
-```
-
-***************************************
-
-## Install font
-Git and Docker is required.
-https://github.com/miiton/Cica
-
-
-Install semshi
-https://github.com/numirias/semshi
-Semshi itself will be installed with Plug-vim plugin manager
-```bash
-conda install -c conda-forge pynvim 
-```
-
-```bash
-git clone https://github.com/miiton/Cica.git
-cd Cica
-docker-compose build ; docker-compose run --rm cica
-mkdir ~/.fonts
-mv dist/*.ttf ~/.fonts/
-```
-
-Then set fonts from gnome-tweaks
-
-## Install softwares and setup
-
-### Tools from Ubuntu repo
-```bash
-sudo apt install \
-    tree \
-    tmux \
-    dolphin \
-    htop \
-    gcc \
-    python3-dev \
-    grass \
-    qt5ct \
-    libgdal-dev
-
-```
-
-### github
-Follow [this](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-and [this](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account).
-
-
-
-
-
-
-### Docker
-https://docs.docker.com/engine/install/ubuntu/
-```bash
-sudo apt install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common \
-    cmake \
-    build-essential \
-    libgl1-mesa-dev \
-    mlocate
-
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-sudo apt install docker-ce docker-ce-cli containerd.io docker-compose
 sudo docker run hello-world
-
+```
+### Setup
+```bash
 sudo usermod -aG docker ${USER}
 newgrp docker
 ```
 
-### Conda
+## Install font
+### Install
+```bash
+curl -L -O https://github.com/miiton/Cica/releases/download/v5.0.2/Cica_v5.0.2_with_emoji.zip
+sudo mkdir /usr/share/fonts/truetype/cica
+sudo unzip Cica_v5.0.2_with_emoji.zip -d /usr/share/fonts/truetype/cica
+sudo fc-cache -vf
+rm Cica_v5.0.2_with_emoji.zip
+fc-list | grep -i cica
+```
+
+### Setup
+Add to gnome terminal font list
+```bash
+$ gsettings get org.gnome.Terminal.ProfilesList list
+['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
+
+$ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ font "Cica 12"
+```
+
+## Dolphin
+### Install
+```bash
+sudo apt install dolphin konsole
+```
+
+## Conda
+### Install
 Use miniconda
 https://repo.anaconda.com/miniconda//
 ```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.3-Linux-x86_64.sh
-bash Miniconda3-py38_4.8.3-Linux-x86_64.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
+rm Miniconda3-latest-Linux-x86_64.sh
+
 ```
 Agree EULA and follow installer messages.
 
+### Setup
 Setup conda environment
 ```bash
 conda create -n py38 python=3.8.3
+conda create -n py310 python=3.10
 ```
 
-Conda packages
-```bash
-conda install -c conda-forge jupyterlab descartes autopep8 ipywidgets altair
-```
 
-Pip packages
-```bash
-pip install grass-session
-```
 
-### Slack
+## Slack
 Download `.deb` from [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb)
 Then install.
 ```bash
-sudo dpkg -i slack-desktop-4.12.2-amd64.deb
+wget https://downloads.slack-edge.com/releases/linux/4.23.0/prod/x64/slack-desktop-4.23.0-amd64.deb
+sudo dpkg -i slack-desktop-4.23.0-amd64.deb
+rm slack-desktop-4.23.0-amd64.deb
 ```
-### QGIS
-https://www.qgis.org/en/site/forusers/alldownloads.html
+
+## QGIS
+### Install
+https://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu
 ```bash
-wget -qO - https://qgis.org/downloads/qgis-2020.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
+wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
 sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
-sudo add-apt-repository "deb [arch=amd64] https://qgis.org/ubuntu `lsb_release -c -s` main"
-
+sudo add-apt-repository "deb [arch=amd64] https://qgis.org/ubuntu $(lsb_release -c -s) main"
+sudo apt install qgis qgis-plugin-grass
 ```
 
-### Orfeo Toolbox
+### Shutter
 ```bash
-wget https://www.orfeo-toolbox.org/packages/OTB-7.2.0-Linux64.run
-chmod +x OTB-7.2.0-Linux64.run
-./OTB-7.2.0-Linux64.run
+sudo add-apt-repository ppa:shutter/ppa
+sudo apt-get update
+sudo apt install shutter
 ```
-
-Re-compile for python 3.8
-https://www.orfeo-toolbox.org/CookBook/Installation.html#id4
+Additional install for shutter
+```bash
+sudo apt install gnome-web-photo 
 ```
-cd ~/OTB-7.2.0-Linux64
-source otbenv.profile
-ctest -S share/otb/swig/build_wrapping.cmake -VV
+Optional, if not installed.
+```bash
+sudo apt install gir1.2-appindicator3-0.1
 ```
 
 ### Google chrome
@@ -365,60 +323,3 @@ ctest -S share/otb/swig/build_wrapping.cmake -VV
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
-
-### Shutter
-```bash
-sudo add-apt-repository ppa:linuxuprising/shutter
-sudo apt-get update
-sudo apt install shutter
-```
-
-
-### wine and kindle
-
-Install wine
-```bash
-sudo dpkg --add-architecture i386
-wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
-# sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport
-sudo apt update && sudo apt install -y --install-recommends winehq-devel
-cd "${HOME}/Downloads"
-wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-chmod +x winetricks
-```
-
-Install kindle
-```bash
-mkdir -p ${WINEPREFIX:-$HOME/.wine}/drive_c/users/$USER/AppData/Local/Amazon/Kindle
-wine KindleForPC-installer-1.30.59056.exe
-```
-
-### Japanese environments
-#### Ubuntu settings
- 
-
-- hide top bar
-https://extensions.gnome.org/extension/545/hide-top-bar/
-
-- Auto-hide the Dock
-
-
-## Bash
-## GPU
-Install CUDA Toolkit by folliowing [this](https://developer.nvidia.com/cuda-toolkit).
-
-https://github.com/tensorflow/tensorflow/issues/44777#issuecomment-771285431
-```bash
-echo export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64 >> .bashrc
-```
-```
-cd $LD_LIBRARY_PATH
-sudo ln libcusolver.so.11 libcusolver.so.10  # hard link
-```
-
-Install libcudnn8 if necessary
-
-https://github.com/tensorflow/tensorflow/issues/45200#issuecomment-786641172
-
-
