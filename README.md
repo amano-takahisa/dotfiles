@@ -153,7 +153,8 @@ parse_conda_env() {
 
 CHAR_PYTHON=$'\uE606'
 CHAR_BRANCH=$'\uE725'
-CHAR_PROMPT=$'\uE285\uE285'
+# CHAR_PROMPT=$'\uE285\uE285'
+CHAR_PROMPT='$ '
 CHAR_RFRAME=$'\uE0C0'
 CHAR_MANTLELAB=$'\uE257'
 CHAR_RPIXEL=$'\uE0C6'
@@ -270,6 +271,9 @@ $ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/pro
 ```bash
 sudo apt install dolphin konsole
 ```
+
+### Setup
+
 
 ## Conda
 ### Install
