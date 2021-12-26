@@ -49,6 +49,13 @@ and add language
 Hide top bar
 https://extensions.gnome.org/extension/545/hide-top-bar/
 
+### wi-fi settings
+If a computer can't connect to specific wifi, try to strict to use 2.4Ghz band.
+You can configure this with an "Advanced Network Configuration" tool.
+```bash
+sudo apt install net-tools
+```
+Then start Advanced Network Configuration tool and set wifi band to B/G (2.4GHz).
 
 ## Git
 ### Install
@@ -330,6 +337,13 @@ Optional, if not installed.
 ```bash
 sudo apt install gir1.2-appindicator3-0.1
 ```
+At 2021-12-26, shutter version 0.99.2 is not support weyland.
+Some features are not available on that.
+Therefore, using ubuntu xorg is recommended for the time.
+1. At the login screen click on the cog icon beside the "Sign In" button.
+2. Select the option "Ubuntu on Xorg."
+3. Enter your password and log in to your Ubuntu machine.
+
 
 ### Google chrome
 ```bash
