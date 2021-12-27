@@ -302,7 +302,17 @@ conda create -n py38 python=3.8.3
 conda create -n py310 python=3.10
 ```
 
+## GDAL
+```bash
+# sudo add-apt-repository ppa:ubuntugis/ppa
+# sudo apt install libgdal-dev
+```
 
+
+## Jupyter lab
+```bash
+pip install jupyterlab
+```
 
 ## Slack
 Download `.deb` from [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb)
@@ -323,7 +333,7 @@ sudo add-apt-repository "deb [arch=amd64] https://qgis.org/ubuntu $(lsb_release 
 sudo apt install qgis qgis-plugin-grass
 ```
 
-### Shutter
+## Shutter
 ```bash
 sudo add-apt-repository ppa:shutter/ppa
 sudo apt-get update
@@ -345,8 +355,14 @@ Therefore, using ubuntu xorg is recommended for the time.
 3. Enter your password and log in to your Ubuntu machine.
 
 
-### Google chrome
+## Google chrome
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
+
+## Jupyter book
+
+```bash
+pip install -U jupyter-book
 ```
