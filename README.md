@@ -53,9 +53,9 @@ https://extensions.gnome.org/extension/545/hide-top-bar/
 If a computer can't connect to specific wifi, try to strict to use 2.4Ghz band.
 You can configure this with an "Advanced Network Configuration" tool.
 ```bash
-sudo apt install net-tools
+# sudo apt install net-tools  # <- not necessary?
 ```
-Then start Advanced Network Configuration tool and set wifi band to B/G (2.4GHz).
+Then start Advanced Network Configuration tool `nm-connection-editor` and set wifi band to B/G (2.4GHz).
 
 ## Git
 ### Install
