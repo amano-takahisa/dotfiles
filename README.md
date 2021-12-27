@@ -87,6 +87,7 @@ cat ~/.ssh/id_ed25519.pub
 # displayed in the terminal to your clipboard
 ```
 and paste to GitHub ssh key setting
+https://github.com/settings/ssh/new
 
 ## dotfiles
 
