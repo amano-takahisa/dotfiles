@@ -368,3 +368,8 @@ rm google-chrome-stable_current_amd64.deb
 ```bash
 pip install -U jupyter-book
 ```
+
+## peek
+```bash
+sudo apt install peek
+```
