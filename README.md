@@ -17,7 +17,6 @@ sudo apt install \
     gnome-tweaks \
     tree \
     htop \
-
 ```
 
 Prepare directory
@@ -38,7 +37,11 @@ Run
 ```bash
 gnome-language-selector
 ```
-and add language
+and install Japanese.
+Then, activate input method.
+
+- Settings > Region & Language > Input Source > add Japanese (Mozc)
+- Formats > United Kingdom
 
 ### GNOME settings
 - Auto hide Dock
@@ -372,4 +375,9 @@ pip install -U jupyter-book
 ## peek
 ```bash
 sudo apt install peek
+```
+
+## Other
+```bash
+sudo apt install awscli
 ```

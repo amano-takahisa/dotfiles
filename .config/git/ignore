@@ -32,3 +32,8 @@ ipython_config.py
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
 
+
+# Git management tool
+# https://support.atlassian.com/bitbucket-cloud/docs/maintain-a-git-repository/#MaintainingaGitRepository-Manuallyreviewinglargefilesinyourrepository
+# https://livingdead0812.hatenablog.com/entry/2019/10/18/180033
+git_find_big.sh
