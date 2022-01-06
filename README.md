@@ -48,6 +48,7 @@ Then, activate input method.
 - Dark window theme
 - Accessibility > Cursor size > enlarge
 - Accessibility > Hearing > enable visual alart
+- Default Applications > Web > Firefox
 
 Hide top bar
 https://extensions.gnome.org/extension/545/hide-top-bar/
