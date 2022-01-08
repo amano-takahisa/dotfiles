@@ -215,7 +215,11 @@ sudo apt-get install -y nodejs
 ## ctags
 Requried for gutentag plugin for Neovim
 ```bash
-sudo snap install universal-ctags
+# snap version of ctags is not compatible with gutentag
+# https://github.com/ludovicchabant/vim-gutentags/issues/267
+# sudo snap install universal-ctags
+
+sudo apt install universal-ctags
 ```
 
 ## Neovim
@@ -239,6 +243,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 Install plugins
 ```
 :PlugInstall
+:UpdateRemotePlugins
 ```
 
 ## Docker
