@@ -372,6 +372,15 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb 
 ```
 
+## Sphinx
+```bash
+sudo apt install python3-sphinx
+# in conda env,
+pip install sphinx-rtd-theme
+conda install -c conda-forge nbsphinx pandoc ipython
+
+```
+
 ## Jupyter book
 
 ```bash
@@ -385,5 +394,7 @@ sudo apt install peek
 
 ## Other
 ```bash
+# aws
 sudo apt install awscli
 ```
+
