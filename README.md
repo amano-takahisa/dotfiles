@@ -93,6 +93,8 @@ cat ~/.ssh/id_ed25519.pub
 and paste to GitHub ssh key setting
 https://github.com/settings/ssh/new
 
+
+
 ## dotfiles
 
 ```bash
@@ -311,6 +313,17 @@ Setup conda environment
 conda create -n py38 python=3.8.3
 conda create -n py310 python=3.10
 ```
+
+## Git hooks
+```bash
+pip install pre-commit
+```
+in git repository,
+```bash
+pre-commit sample-config > .pre-commit-config.yaml
+pre-commit install
+```
+
 
 ## GDAL
 ```bash
