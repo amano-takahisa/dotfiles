@@ -1,5 +1,6 @@
 [blame]
     coloring = highlightRecent
+    date = short
 [color "blame"]
     highlightRecent = 235, 6 month ago, 240, 3 month ago, 243, 1 month ago, 250, 1 week ago, 255, 1 day ago, red
 [color]
@@ -14,6 +15,7 @@
     lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ar)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
     st = status --short --branch
     sh = show --color-words='[^[:space:]]'
+    bl = blame --abbrev=10
 
 # Do not create merge commit if possible
 [pull]
@@ -36,7 +38,7 @@
 [grep]
     linenumber = true
 [log]
-    date = iso
+	date = iso-local
 [core]
     commentChar = ";"
 [diff "jupyternotebook"]
