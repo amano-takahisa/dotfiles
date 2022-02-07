@@ -15,7 +15,7 @@
     lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ar)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
     st = status --short --branch
     sh = show --color-words='[^[:space:]]'
-    bl = blame --abbrev=10
+    bl = blame --abbrev=6
 
 # Do not create merge commit if possible
 [pull]
