@@ -248,6 +248,12 @@ Install plugins
 :UpdateRemotePlugins
 ```
 
+For semshi
+```console
+# https://github.com/numirias/semshi#installation
+pip3 install pynvim --upgrade 
+```
+
 ## Docker
 ### Install
 ```bash
