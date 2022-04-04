@@ -17,6 +17,7 @@ sudo apt install \
     gnome-tweaks \
     tree \
     htop \
+    fzf
 ```
 
 Prepare directory
