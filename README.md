@@ -343,6 +343,15 @@ pre-commit install
 ```bash
 pip install jupyterlab
 ```
+install following extentions.
+- @jupyter-widgets/jupyterlab-manager
+- jupyter-leaflet
+- nbdime-jupyterlab
+- jupyter-matplotlib
+- @lckr/jupyterlab_variableinspector
+- @ryantam626/jupyterlab_code_formatter
+- @axlair/jupyterlab_vim
+- @krassowski/jupyterlab-lsp
 
 ## Slack
 Download `.deb` from [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb)
