@@ -347,11 +347,14 @@ install following extentions.
 - @jupyter-widgets/jupyterlab-manager
 - jupyter-leaflet
 - nbdime-jupyterlab
+    - requires `pip install nbdime`
 - jupyter-matplotlib
 - @lckr/jupyterlab_variableinspector
 - @ryantam626/jupyterlab_code_formatter
+    - requires `pip install jupyterlab_code_formatter` 
 - @axlair/jupyterlab_vim
 - @krassowski/jupyterlab-lsp
+    - requires `pip install jupyterlab-lsp` 
 
 ## Slack
 Download `.deb` from [Slack](https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb)
