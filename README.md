@@ -22,7 +22,7 @@ sudo apt install \
 
 Prepare directory
 ```bash
-mkdir ~/bin
+mkdir ~/bin ~/Applications
 ```
 ### Fix brightness control (If not work)
 ```bash
@@ -206,6 +206,15 @@ sudo apt install tmux
 ```
 or, get [AppImage](https://github.com/nelsonenzo/tmux-appimage/releases),
 or [build and install](https://github.com/tmux/tmux#installation).
+
+In case appimage,
+
+```bash
+wget <url-to-app-image>
+chmod +x tmux.appimage
+mv tmux.appimage ~/Applications
+ln -s ~/Applications/tmux.appimage ~/bin/
+```
 
 ### Setup
 ```bash
