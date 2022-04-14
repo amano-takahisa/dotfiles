@@ -112,7 +112,7 @@ mkdir -p .config/git
 ln -s ~/dotfiles/.config/git/config .config/git/config
 ln -s ~/dotfiles/.config/git/ignore .config/git/ignore
 
-mkdir mypy
+mkdir -p .config/mypy/config
 ln -s ~/dotfiles/.config/mypy/config/mypy.ini .config/mypy/config/mypy.ini
 
 mkdir -p .config/nvim/after/ftplugin
