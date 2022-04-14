@@ -62,6 +62,15 @@ You can configure this with an "Advanced Network Configuration" tool.
 ```
 Then start Advanced Network Configuration tool `nm-connection-editor` and set wifi band to B/G (2.4GHz).
 
+### Fix wakeup issue (If there is a problem)
+https://askubuntu.com/a/1361408/
+
+> Open with e.g. vim: `sudo vim /etc/default/grub`
+> Add `amd_iommu=off` to option of `GRUB_CMDLINE_LINUX_DEFAULT`.
+> (For me it was `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"`
+> to begin with, and `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amd_iommu=off"`
+> after editing.)
+
 ## Git
 ### Install
 ```bash
