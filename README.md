@@ -73,6 +73,12 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install git
 ```
+
+and
+```bash
+sudo apt install git-secret
+```
+
 ### Setup
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 Setup ssh
