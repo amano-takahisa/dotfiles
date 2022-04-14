@@ -301,11 +301,11 @@ sudo docker run hello-world
 ## Install font
 ### Install
 ```bash
-curl -L -O https://github.com/miiton/Cica/releases/download/v5.0.2/Cica_v5.0.2_with_emoji.zip
+curl -L -O https://github.com/miiton/Cica/releases/download/v5.0.3/Cica_v5.0.3.zip
 sudo mkdir /usr/share/fonts/truetype/cica
-sudo unzip Cica_v5.0.2_with_emoji.zip -d /usr/share/fonts/truetype/cica
+sudo unzip Cica_v5.0.3.zip -d /usr/share/fonts/truetype/cica
 sudo fc-cache -vf
-rm Cica_v5.0.2_with_emoji.zip
+rm Cica_v5.0.3.zip
 fc-list | grep -i cica
 ```
 
