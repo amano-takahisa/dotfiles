@@ -356,7 +356,10 @@ Setup conda environment
 conda create -n py38 python=3.8.3
 conda create -n py310 python=3.10
 ```
-
+In each environment,
+```bash
+pip install pyright
+```
 ## Git hooks
 ```bash
 pip install pre-commit
