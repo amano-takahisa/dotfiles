@@ -121,27 +121,28 @@ ln -s ~/dotfiles/.bash_aliases
 ln -s ~/dotfiles/.condarc
 ln -s ~/dotfiles/.cookiecutterrc
 ln -s ~/dotfiles/.tmux.conf
-ln -s ~/dotfiles/.config/flake8 .config/flake8
+ln -s ~/dotfiles/.config/flake8 ~/.config/flake8
 
-mkdir -p .config/git
-ln -s ~/dotfiles/.config/git/config .config/git/config
-ln -s ~/dotfiles/.config/git/ignore .config/git/ignore
+mkdir -p ~/.config/git
+ln -s ~/dotfiles/.config/git/config ~/.config/git/config
+ln -s ~/dotfiles/.config/git/ignore ~/.config/git/ignore
 
-mkdir -p .config/mypy/config
-ln -s ~/dotfiles/.config/mypy/config/mypy.ini .config/mypy/config/mypy.ini
+mkdir -p ~/.config/mypy/config
+ln -s ~/dotfiles/.config/mypy/config/mypy.ini ~/.config/mypy/config/mypy.ini
 
-mkdir -p .config/nvim/after/ftplugin
-ln -s ~/dotfiles/.config/nvim/init.vim .config/nvim/init.vim
-ln -s ~/dotfiles/.config/nvim/coc-settings.json .config/nvim/coc-settings.json
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/dockerfile.vim .config/nvim/after/ftplugin/dockerfile.vim
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/markdown.vim .config/nvim/after/ftplugin/markdown.vim
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/sh.vim .config/nvim/after/ftplugin/sh.vim
+mkdir -p ~/.config/nvim/after/ftplugin
+ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/dockerfile.vim ~/.config/nvim/after/ftplugin/dockerfile.vim
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/markdown.vim ~/.config/nvim/after/ftplugin/markdown.vim
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/sh.vim ~/.config/nvim/after/ftplugin/sh.vim
+ln -s ~/dotfiles/.config/nvim/after/ftplugin/python.vim ~/.config/nvim/after/ftplugin/python.vim
 
-mkdir -p .config/qt5ct/qss
-ln -s ~/dotfiles/.config/qt5ct/qss/dolphin_fix_bg.qss .config/qt5ct/qss/dolphin_fix_bg.qss
+mkdir -p ~/.config/qt5ct/qss
+ln -s ~/dotfiles/.config/qt5ct/qss/dolphin_fix_bg.qss ~/.config/qt5ct/qss/dolphin_fix_bg.qss
 
-mkdir -p .config/tmux
-ln -s ~/dotfiles/.config/tmux/pane-border-format.sh .config/tmux/pane-border-format.sh
+mkdir -p ~/.config/tmux
+ln -s ~/dotfiles/.config/tmux/pane-border-format.sh ~/.config/tmux/pane-border-format.sh
 ```
 ## terminal
 ### PS1
