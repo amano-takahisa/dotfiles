@@ -359,8 +359,21 @@ conda create -n py310 python=3.10
 ```
 In each environment,
 ```bash
-pip install pyright
+pip install pyright pre-commit isort autopep8 pyright
 ```
+
+If you get an error like the following, the `GDAL_DATA` path is not set properly.
+```
+CRSError: The EPSG code is unknown. Unable to open EPSG support file gcs.csv.  Try setting the GDAL_DATA environment variable to point to the directory containing EPSG csv files.
+```
+Stop modifiing `GDAL_DATA` by conda init, and use system default.
+```bash
+mv $CONDA_PREFIX/etc/conda/activate.d/gdal-activate.sh $CONDA_PREFIX/etc/conda/activate.d/gdal-activate.sh.bak
+mv $CONDA_PREFIX/etc/conda/deactivate.d/gdal-deactivate.sh $CONDA_PREFIX/etc/conda/deactivate.d/gdal-deactivate.sh.bak
+```
+
+
+
 ## Git hooks
 ```bash
 pip install pre-commit
