@@ -376,7 +376,7 @@ conda create -n py310 python=3.10
 ```
 In each environment,
 ```bash
-pip install pyright pre-commit isort autopep8 pyright
+pip install pyright pre-commit isort autopep8 pyright awscli
 ```
 
 If you get an error like the following, the `GDAL_DATA` path is not set properly.
