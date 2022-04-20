@@ -10,12 +10,13 @@
 [commit]
     verbose = true
 [alias]
-    root = rev-parse --show-toplevel
-    loo = log --stat --graph --decorate --all
-    lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ar)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
-    st = status --short --branch
-    sh = show --color-words='[^[:space:]]'
+    aliases = config --get-regexp '^alias\\.'
     bl = blame --abbrev=6
+    lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ar)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
+    loo = log --stat --graph --decorate --all
+    root = rev-parse --show-toplevel
+    sh = show --color-words='[^[:space:]]'
+    st = status --short --branch
 
 # Do not create merge commit if possible
 [pull]
