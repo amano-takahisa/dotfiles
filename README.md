@@ -88,6 +88,8 @@ and
 sudo apt install git-secret
 ```
 
+## GitHub
+
 ### Setup
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 Setup ssh
@@ -109,7 +111,18 @@ cat ~/.ssh/id_ed25519.pub
 and paste to GitHub ssh key setting
 https://github.com/settings/ssh/new
 
+## GitHub cli
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install gh
+```
 
+### Setup
+```bash
+gh auth login
+```
 
 ## dotfiles
 
