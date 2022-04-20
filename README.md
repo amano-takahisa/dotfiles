@@ -292,7 +292,11 @@ For semshi
 # https://github.com/numirias/semshi#installation
 pip3 install pynvim --upgrade 
 ```
+Coc
 
+```
+:CocInstall coc-pyright
+```
 ## Docker
 ### Install
 https://docs.docker.com/engine/install/ubuntu/
