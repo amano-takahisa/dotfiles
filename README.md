@@ -276,6 +276,17 @@ sudo apt update
 sudo apt install neovim
 ln -s /usr/bin/nvim ~/bin/nvim
 ```
+
+Or build from source
+```bash
+sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+
+git clone https://github.com/neovim/neovim
+cd neovim && make
+sudo make install
+
+cd ~
+```
 ### Setup
 Install plugin manager
 https://github.com/junegunn/vim-plug#unix-linux
@@ -293,7 +304,8 @@ Install plugins
 For semshi
 ```console
 # https://github.com/numirias/semshi#installation
-pip3 install pynvim --upgrade 
+sudo apt install python3-pip
+pip3 install pynvim --upgrade
 ```
 Coc
 
