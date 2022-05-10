@@ -239,6 +239,7 @@ wget <url-to-app-image>
 chmod +x tmux.appimage
 mv tmux.appimage ~/Applications
 ln -s ~/Applications/tmux.appimage ~/bin/
+sudo apt-get install fuse libfuse2
 ```
 
 ### Setup
