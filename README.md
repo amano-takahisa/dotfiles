@@ -249,10 +249,11 @@ git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 and on tmux `<prefix> + I` to install plugins.
 
 ## nodejs
+
 Required for COC NeoVim
 https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
