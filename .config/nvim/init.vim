@@ -118,6 +118,9 @@ Plug 'vim-airline/vim-airline'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
 
+" diff two separate blocks of text
+Plug 'AndrewRadev/linediff.vim'
+
 
 " Initialize plugin system
 call plug#end()

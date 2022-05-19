@@ -37,3 +37,7 @@ ipython_config.py
 # https://support.atlassian.com/bitbucket-cloud/docs/maintain-a-git-repository/#MaintainingaGitRepository-Manuallyreviewinglargefilesinyourrepository
 # https://livingdead0812.hatenablog.com/entry/2019/10/18/180033
 git_find_big.sh
+
+
+# nvim
+.netrwhist
