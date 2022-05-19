@@ -71,6 +71,15 @@ https://askubuntu.com/a/1361408/
 > to begin with, and `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amd_iommu=off"`
 > after editing.)
 
+## Full screen to dual monitor
+```bash
+sudo apt install compizconfig-settings-manager
+```
+and open *CompizConfig Settings Manager*
+
+
+
+
 ## Git
 ### Install
 ```bash
