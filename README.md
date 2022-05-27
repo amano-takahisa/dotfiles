@@ -498,6 +498,13 @@ Therefore, using ubuntu xorg is recommended for the time.
 2. Select the option "Ubuntu on Xorg."
 3. Enter your password and log in to your Ubuntu machine.
 
+## OBS
+```bash
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install obs-studio
+
+```
 
 ## Google chrome
 ```bash
