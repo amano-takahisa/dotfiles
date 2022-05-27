@@ -54,6 +54,11 @@ import key map
 - Default Applications > Web > Firefox
 
 Hide top bar
+
+```bash
+sudo apt-get install chrome-gnome-shell
+```
+
 https://extensions.gnome.org/extension/545/hide-top-bar/
 
 ### wi-fi settings
