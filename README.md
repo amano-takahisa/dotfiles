@@ -44,6 +44,8 @@ Then, activate input method.
 - Settings > Region & Language > Input Source > add Japanese (Mozc)
 - Formats > United Kingdom
 
+import key map
+
 ### GNOME settings
 - Auto hide Dock
 - Dark window theme
