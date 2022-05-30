@@ -35,6 +35,10 @@
 [fetch]
     prune = true
 
+[remote "origin"]
+    prune = true
+
+
 # always show line nunber with grep
 [grep]
     linenumber = true
