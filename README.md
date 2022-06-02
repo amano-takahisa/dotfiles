@@ -301,7 +301,7 @@ sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake c
 git clone https://github.com/neovim/neovim
 cd neovim && make
 sudo make install
-
+ln -s /usr/local/bin/nvim ~/bin/nvim
 cd ~
 ```
 ### Setup
@@ -437,7 +437,8 @@ pre-commit install
 ## GDAL
 ```bash
 # sudo add-apt-repository ppa:ubuntugis/ppa
-# sudo apt install libgdal-dev
+sudo apt install libgdal-dev
+pip install GDAL==$(gdal-config --version | awk -F'[.]' '{print $1"."$2}')
 ```
 
 
@@ -539,3 +540,24 @@ sudo apt install peek
 sudo apt install awscli
 ```
 
+## wine
+```bash
+sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/winehq.key
+sudo mv winehq.key /usr/share/keyrings/winehq-archive.key
+sudo apt install --install-recommends winehq-devel
+cd ~/bin
+wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks
+```
+## VPN
+
+```bash
+sudo apt install openvpn
+```
+### Usage
+```bash
+sudo openvpn --config <path to .ovpn file>
+```
+
+## Kindle
