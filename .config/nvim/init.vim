@@ -174,7 +174,7 @@ let NERDTreeIgnore = ['^__pycache__$', '.*\.egg-info$', '\.mypy_cache']
 " Markdown
 """""""""""""""""
 " Plugin setting: 'previm/previm'
-let g:previm_open_cmd = 'firefox'
+let g:previm_open_cmd = 'google-chrome --new-window'
 
 " Plugin setting: 'plasticboy/vim-markdown'
 " Disable Folding
