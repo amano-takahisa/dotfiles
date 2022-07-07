@@ -479,6 +479,20 @@ sudo add-apt-repository "deb [arch=amd64] https://qgis.org/ubuntu $(lsb_release 
 sudo apt install qgis qgis-plugin-grass
 ```
 
+## Orfeo toolbox
+### Install
+```python
+wget https://www.orfeo-toolbox.org/packages/OTB-8.0.1-Linux64.run
+chmod +x OTB-8.0.1-Linux64.run
+./OTB-8.0.1-Linux64.run
+sudo apt-get -y install cmake build-essential libgl1-mesa-dev
+cd OTB-8.0.1-Linux64
+ctest -S share/otb/swig/build_wrapping.cmake -VV
+
+# following symbolic link part should be moved into a script which run when conda activate.
+ln -s $CONDA_PREFIX/lib/libpython3.8.so.1.0 /home/takahisa/OTB-7.2.0-Linux64/lib/libpython3.8.so.1.0
+```
+
 ## Shutter
 ```bash
 sudo add-apt-repository ppa:shutter/ppa
