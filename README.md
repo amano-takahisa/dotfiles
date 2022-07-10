@@ -18,7 +18,8 @@ sudo apt install \
     tree \
     htop \
     fzf \
-    xclip
+    xclip \
+    jq
 ```
 
 Prepare directory
