@@ -115,6 +115,8 @@ Plug 'vim-airline/vim-airline'
 " diff two separate blocks of text
 Plug 'AndrewRadev/linediff.vim'
 
+" to read or write files with sudo command.
+Plug 'lambdalisue/suda.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -131,7 +133,8 @@ call plug#end()
 " Open - save - close
 """""""""""""""""
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+cmap w!! :SudaWrite<CR>
+
 set nobackup
 set noswapfile
 set autoread
