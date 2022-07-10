@@ -581,3 +581,12 @@ sudo openvpn --config <path to .ovpn file>
 ```
 
 ## Kindle
+Download kindle installer from Amazon, and install via wine.
+If Japanese texts are tofu, install JCK fonts via winetricks.
+
+
+## direnv
+Install
+```bash
+sudo apt install direnv
+```
