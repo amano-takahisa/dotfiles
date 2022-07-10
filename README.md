@@ -83,7 +83,7 @@ https://askubuntu.com/a/1361408/
 Set `XDG_XXX_HOME` variables.
 https://chiyosuke.blogspot.com/2019/04/blog-post_27.html
 ```bash
-sudo ln -s ~/dotfiles/misc/xdgenv.sh /etc/profile.d/
+sudo cp ~/dotfiles/misc/xdgenv.sh /etc/profile.d/
 ```
 
 
