@@ -79,6 +79,14 @@ https://askubuntu.com/a/1361408/
 > to begin with, and `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amd_iommu=off"`
 > after editing.)
 
+## XDG environment setup
+Set `XDG_XXX_HOME` variables.
+https://chiyosuke.blogspot.com/2019/04/blog-post_27.html
+```bash
+sudo ln -s ~/dotfiles/misc/xdgenv.sh /etc/profile.d/
+```
+
+
 ## Full screen to dual monitor
 ```bash
 sudo apt install compizconfig-settings-manager
