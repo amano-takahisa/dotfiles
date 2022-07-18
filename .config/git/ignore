@@ -41,3 +41,6 @@ git_find_big.sh
 
 # nvim
 .netrwhist
+
+# kate
+.kate-swp
