@@ -1,5 +1,5 @@
 " Highlight column at 100 charactor
-set colorcolumn=79,110,120
+set colorcolumn=80,110,120
 
 " Plugin setting: 'preservim/tagbar'
 " https://github.com/preservim/tagbar/wiki#markdown
