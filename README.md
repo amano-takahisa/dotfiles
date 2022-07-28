@@ -599,3 +599,34 @@ Install
 ```bash
 sudo apt install direnv
 ```
+
+## alacritty
+https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+```bash
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
+# To make sure you have the right Rust compiler installed, run
+# rustup override set stable
+# rustup update stable
+
+# build
+cargo build --release
+
+# install it globally
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+
+# Desktop Entry
+sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+
+# Shell completions
+echo "source $(pwd)/extra/completions/alacritty.bash" >> ~/.bashrc
+
+```
+
+
