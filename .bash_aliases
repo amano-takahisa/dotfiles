@@ -19,7 +19,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -ahlFv --time-style=long-iso --group-directories-first'
-alias llt='ls -ahlFrtv --time-style=long-iso'
+alias llt='ls -ahlFrt --time-style=long-iso'
 alias la='ls -A'
 alias l='ls -CF'
 
