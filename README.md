@@ -19,7 +19,8 @@ sudo apt install \
     htop \
     fzf \
     xclip \
-    jq
+    jq \
+    kate
 ```
 
 Prepare directory
