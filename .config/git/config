@@ -53,8 +53,13 @@
 	name = jupyter notebook merge driver
 [difftool "nbdime"]
 	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[diff]
+    tool = nvim
 [difftool]
 	prompt = false
+    tool = nvim
+[difftool "nvim"]
+    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [mergetool "nbdime"]
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [mergetool]
