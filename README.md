@@ -172,13 +172,7 @@ ln -s ~/dotfiles/.config/git/ignore ~/.config/git/ignore
 mkdir -p ~/.config/mypy/config
 ln -s ~/dotfiles/.config/mypy/config/mypy.ini ~/.config/mypy/config/mypy.ini
 
-mkdir -p ~/.config/nvim/after/ftplugin
-ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/dockerfile.vim ~/.config/nvim/after/ftplugin/dockerfile.vim
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/markdown.vim ~/.config/nvim/after/ftplugin/markdown.vim
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/sh.vim ~/.config/nvim/after/ftplugin/sh.vim
-ln -s ~/dotfiles/.config/nvim/after/ftplugin/python.vim ~/.config/nvim/after/ftplugin/python.vim
+ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 
 mkdir -p ~/.config/qt5ct/qss
 ln -s ~/dotfiles/.config/qt5ct/qss/dolphin_fix_bg.qss ~/.config/qt5ct/qss/dolphin_fix_bg.qss
