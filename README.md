@@ -173,6 +173,7 @@ mkdir -p ~/.config/mypy/config
 ln -s ~/dotfiles/.config/mypy/config/mypy.ini ~/.config/mypy/config/mypy.ini
 
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
+ln -s ~/dotfiles/.config/lvim ~/.config/lvim
 
 mkdir -p ~/.config/qt5ct/qss
 ln -s ~/dotfiles/.config/qt5ct/qss/dolphin_fix_bg.qss ~/.config/qt5ct/qss/dolphin_fix_bg.qss
@@ -269,14 +270,20 @@ git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 and on tmux `<prefix> + I` to install plugins.
 
-## nodejs
+# Install node version manager
+# https://github.com/nvm-sh/nvm
 
-Required for COC NeoVim
-https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# install node
+nvm install node
 ```
+
+# install cargo (Rust package manager)
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
 
 ## ctags
 Requried for gutentag plugin for Neovim
@@ -334,6 +341,26 @@ Coc
 ```
 :CocInstall coc-pyright
 ```
+
+## LunarVim
+Requirements:
+https://www.lunarvim.org/01-installing.html
+
+- NeoVim (0.7 +)
+- git, make, pip, npm, node
+
+```
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+```
+
+LunarVim will be installed at `$HOME/.local/bin/lvim`. Make a symbolic link in `$home/bin/`.
+```bash
+ln -s $HOME/.local/bin/lvim $HOME/bin/
+```
+
+Configuration files are under `$HOME/.config/lvim/`.
+
+
 ## Docker
 ### Install
 https://docs.docker.com/engine/install/ubuntu/
