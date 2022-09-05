@@ -390,7 +390,7 @@ sudo docker run hello-world
 
 
 ## Install font
-### Install
+### Install Cica
 ```bash
 curl -L -O https://github.com/miiton/Cica/releases/download/v5.0.3/Cica_v5.0.3.zip
 sudo mkdir /usr/share/fonts/truetype/cica
@@ -400,7 +400,7 @@ rm Cica_v5.0.3.zip
 fc-list | grep -i cica
 ```
 
-### Setup
+### Setup Cica
 Add to gnome terminal font list
 ```bash
 gsettings get org.gnome.Terminal.ProfilesList list
@@ -410,6 +410,14 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 ```
 
 Set Cica font as default mono font from tweaks app.
+
+### Install Nerd font
+Follow https://github.com/ronniedroid/getnf
+Install *Hack*
+
+```bash
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ font "Hack 12"
+```
 
 ## Dolphin
 ### Install
