@@ -203,10 +203,37 @@ EDITOR=nvim visudo
 Activate `# %wheel ALL=(ALL) ALL` line by removing `#`
 
 
+## Setup GUI
+### Display server
+```console
+pacman -S xorg-server
+```
+In case Arch is inside of VirtualBox, additionally,
+
+```console
+pacman -S virtualbox-guest-utils
+```
+
+### xfce
+```console
+pacman -S xfce4 xfce4-goodies lightdm  lightdm-gtk-greeter
+```
+and `Enter` to install all related packages if you are asked to choose extras.
+Set enable to start lightdm display manager when boot.
+```console
+systemctl enable lightdm
+```
 Switch to user created the above with `su takahisa`, and from following section, run commands as that user. (Not as root.)
 
 ## Install packages
-
+### Git
+#### Install
+```console
+sudo pacman -S git
+```
+#### Configure
+```console
+```
 
 
 
