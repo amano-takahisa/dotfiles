@@ -46,3 +46,7 @@ git_find_big.sh
 
 # kate
 .kate-swp
+
+# zsh
+# https://github.com/ohmyzsh/ohmyzsh/pull/9090
+.zcompdump-*
