@@ -29,7 +29,7 @@
 
 # Use vim as a default editor
 [core]
-    editor = ~/bin/nvim
+    editor = nvim
 
 # Remove deleted remote branches when fetch or pull
 [fetch]
