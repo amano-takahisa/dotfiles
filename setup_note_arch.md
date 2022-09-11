@@ -225,6 +225,7 @@ systemctl enable lightdm
 ```
 Switch to user created the above with `su takahisa`, and from following section, run commands as that user. (Not as root.)
 
+
 ## Install packages
 ### ssh
 #### Install
@@ -316,14 +317,17 @@ makepkg -si
 ```console
 yay -Y --gendb
 ```
+### Fonts
+
+#### Install
+```console
+yay -S nerd-fonts-complete
+```
 ### tree
 
 #### Install
 ```console
 sudo pacman -S tree
-```
-#### Configure
-```console
 ```
 ### tmux
 
@@ -335,15 +339,29 @@ sudo pacman -S tmux
 ```console
 
 ```
-### Fonts
-
+### Rust
+https://wiki.archlinux.org/title/rust
 #### Install
 ```console
-yay -S nerd-fonts-complete
+sudo pacman -S rust
+```
+
+#### Configure
+```console
+```
+
+### xremap
+#### Install
+```console
+yay -S xremap-x11-bin
 ```
 #### Configure
 ```console
 ```
+
+
+
+
 
 
 
