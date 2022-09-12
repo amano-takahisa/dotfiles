@@ -260,7 +260,6 @@ cat ~/.ssh/id_ed25519.pub
 
 Clone my dotfiles.
 ```console
-cd
 git clone git@github.com:amano-takahisa/dotfiles.git $HOME/dotfiles
 ```
 
