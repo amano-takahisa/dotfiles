@@ -184,6 +184,7 @@ Exit from chroot environment with `exit` and reboot with `reboot`
 
 # Setup Arch
 https://wiki.archlinux.org/title/General_recommendations
+Login as `root` with password which you set in the above section.
 ## Create a user
 ```console
 useradd -m -G wheel takahisa
