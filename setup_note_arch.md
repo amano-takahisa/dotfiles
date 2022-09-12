@@ -258,6 +258,12 @@ cat ~/.ssh/id_ed25519.pub
 # and paste to GitHub ssh key setting https://github.com/settings/ssh/new
 ```
 
+Clone my dotfiles.
+```console
+cd
+git clone git@github.com:amano-takahisa/dotfiles.git $HOME/dotfiles
+```
+
 Clone dotfiles and make symbolic link.
 ```console
 mkdir -p ~/.config/git
