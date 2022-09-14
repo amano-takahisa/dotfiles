@@ -269,6 +269,20 @@ mkdir -p ~/.config/git
 ln -s ~/dotfiles/.config/git/config ~/.config/git/config
 ln -s ~/dotfiles/.config/git/ignore ~/.config/git/ignore
 ```
+### git-secrets
+Prevents you from committing secrets and credentials into git repositories
+#### Install
+```console
+yay -S git-secrets
+```
+
+### XDG environment
+#### Configure
+Set `XDG_XXX_HOME` variables.
+https://chiyosuke.blogspot.com/2019/04/blog-post_27.html
+```bash
+sudo ln -s ~/dotfiles/misc/xdgenv.sh /etc/profile.d/xdgenv.sh 
+```
 
 ### Zsh
 #### Install
@@ -379,16 +393,88 @@ mkdir -p $HOME/.config/autostart/
 ln -s $HOME/dotfiles/.config/autostart/xremap.desktop $HOME/.config/autostart
 ```
 
+### Docker
+#### Install
+```console
+sudo pacman -S docker
+```
+#### Configure
+```console
+sudo usermod -aG docker ${USER}
+newgrp docker
+sudo systemctl enable docker
+```
+
+To test,
+```console
+docker run -it --rm archlinux bash -c "echo hello world"
+```
+
+### Firefox
+#### install
+```console
+sudo pacman -s firefox
+```
+#### configure
+log in to firefox, and sync.
 
 
+### miniconda
+#### install
+```console
+yay -S miniconda3
+```
+
+#### configure
+```console
+sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+```
+
+### QGIS
+#### install
+```console
+sudo pacman -S qgis
+```
 
 
+### LunarVim
+#### install
+```console
+yay -S lunarvim-git
+```
+#### configure
+```console
+```
 
+### <PACKAGE>
+#### install
+```console
+```
+#### configure
+```console
+```
 
+### <PACKAGE>
+#### install
+```console
+```
+#### configure
+```console
+```
 
+### <PACKAGE>
+#### install
+```console
+```
+#### configure
+```console
+```
 
-
-
-
-
+### <PACKAGE>
+#### install
+```console
+```
+#### configure
+```console
+```
 

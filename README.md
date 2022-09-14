@@ -112,7 +112,7 @@ sudo apt install git
 
 and
 ```bash
-sudo apt install git-secret
+sudo apt install git-secrets
 ```
 
 ## GitHub
