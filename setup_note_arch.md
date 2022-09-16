@@ -440,8 +440,11 @@ sudo pacman -S qgis
 ### LunarVim
 #### install
 ```console
-yay -S lunarvim-git
+# yay -S lunarvim-git
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
+Install dependencies from dialogs.
+
 #### configure
 ```console
 ```
