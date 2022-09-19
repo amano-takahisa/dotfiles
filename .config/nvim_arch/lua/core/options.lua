@@ -1,6 +1,6 @@
 local options = {
     -- UI left
-    number = true,
+    -- number = true,
     numberwidth = 2,
 
     -- UI top
@@ -17,6 +17,12 @@ local options = {
 
     -- cursor
     cursorline = true,
+    scrolloff = 8,
+    sidescrolloff = 8,
+
+    -- floating window
+    winblend = 20,
+    pumblend = 20,
 
     -- search
     ignorecase = true,

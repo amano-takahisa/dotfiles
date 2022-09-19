@@ -1,5 +1,9 @@
-require('plugins')
-require('autocmd')
-require('options')
-require('keymaps')
+-- core
+require('core.plugins')
+require('core.autocmd')
+require('core.options')
+require('core.keymaps')
+
+-- plugin settings
+require('plugins.nvim-tree')
 
