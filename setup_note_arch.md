@@ -337,6 +337,27 @@ makepkg -si
 ```console
 yay -Y --gendb
 ```
+
+### NeoVim
+#### Install
+NeoVim has been installed while installation of Arch.
+
+#### Config
+```console
+# ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
+# Locate configuration files in nvim_arch until it is mature enough.
+ln -s $HOME/dotfiles/.config/nvim_arch $HOME/.config/nvim
+
+# install packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ $XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim
+```
+
+In NeoVim command line,
+```
+:PackerInstall
+```
+
 ### Fonts
 
 #### Install
