@@ -1,6 +1,6 @@
 local options = {
     -- UI left
-    -- number = true,
+    number = true,
     numberwidth = 2,
 
     -- UI top

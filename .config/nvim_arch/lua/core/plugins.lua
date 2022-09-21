@@ -10,10 +10,13 @@ return require('packer').startup(function(use)
   -- A File Explorer For Neovim Written In Lua
   use {
   'kyazdani42/nvim-tree.lua',
-  requires = {
-    'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  },
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
+  }
+  
+  -- adds indentation guides to all lines (including empty lines).
+  use 'lukas-reineke/indent-blankline.nvim'
 
 end)

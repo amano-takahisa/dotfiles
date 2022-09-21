@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/takahisa/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/takahisa/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

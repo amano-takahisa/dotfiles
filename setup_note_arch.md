@@ -378,7 +378,7 @@ sudo pacman -S tmux
 ```
 #### Configure
 ```console
-
+ln -s $HOME/dotfiles/.config/tmux $HOME/.config/tmux
 ```
 ### Rust
 https://wiki.archlinux.org/title/rust
@@ -449,6 +449,15 @@ yay -S miniconda3
 #### configure
 ```console
 sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+```
+### IME
+#### install
+```console
+yay -S mozc-ut
+```
+
+#### configure
+```
 ```
 
 ### QGIS
