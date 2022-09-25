@@ -162,7 +162,7 @@ netctl enable wireless
 ```
 
 #### Set root password
-```echo
+```console
 passwd
 ```
 
@@ -326,6 +326,17 @@ Plugins
 ```console
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+
+### alacritty
+#### Install
+```console
+sudo -S alacritty
+```
+
+#### Config
+```console
+ln -s $HOME/dotfiles/.config/alacritty $XDG_CONFIG_HOME/alacritty
 ```
 
 ### yay
