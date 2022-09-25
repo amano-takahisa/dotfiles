@@ -284,6 +284,16 @@ https://chiyosuke.blogspot.com/2019/04/blog-post_27.html
 sudo ln -s ~/dotfiles/misc/xdgenv.sh /etc/profile.d/xdgenv.sh 
 ```
 
+Install `xdg-user-dirs`.
+```console
+sudo pacman -S xdg-user-dirs
+```
+Then  run 
+```console
+xdg-user-dirs-update
+```
+
+
 ### Zsh
 #### Install
 ```console
@@ -381,6 +391,7 @@ In NeoVim command line,
 #### Install
 ```console
 yay -S nerd-fonts-complete
+yay -S ttf-cica
 ```
 ### tree
 

@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/takahisa/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/takahisa/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/takahisa/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

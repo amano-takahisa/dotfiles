@@ -6,6 +6,7 @@ local nvim_tree_ok, nvim_tree = pcall(require, "nvim-tree")
 if not nvim_tree_ok then return end
 
 nvim_tree.setup({
+    open_on_setup = true,
   sort_by = "case_sensitive",
   view = {
     -- adaptive_size = true,
@@ -19,6 +20,9 @@ nvim_tree.setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
+  git = {
+      ignore = false
+  }
 })

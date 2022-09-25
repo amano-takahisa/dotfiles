@@ -7,4 +7,5 @@ require('core.keymaps')
 
 -- plugin settings
 require('plugins.nvim-tree')
+require('plugins.lualine')
 

@@ -15,6 +15,12 @@ return require('packer').startup(function(use)
     },
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+
+  -- A blazing fast and easy to configure Neovim statusline written in Lua.
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   
   -- adds indentation guides to all lines (including empty lines).
   use 'lukas-reineke/indent-blankline.nvim'
