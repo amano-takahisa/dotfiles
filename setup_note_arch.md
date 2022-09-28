@@ -405,6 +405,12 @@ sudo pacman -S xclip
 ```console
 sudo pacman -S tree
 ```
+
+### man
+#### Install
+```console
+sudo pacman -S mandoc
+```
 ### tmux
 
 #### Install
