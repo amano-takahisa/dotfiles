@@ -1,5 +1,4 @@
 -- local alias
-local opts = { noremap = true, silent = true}
 local keymap = vim.keymap.set
 
 -- Usage: keymap(<MODE>, <KEY1>, <KEY2>, opts) changes KEY2 to KEY1.
@@ -14,21 +13,21 @@ local keymap = vim.keymap.set
 
 -- Plugin: nvim-tree
 -- Toggle tree window
-keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<C-n>', ':NvimTreeToggle<CR>')
 
 
 -- Mode
 --   Exit from terminal mode with Exc Esc.
-keymap('t', '<Esc><Esc>', '<C-\\><C-n>', opts)
+keymap('t', '<Esc><Esc>', '<C-\\><C-n>')
 
 
 -- Buffer
 --   Switch buffers
-keymap('n', '<C-j>', ':bnext<CR>', opts)
-keymap('n', '<C-k>', ':bprevious<CR>', opts)
+keymap('n', '<C-j>', ':bnext<CR>')
+keymap('n', '<C-k>', ':bprevious<CR>')
 
 --   Close a buffer without closing a window
-keymap('n', '<C-c>', ':bprevious<bar>bdelete #<CR>', opts)
+keymap('n', '<C-c>', ':bprevious<bar>bdelete #<CR>')
 
 
 -- Appearance
@@ -42,4 +41,14 @@ keymap('n', 'gj', 'j')
 keymap('n', 'k', 'gk')
 keymap('n', 'gk', 'k')
 
+-- Clip board
+keymap('v', '"+y', ':!xclip -f -sel clip')
 
+-- Search
+--   Highlight off
+keymap('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>')
+--   Move cursor line to center after seach
+keymap('n', 'n', 'nzz')
+keymap('n', 'N', 'Nzz')
+keymap('n', '*', '*zz')
+keymap('n', '#', '#zz')
