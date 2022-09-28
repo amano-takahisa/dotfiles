@@ -390,9 +390,15 @@ In NeoVim command line,
 
 #### Install
 ```console
-yay -S nerd-fonts-complete
+# yay -S nerd-fonts-complete
 yay -S ttf-cica
 ```
+### xclip
+#### Install
+```console
+sudo pacman -S xclip
+```
+
 ### tree
 
 #### Install
