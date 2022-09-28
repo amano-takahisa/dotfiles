@@ -412,7 +412,6 @@ sudo pacman -S tree
 sudo pacman -S mandoc
 ```
 ### tmux
-
 #### Install
 ```console
 sudo pacman -S tmux
@@ -421,6 +420,13 @@ sudo pacman -S tmux
 ```console
 ln -s $HOME/dotfiles/.config/tmux $HOME/.config/tmux
 ```
+
+### pyright
+#### Install
+```console
+sudo pacman -S pyright
+```
+
 ### Rust
 https://wiki.archlinux.org/title/rust
 #### Install

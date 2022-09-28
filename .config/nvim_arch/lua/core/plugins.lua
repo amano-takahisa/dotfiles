@@ -25,4 +25,32 @@ return require('packer').startup(function(use)
   -- adds indentation guides to all lines (including empty lines).
   use 'lukas-reineke/indent-blankline.nvim'
 
+  -- Treeshitter configuration and abstruction layer for NeoVim
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
+
+  -- Treeshitter context
+  use 'nvim-treesitter/nvim-treesitter-context'
+
+  -- color scheme
+  use 'EdenEast/nightfox.nvim'
+
+
+  use 'williamboman/nvim-lsp-installer'
+  use 'neovim/nvim-lspconfig'
+
+    use ({
+  "hrsh7th/nvim-cmp",
+  -- config = [[require('config.cmp')]], -- may very based on config
+  requires = {
+   "hrsh7th/cmp-buffer",
+   "hrsh7th/cmp-nvim-lsp",
+   "hrsh7th/cmp-path",
+   "hrsh7th/cmp-nvim-lua",
+   -- "L3MON4D3/LuaSnip", -- may very based on config
+   "onsails/lspkind-nvim",
+  }
+ })
 end)

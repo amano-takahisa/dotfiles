@@ -2,10 +2,10 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
-local nvim_tree_ok, nvim_tree = pcall(require, "nvim-tree")
-if not nvim_tree_ok then return end
+local plug_ok, plug = pcall(require, "nvim-tree")
+if not plug_ok then return end
 
-nvim_tree.setup({
+plug.setup({
     open_on_setup = true,
   sort_by = "case_sensitive",
   view = {

@@ -1,7 +1,7 @@
-local lualine_ok, lualine = pcall(require, "lualine")
-if not lualine_ok then return end
+local plug_ok, plug = pcall(require, "lualine")
+if not plug_ok then return end
 
-lualine.setup({
+plug.setup({
     options = {
         icons_enabled = true,
         theme = 'auto',

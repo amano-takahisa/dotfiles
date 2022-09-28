@@ -2,6 +2,7 @@ local options = {
     -- UI left
     number = true,
     numberwidth = 2,
+    relativenumber = true,
 
     -- UI top
     title = true,
@@ -16,7 +17,7 @@ local options = {
     mouse="a",
 
     -- cursor
-    cursorline = true,
+    cursorline = false,
     scrolloff = 8,
     sidescrolloff = 8,
 
@@ -47,4 +48,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- set color scheme
+vim.cmd('colorscheme duskfox')
 
