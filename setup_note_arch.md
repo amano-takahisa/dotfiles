@@ -386,13 +386,6 @@ In NeoVim command line,
 :PackerInstall
 ```
 
-### Fonts
-
-#### Install
-```console
-# yay -S nerd-fonts-complete
-yay -S ttf-cica
-```
 ### xclip
 #### Install
 ```console
@@ -404,6 +397,12 @@ sudo pacman -S xclip
 #### Install
 ```console
 sudo pacman -S tree
+```
+
+### zip/unzip
+#### Install
+```console
+sudo pacman -S zip unzip
 ```
 
 ### man
@@ -476,6 +475,35 @@ sudo systemctl enable docker
 To test,
 ```console
 docker run -it --rm archlinux bash -c "echo hello world"
+```
+
+### Docker-compose
+#### Install
+```console
+sudo pacman -S docker-compose
+```
+
+### Fonts
+
+#### Install
+Cica font
+```console
+# yay -S nerd-fonts-complete
+# yay -S ttf-cica
+git clone https://github.com/miiton/Cica.git
+cd Cica
+docker-compose build ; docker-compose run --rm cica
+# font is saved in /dist/
+mkdir -p $XDG_DATA_HOME/fonts/
+mv dist/*.ttf $XDG_DATA_HOME/fonts/
+```
+Hackgen with Nerd
+```console
+curl -o HackGen_NF.zip -L https://github.com/yuru7/HackGen/releases/download/v2.7.1/HackGen_NF_v2.7.1.zip
+unzip HackGen_NF.zip
+mv HackGen_NF_v2.7.1/*.ttf $XDG_DATA_HOME/fonts/
+rm HackGen_NF.zip
+rmdir HackGen_NF_v2.7.1
 ```
 
 ### Firefox
