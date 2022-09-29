@@ -399,6 +399,13 @@ sudo pacman -S xclip
 sudo pacman -S tree
 ```
 
+### fzf
+#### Install
+```console
+sudo pacman -S fzf
+```
+
+
 ### zip/unzip
 #### Install
 ```console
