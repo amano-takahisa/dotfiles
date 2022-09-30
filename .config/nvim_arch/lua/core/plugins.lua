@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   use 'EdenEast/nightfox.nvim'
 
 
-  use 'williamboman/nvim-lsp-installer'
+    use  "williamboman/mason.nvim" 
   use 'neovim/nvim-lspconfig'
 
     use ({
@@ -60,5 +60,12 @@ return require('packer').startup(function(use)
   'nvim-telescope/telescope.nvim',  branch = '0.1.x',
 -- or                            , tag = '0.1.0',
   requires = { {'nvim-lua/plenary.nvim'} }
+}
+    use {
+  "nvim-telescope/telescope-frecency.nvim",
+  config = function()
+    require"telescope".load_extension("frecency")
+  end,
+  requires = {"kkharji/sqlite.lua"}
 }
 end)
