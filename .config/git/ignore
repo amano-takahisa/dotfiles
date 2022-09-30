@@ -43,7 +43,7 @@ git_find_big.sh
 
 # nvim
 .netrwhist
-packer_compiled.lua
+*packer_compiled.lua
 
 # kate
 .kate-swp
