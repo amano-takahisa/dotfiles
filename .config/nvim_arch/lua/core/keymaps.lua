@@ -1,7 +1,7 @@
 -- local alias
 local keymap = vim.keymap.set
 
--- Usage: keymap(<MODE>, <KEY1>, <KEY2>, opts) changes KEY2 to KEY1.
+-- Usage: keymap(<MODE>, <KEY1>, <KEY2>, opts) assigns KEY2 on KEY1.
 -- Modes:
 --   'n' : normal mode
 --   'i' : insert mode
@@ -10,11 +10,9 @@ local keymap = vim.keymap.set
 --   't' : terminal mode
 --   'c' : command mode
 
-
--- Plugin: nvim-tree
--- Toggle tree window
-keymap('n', '<C-n>', ':NvimTreeToggle<CR>')
-
+-- Leader key
+keymap('n', '<SPACE>', '<Nop>')
+vim.g.mapleader = ' '
 
 -- Mode
 --   Exit from terminal mode with Exc Esc.

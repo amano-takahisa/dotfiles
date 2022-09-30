@@ -53,4 +53,12 @@ return require('packer').startup(function(use)
    "onsails/lspkind-nvim",
   }
  })
+    -- All the lua functions I don't want to write twice.
+    use "nvim-lua/plenary.nvim"
+
+    use {
+  'nvim-telescope/telescope.nvim',  branch = '0.1.x',
+-- or                            , tag = '0.1.0',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
 end)

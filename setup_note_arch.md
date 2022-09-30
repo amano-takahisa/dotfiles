@@ -391,7 +391,17 @@ In NeoVim command line,
 ```console
 sudo pacman -S xclip
 ```
+### ripgrep
+#### Install
+```console
+sudo pacman -S ripgrep
+```
 
+### fd
+#### Install
+```console
+sudo pacman -S fd
+```
 ### tree
 
 #### Install
