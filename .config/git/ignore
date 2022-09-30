@@ -43,6 +43,7 @@ git_find_big.sh
 
 # nvim
 .netrwhist
+packer_compiled.lua
 
 # kate
 .kate-swp
@@ -50,3 +51,4 @@ git_find_big.sh
 # zsh
 # https://github.com/ohmyzsh/ohmyzsh/pull/9090
 .zcompdump-*
+
