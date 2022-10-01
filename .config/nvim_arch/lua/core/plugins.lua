@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 
 
     use  "williamboman/mason.nvim" 
+    use "williamboman/mason-lspconfig.nvim"
   use 'neovim/nvim-lspconfig'
 
     use ({
@@ -67,5 +68,9 @@ return require('packer').startup(function(use)
     require"telescope".load_extension("frecency")
   end,
   requires = {"kkharji/sqlite.lua"}
+}
+    use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
 }
 end)
