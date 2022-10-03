@@ -341,7 +341,7 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 ### alacritty
 #### Install
 ```console
-sudo -S alacritty
+sudo pacman -S alacritty
 ```
 
 #### Config
