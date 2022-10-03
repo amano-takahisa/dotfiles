@@ -8,13 +8,25 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- A File Explorer For Neovim Written In Lua
-  use {
-  'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  -- use {
+  -- 'kyazdani42/nvim-tree.lua',
+  --   requires = {
+  --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  --   },
+  -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  -- }
+    -- Unless you are still migrating, remove the deprecated commands from v1.x
+    vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
+    use {
+      "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = { 
+          "nvim-lua/plenary.nvim",
+          "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+          "MunifTanjim/nui.nvim",
+        }
+      }
 
   -- A blazing fast and easy to configure Neovim statusline written in Lua.
   use {
