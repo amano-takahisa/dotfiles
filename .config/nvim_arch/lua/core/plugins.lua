@@ -15,9 +15,13 @@ return require('packer').startup(function(use)
     --   },
     -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
     -- }
+
+    -- All the lua functions I don't want to write twice.
+    use "nvim-lua/plenary.nvim"
+
+    -- File tree
     -- Unless you are still migrating, remove the deprecated commands from v1.x
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -28,6 +32,11 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = {'nvim-lua/plenary.nvim'}
+    }
     -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
@@ -66,8 +75,6 @@ return require('packer').startup(function(use)
             "onsails/lspkind-nvim",
         }
     })
-    -- All the lua functions I don't want to write twice.
-    use "nvim-lua/plenary.nvim"
 
     use {
         'nvim-telescope/telescope.nvim',  branch = '0.1.x',
