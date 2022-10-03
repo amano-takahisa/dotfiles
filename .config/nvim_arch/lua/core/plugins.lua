@@ -4,85 +4,85 @@
 -- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- A File Explorer For Neovim Written In Lua
-  -- use {
-  -- 'kyazdani42/nvim-tree.lua',
-  --   requires = {
-  --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  --   },
-  -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  -- }
+    -- A File Explorer For Neovim Written In Lua
+    -- use {
+    -- 'kyazdani42/nvim-tree.lua',
+    --   requires = {
+    --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    --   },
+    -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    -- }
     -- Unless you are still migrating, remove the deprecated commands from v1.x
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
     use {
-      "nvim-neo-tree/neo-tree.nvim",
+        "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         requires = { 
-          "nvim-lua/plenary.nvim",
-          "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-          "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
         }
-      }
+    }
 
-  -- A blazing fast and easy to configure Neovim statusline written in Lua.
-  use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  
-  -- adds indentation guides to all lines (including empty lines).
-  use 'lukas-reineke/indent-blankline.nvim'
+    -- A blazing fast and easy to configure Neovim statusline written in Lua.
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
-  -- Treeshitter configuration and abstruction layer for NeoVim
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
+    -- adds indentation guides to all lines (including empty lines).
+    use 'lukas-reineke/indent-blankline.nvim'
 
-  -- Treeshitter context
-  use 'nvim-treesitter/nvim-treesitter-context'
+    -- Treeshitter configuration and abstruction layer for NeoVim
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
-  -- color scheme
-  use 'EdenEast/nightfox.nvim'
+    -- Treeshitter context
+    use 'nvim-treesitter/nvim-treesitter-context'
+
+    -- color scheme
+    use 'EdenEast/nightfox.nvim'
 
 
     use  "williamboman/mason.nvim" 
     use "williamboman/mason-lspconfig.nvim"
-  use 'neovim/nvim-lspconfig'
+    use 'neovim/nvim-lspconfig'
 
     use ({
-  "hrsh7th/nvim-cmp",
-  -- config = [[require('config.cmp')]], -- may very based on config
-  requires = {
-   "hrsh7th/cmp-buffer",
-   "hrsh7th/cmp-nvim-lsp",
-   "hrsh7th/cmp-path",
-   "hrsh7th/cmp-nvim-lua",
-   -- "L3MON4D3/LuaSnip", -- may very based on config
-   "onsails/lspkind-nvim",
-  }
- })
+        "hrsh7th/nvim-cmp",
+        -- config = [[require('config.cmp')]], -- may very based on config
+        requires = {
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lua",
+            -- "L3MON4D3/LuaSnip", -- may very based on config
+            "onsails/lspkind-nvim",
+        }
+    })
     -- All the lua functions I don't want to write twice.
     use "nvim-lua/plenary.nvim"
 
     use {
-  'nvim-telescope/telescope.nvim',  branch = '0.1.x',
--- or                            , tag = '0.1.0',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+        'nvim-telescope/telescope.nvim',  branch = '0.1.x',
+        -- or                            , tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
     use {
-  "nvim-telescope/telescope-frecency.nvim",
-  config = function()
-    require"telescope".load_extension("frecency")
-  end,
-  requires = {"kkharji/sqlite.lua"}
-}
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require"telescope".load_extension("frecency")
+        end,
+        requires = {"kkharji/sqlite.lua"}
+    }
     use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-}
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 end)
