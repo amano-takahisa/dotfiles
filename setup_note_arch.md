@@ -515,13 +515,24 @@ echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d
 mkdir -p $HOME/.config/autostart/
 ln -s $HOME/dotfiles/.config/autostart/xremap.desktop $XDG_CONFIG_HOME/autostart/xremap.desktop
 ```
-----------
-----------
 ### pyright
 #### Install
 ```console
 sudo pacman -S pyright --needed
 ```
+### miniconda
+#### install
+```console
+yay -S miniconda3
+```
+
+#### configure
+```console
+sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+```
+
+----------
+----------
 
 ### Rust
 https://wiki.archlinux.org/title/rust
@@ -544,16 +555,6 @@ sudo pacman -s firefox
 log in to firefox, and sync.
 
 
-### miniconda
-#### install
-```console
-yay -S miniconda3
-```
-
-#### configure
-```console
-sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
-```
 ### IME
 #### install
 ```console
