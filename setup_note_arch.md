@@ -24,7 +24,7 @@ ping archlinux.org
 
 ## Update the system clock
 ```console
-timedatectl set-ntp true
+timedatectl set-ntp 1
 ```
 
 ## Partition the disks
@@ -146,7 +146,7 @@ systemctl enable dhcpcd@enp0s3
 
 Install `netctl` and setup wireless network.
 ```console
-pacman -S netctl openresolv dhcpcd wpa_supplicant
+pacman -S netctl openresolv wpa_supplicant
 
 cp /etc/netctl/exsamples/wireless-wpa /etc/netctl/wireless
 ```
