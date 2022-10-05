@@ -1,7 +1,8 @@
 -- keymaps
 local keymap = vim.keymap.set
 -- Toggle tree window
-keymap('n', '<C-n>', ':Neotree toggle focus %<CR>')
+keymap('n', '<C-n>', ':Neotree toggle<CR>')
+keymap('n', '<C-n>%', ':Neotree focus %<CR>')
 
 local plug_ok, plug = pcall(require, "neo-tree")
 if not plug_ok then return end
