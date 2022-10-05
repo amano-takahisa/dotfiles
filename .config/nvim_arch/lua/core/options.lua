@@ -48,6 +48,4 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- set color scheme
-vim.cmd('colorscheme duskfox')
 
