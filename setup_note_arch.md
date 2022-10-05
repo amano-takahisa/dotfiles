@@ -469,34 +469,54 @@ In NeoVim command line,
 ### xclip
 #### Install
 ```console
-sudo pacman -S xclip
+sudo pacman -S xclip --needed
 ```
 ### ripgrep
 #### Install
 ```console
-sudo pacman -S ripgrep
+sudo pacman -S ripgrep  --needed
 ```
 
 ### fd
 #### Install
 ```console
-sudo pacman -S fd
+sudo pacman -S fd --needed
 ```
-### tree
 
+### tree
 #### Install
 ```console
-sudo pacman -S tree
+sudo pacman -S tree --needed
 ```
-
-
-
 ### man
 #### Install
 ```console
-sudo pacman -S mandoc
+sudo pacman -S mandoc --needed
 ```
+### xremap
+#### Install
+```console
+yay -S xremap-x11-bin
+```
+#### Configure
+```console
+# sudo modprobe uinput
+mkdir $XDG_CONFIG_HOME/xremap
+ln -s $HOME/dotfiles/.config/xremap/config.yml $XDG_CONFIG_HOME/xremap/config.yml
+echo uinput | sudo tee /etc/modules-load.d/uinput.conf
+sudo usermod -a -G input takahisa
+echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/99-input.rules
 
+# systemctl
+# mkdir -p $HOME/.config/systemd/user/
+# ln -s $HOME/dotfiles/.config/systemd/user/xremap.service $XDG_CONFIG_HOME/systemd/user
+
+# auto start
+mkdir -p $HOME/.config/autostart/
+ln -s $HOME/dotfiles/.config/autostart/xremap.desktop $XDG_CONFIG_HOME/autostart/xremap.desktop
+```
+----------
+----------
 ### pyright
 #### Install
 ```console
@@ -514,28 +534,6 @@ sudo pacman -S rust
 ```console
 ```
 
-### xremap
-#### Install
-```console
-yay -S xremap-x11-bin
-```
-#### Configure
-```console
-# sudo modprobe uinput
-mkdir $HOME/.config/xremap
-ln -s $HOME/dotfiles/.config/xremap/config.yml $HOME/.config/xremap
-echo uinput | sudo tee /etc/modules-load.d/uinput.conf
-sudo usermod -a -G input takahisa
-echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/99-input.rules
-
-# systemctl
-# mkdir -p $HOME/.config/systemd/user/
-# ln -s $HOME/dotfiles/.config/systemd/user/xremap.service $HOME/.config/systemd/user
-
-# auto start
-mkdir -p $HOME/.config/autostart/
-ln -s $HOME/dotfiles/.config/autostart/xremap.desktop $HOME/.config/autostart
-```
 
 ### Firefox
 #### install
