@@ -520,7 +520,7 @@ ln -s $HOME/dotfiles/.config/autostart/xremap.desktop $XDG_CONFIG_HOME/autostart
 ### pyright
 #### Install
 ```console
-sudo pacman -S pyright
+sudo pacman -S pyright --needed
 ```
 
 ### Rust
