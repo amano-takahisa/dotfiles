@@ -92,4 +92,5 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 end)
