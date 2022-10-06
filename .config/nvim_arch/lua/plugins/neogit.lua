@@ -10,7 +10,7 @@ function open_neogit()
     if not cwd then
         cwd = vim.fn.getcwd()
     end
-    print('open ' .. cwd .. 'repository')
+    print('open ' .. cwd .. ' repository')
     plug.open { cwd = cwd}
 end
 
