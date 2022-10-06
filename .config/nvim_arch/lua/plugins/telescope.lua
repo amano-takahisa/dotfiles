@@ -12,14 +12,19 @@ keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 plug.setup { 
     pickers = {
         find_files = {
-            find_command = { "rg", "--files", "--hidden", "--glob", "!{**/.git/*,**/.cache/*}" },
+            find_command = {
+                "rg", "--files", "--hidden", "--glob",
+                "!{**/.git/*,**/.cache/*}" },
         }
     },
     extensions = {
         frecency = {
             show_scores = true,
             show_unindexed = true,
-            ignore_patterns = {"*.git/*", "*/cache/*"},
+            ignore_patterns = {
+                "*.git/*",
+                "*/cache/*"
+            },
             disable_devicons = false,
             workspaces = {
                 ["dotfiles"] = vim.fn.expand("$HOME/dotfiles"),
