@@ -16,7 +16,6 @@ require('plugins.mason-lspconfig')
 require('plugins.nvim-lspconfig')
 require('plugins.nvim-cmp')
 require('plugins.telescope')
-require('plugins.telescope-frecency')
 require('plugins.nightfox')
 require('plugins.neogit')
 
