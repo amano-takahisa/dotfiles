@@ -18,5 +18,6 @@ require('plugins.nvim-cmp')
 require('plugins.telescope')
 require('plugins.nightfox')
 require('plugins.neogit')
+require('plugins.null-ls')
 
 
