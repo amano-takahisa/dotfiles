@@ -534,6 +534,12 @@ sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 ----------
 ----------
 
+### Wget
+#### Install
+```console
+sudo pacman -S wget --needed
+```
+
 ### Rust
 https://wiki.archlinux.org/title/rust
 #### Install
