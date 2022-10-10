@@ -99,4 +99,5 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 'simrat39/symbols-outline.nvim' }
 end)
