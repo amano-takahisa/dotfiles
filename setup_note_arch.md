@@ -555,7 +555,7 @@ sudo pacman -S rust
 ### Firefox
 #### install
 ```console
-sudo pacman -s firefox
+sudo pacman -S firefox --needed
 ```
 #### configure
 log in to firefox, and sync.
