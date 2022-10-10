@@ -1,3 +1,7 @@
+-- set log
+-- to see logs, `:LspLog`
+-- vim.lsp.set_log_level("debug")
+
 -- core
 require('core.plugins')
 require('core.disable_builtin')
