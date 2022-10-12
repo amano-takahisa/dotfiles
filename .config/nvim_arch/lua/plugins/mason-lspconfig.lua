@@ -3,7 +3,7 @@ if not plug_ok then return end
 
 plug.setup(
     {
-        ensure_installed = { 
+        ensure_installed = {
             "pyright",
             "sumneko_lua",
             "marksman",
@@ -13,4 +13,3 @@ plug.setup(
         automatic_installation = false,
     }
 )
-

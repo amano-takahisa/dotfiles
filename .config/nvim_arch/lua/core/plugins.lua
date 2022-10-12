@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-        requires = { 
+        requires = {
             "nvim-lua/plenary.nvim",
             "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
     -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
     use {
         'jose-elias-alvarez/null-ls.nvim',
-        requires = {'nvim-lua/plenary.nvim'}
+        requires = { 'nvim-lua/plenary.nvim' }
     }
     -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
@@ -50,11 +50,11 @@ return require('packer').startup(function(use)
     use 'EdenEast/nightfox.nvim'
 
 
-    use  "williamboman/mason.nvim" 
+    use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use 'neovim/nvim-lspconfig'
 
-    use ({
+    use({
         "hrsh7th/nvim-cmp",
         -- config = [[require('config.cmp')]], -- may very based on config
         requires = {
@@ -68,22 +68,22 @@ return require('packer').startup(function(use)
     })
 
     use {
-        'nvim-telescope/telescope.nvim',  branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
         -- or                            , tag = '0.1.0',
-        requires = { 
+        requires = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
         },
         config = function()
-    require("telescope").load_extension("live_grep_args")
-  end
+            require("telescope").load_extension("live_grep_args")
+        end
     }
     use {
         "nvim-telescope/telescope-frecency.nvim",
         config = function()
-            require"telescope".load_extension("frecency")
+            require "telescope".load_extension("frecency")
         end,
-        requires = {"kkharji/sqlite.lua"}
+        requires = { "kkharji/sqlite.lua" }
     }
     use {
         "windwp/nvim-autopairs",
@@ -92,4 +92,3 @@ return require('packer').startup(function(use)
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'simrat39/symbols-outline.nvim' }
 end)
-

@@ -23,5 +23,3 @@ require('plugins.nightfox')
 require('plugins.neogit')
 require('plugins.null-ls')
 require('plugins.symbols-outline')
-
-
