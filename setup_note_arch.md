@@ -531,13 +531,19 @@ yay -S miniconda3
 sudo ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 ```
 
-----------
-----------
 
 ### Wget
 #### Install
 ```console
 sudo pacman -S wget --needed
+```
+----------
+----------
+
+### lua-language-server
+#### Install
+```console
+sudo pacman -S lua-language-server --needed
 ```
 
 ### Rust
