@@ -10,8 +10,8 @@ return require('packer').startup(function(use)
     -- All the lua functions I don't want to write twice.
     use "nvim-lua/plenary.nvim"
 
-    -- File tree
-    -- Unless you are still migrating, remove the deprecated commands from v1.x
+    -- -- File tree
+    -- -- Unless you are still migrating, remove the deprecated commands from v1.x
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -23,18 +23,18 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-    use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
-    }
-    -- A blazing fast and easy to configure Neovim statusline written in Lua.
+    -- -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+    -- use {
+    --     'jose-elias-alvarez/null-ls.nvim',
+    --     requires = { 'nvim-lua/plenary.nvim' }
+    -- }
+    -- -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- adds indentation guides to all lines (including empty lines).
+    -- -- adds indentation guides to all lines (including empty lines).
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- Treeshitter configuration and abstruction layer for NeoVim
@@ -43,10 +43,10 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-    -- Treeshitter context
-    use 'nvim-treesitter/nvim-treesitter-context'
+    -- -- Treeshitter context
+    -- use 'nvim-treesitter/nvim-treesitter-context'
 
-    -- color scheme
+    -- -- color scheme
     use 'EdenEast/nightfox.nvim'
 
 
@@ -85,10 +85,10 @@ return require('packer').startup(function(use)
         end,
         requires = { "kkharji/sqlite.lua" }
     }
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-    use { 'simrat39/symbols-outline.nvim' }
+    -- use {
+    --     "windwp/nvim-autopairs",
+    --     config = function() require("nvim-autopairs").setup {} end
+    -- }
+    -- use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    -- use { 'simrat39/symbols-outline.nvim' }
 end)
