@@ -10,7 +10,6 @@ require('core.autocmds')
 require('core.keymaps')
 
 -- plugin settings
--- require('plugins.nvim-tree')
 require('plugins.neo-tree')
 require('plugins.lualine')
 require('plugins.nvim-treesitter')

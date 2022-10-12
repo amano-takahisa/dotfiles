@@ -7,15 +7,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- A File Explorer For Neovim Written In Lua
-    -- use {
-    -- 'kyazdani42/nvim-tree.lua',
-    --   requires = {
-    --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    --   },
-    -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    -- }
-
     -- All the lua functions I don't want to write twice.
     use "nvim-lua/plenary.nvim"
 
@@ -101,3 +92,4 @@ return require('packer').startup(function(use)
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'simrat39/symbols-outline.nvim' }
 end)
+
