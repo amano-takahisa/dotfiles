@@ -6,7 +6,7 @@
 require('core.plugins')
 require('core.disable_builtin')
 require('core.options')
-require('core.autocmd')
+require('core.autocmds')
 require('core.keymaps')
 
 -- plugin settings
