@@ -85,10 +85,10 @@ return require('packer').startup(function(use)
         end,
         requires = { "kkharji/sqlite.lua" }
     }
-    -- use {
-    --     "windwp/nvim-autopairs",
-    --     config = function() require("nvim-autopairs").setup {} end
-    -- }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     -- use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'simrat39/symbols-outline.nvim' }
 end)
