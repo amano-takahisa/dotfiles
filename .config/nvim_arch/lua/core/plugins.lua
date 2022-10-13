@@ -89,11 +89,22 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    -- use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
     use { 'simrat39/symbols-outline.nvim' }
 
     -- automatically highlighting other uses of the word under the cursor using
     -- either LSP, Tree-sitter, or regex matching.
     use { 'RRethy/vim-illuminate' }
+
+    -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+    -- simple clone of the plugin vim-fugitive which is written in Lua.
+    use { 'dinhhuy258/git.nvim' }
+
+    -- persist and toggle multiple terminals during an editing session
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end }
 end)
