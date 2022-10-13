@@ -13,7 +13,7 @@ plug.setup({
     enable_git_status = true,
     enable_diagnostics = true,
     sort_case_insensitive = false, -- used when sorting files and directories in the tree
-    sort_function = nil , -- use a custom function for sorting files and directories in the tree 
+    sort_function = nil, -- use a custom function for sorting files and directories in the tree
     -- sort_function = function (a,b)
     --       if a.type == b.type then
     --           return a.path > b.path
@@ -62,8 +62,8 @@ plug.setup({
                 -- Change type
                 added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
                 modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-                deleted   = "✖",-- this can only be used in the git_status source
-                renamed   = "",-- this can only be used in the git_status source
+                deleted   = "✖", -- this can only be used in the git_status source
+                renamed   = "", -- this can only be used in the git_status source
                 -- Status type
                 untracked = "",
                 ignored   = "",
@@ -81,9 +81,9 @@ plug.setup({
             nowait = true,
         },
         mappings = {
-            ["<space>"] = { 
-                "toggle_node", 
-                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+            ["<space>"] = {
+                "toggle_node",
+                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
             },
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
@@ -101,7 +101,7 @@ plug.setup({
             ["C"] = "close_node",
             ["z"] = "close_all_nodes",
             --["Z"] = "expand_all_nodes",
-            ["a"] = { 
+            ["a"] = {
                 "add",
                 -- some commands may take optional config options, see `:h neo-tree-mappings` for details
                 config = {
@@ -196,7 +196,7 @@ plug.setup({
             position = "float",
             mappings = {
                 ["A"]  = "git_add_all",
-["gu"] = "git_unstage_file",
+                ["gu"] = "git_unstage_file",
                 ["ga"] = "git_add_file",
                 ["gr"] = "git_revert_file",
                 ["gc"] = "git_commit",
@@ -206,4 +206,3 @@ plug.setup({
         }
     }
 })
-

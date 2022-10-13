@@ -7,43 +7,34 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- A File Explorer For Neovim Written In Lua
-    -- use {
-    -- 'kyazdani42/nvim-tree.lua',
-    --   requires = {
-    --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    --   },
-    -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    -- }
-
     -- All the lua functions I don't want to write twice.
     use "nvim-lua/plenary.nvim"
 
-    -- File tree
-    -- Unless you are still migrating, remove the deprecated commands from v1.x
+    -- -- File tree
+    -- -- Unless you are still migrating, remove the deprecated commands from v1.x
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-        requires = { 
+        requires = {
             "nvim-lua/plenary.nvim",
             "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
         }
     }
 
-    -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-    use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = {'nvim-lua/plenary.nvim'}
-    }
-    -- A blazing fast and easy to configure Neovim statusline written in Lua.
+    -- -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+    -- use {
+    --     'jose-elias-alvarez/null-ls.nvim',
+    --     requires = { 'nvim-lua/plenary.nvim' }
+    -- }
+    -- -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- adds indentation guides to all lines (including empty lines).
+    -- -- adds indentation guides to all lines (including empty lines).
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- Treeshitter configuration and abstruction layer for NeoVim
@@ -52,18 +43,18 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-    -- Treeshitter context
-    use 'nvim-treesitter/nvim-treesitter-context'
+    -- -- Treeshitter context
+    -- use 'nvim-treesitter/nvim-treesitter-context'
 
-    -- color scheme
+    -- -- color scheme
     use 'EdenEast/nightfox.nvim'
 
 
-    use  "williamboman/mason.nvim" 
+    use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use 'neovim/nvim-lspconfig'
 
-    use ({
+    use({
         "hrsh7th/nvim-cmp",
         -- config = [[require('config.cmp')]], -- may very based on config
         requires = {
@@ -77,27 +68,27 @@ return require('packer').startup(function(use)
     })
 
     use {
-        'nvim-telescope/telescope.nvim',  branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
         -- or                            , tag = '0.1.0',
-        requires = { 
+        requires = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-live-grep-args.nvim',
         },
         config = function()
-    require("telescope").load_extension("live_grep_args")
-  end
+            require("telescope").load_extension("live_grep_args")
+        end
     }
     use {
         "nvim-telescope/telescope-frecency.nvim",
         config = function()
-            require"telescope".load_extension("frecency")
+            require "telescope".load_extension("frecency")
         end,
-        requires = {"kkharji/sqlite.lua"}
+        requires = { "kkharji/sqlite.lua" }
     }
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    -- use {
+    --     "windwp/nvim-autopairs",
+    --     config = function() require("nvim-autopairs").setup {} end
+    -- }
+    -- use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'simrat39/symbols-outline.nvim' }
 end)

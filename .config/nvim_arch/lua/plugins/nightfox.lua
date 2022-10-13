@@ -3,4 +3,3 @@ if not plug_ok then return end
 
 -- set color scheme
 vim.cmd('colorscheme duskfox')
-

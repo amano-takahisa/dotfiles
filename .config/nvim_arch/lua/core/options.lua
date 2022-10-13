@@ -10,11 +10,11 @@ local options = {
     -- UI right
 
     -- UI bottom
-    cmdheight = 2,  -- from v0.8, 0 is available. 
+    cmdheight = 2, -- from v0.8, 0 is available.
 
     -- mouse, clip board integration
     clipboard = "unnamedplus",
-    mouse="a",
+    mouse = "a",
 
     -- cursor
     cursorline = false,
@@ -41,11 +41,8 @@ local options = {
 
     -- colors
     termguicolors = true,
-
 }
 
 for k, v in pairs(options) do
-  vim.opt[k] = v
+    vim.opt[k] = v
 end
-
-

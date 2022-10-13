@@ -50,3 +50,4 @@ keymap('n', 'n', 'nzz')
 keymap('n', 'N', 'Nzz')
 keymap('n', '*', '*zz')
 keymap('n', '#', '#zz')
+
