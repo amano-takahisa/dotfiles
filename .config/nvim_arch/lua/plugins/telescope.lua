@@ -1,6 +1,7 @@
 local plug_ok, plug = pcall(require, "telescope")
-local lga_actions = require("telescope-live-grep-args.actions")
 if not plug_ok then return end
+
+local lga_actions = require("telescope-live-grep-args.actions")
 --
 -- shortcut key
 local keymap = vim.keymap.set
