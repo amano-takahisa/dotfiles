@@ -24,11 +24,12 @@ return require('packer').startup(function(use)
     }
 
     -- -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-    -- use {
-    --     'jose-elias-alvarez/null-ls.nvim',
-    --     requires = { 'nvim-lua/plenary.nvim' }
-    -- }
-    -- -- A blazing fast and easy to configure Neovim statusline written in Lua.
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+
+    -- A blazing fast and easy to configure Neovim statusline written in Lua.
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -107,4 +108,15 @@ return require('packer').startup(function(use)
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }
+
+    -- Surround selections, stylishly
+    use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
 end)

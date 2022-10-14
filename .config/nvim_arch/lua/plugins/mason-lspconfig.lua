@@ -10,6 +10,6 @@ plug.setup(
             "rust_analyzer",
             "yamlls",
         },
-        automatic_installation = false,
+        automatic_installation = true,
     }
 )
