@@ -12,6 +12,10 @@ local options = {
     -- UI bottom
     cmdheight = 2, -- from v0.8, 0 is available.
 
+
+    -- Window
+    splitright = true,
+
     -- mouse, clip board integration
     clipboard = "unnamedplus",
     mouse = "a",

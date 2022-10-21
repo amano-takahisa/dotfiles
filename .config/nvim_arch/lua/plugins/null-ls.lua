@@ -13,6 +13,7 @@ plug.setup({
             'aggressive',
             'aggressive'
         }),
+        plug.builtins.formatting.yamlfmt,
 
     },
 })
