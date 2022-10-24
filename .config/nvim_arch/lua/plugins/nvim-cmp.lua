@@ -35,8 +35,8 @@ cmp.setup({
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
-    }, {
         { name = 'buffer' },
+        { name = 'path' },
     })
 })
 
@@ -44,15 +44,6 @@ cmp.setup({
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
         { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-        { name = 'buffer' },
-    })
-})
-cmp.setup.filetype('python', {
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-        { name = 'buffer' },
     })
 })
 
@@ -68,8 +59,6 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
         { name = 'cmdline' }
     })
 })
