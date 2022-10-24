@@ -15,6 +15,7 @@ local options = {
 
     -- Window
     splitright = true,
+    splitbelow = true,
 
     -- mouse, clip board integration
     clipboard = "unnamedplus",
