@@ -53,5 +53,5 @@ end
 
 -- colorscheme
 -- vim.cmd('colorscheme duskfox')
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme tokyonight')
 
