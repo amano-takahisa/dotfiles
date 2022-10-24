@@ -25,7 +25,12 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
+        { name = 'nvim_lsp',
+            -- remove suggestion from text dictionary
+            -- https://github.com/hrsh7th/nvim-cmp/blob/cdb77665bbf23bd2717d424ddf4bf98057c30bb3/doc/cmp.txt#L569-L592
+            entry_filter = function(entry, ctx)
+                return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+            end },
         { name = 'vsnip' }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
