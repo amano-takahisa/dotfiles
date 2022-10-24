@@ -68,6 +68,8 @@ return require('packer').startup(function(use)
             "onsails/lspkind-nvim",
         }
     })
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+    use {'tzachar/cmp-fuzzy-buffer', requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}}
 
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',

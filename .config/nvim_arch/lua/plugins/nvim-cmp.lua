@@ -1,6 +1,7 @@
 local plug_ok, cmp = pcall(require, "cmp")
 if not plug_ok then return end
 
+local compare = require('cmp.config.compare')
 
 
 cmp.setup({
@@ -37,7 +38,22 @@ cmp.setup({
         -- { name = 'snippy' }, -- For snippy users.
         { name = 'buffer' },
         { name = 'path' },
-    })
+        { name = 'fuzzy_buffer' }
+    }),
+    sorting = {
+        priority_weight = 2,
+        comparators = {
+            require('cmp_fuzzy_buffer.compare'),
+            compare.offset,
+            compare.exact,
+            compare.score,
+            compare.recently_used,
+            compare.kind,
+            compare.sort_text,
+            compare.length,
+            compare.order,
+        }
+    }
 })
 
 -- Set configuration for specific filetype.
