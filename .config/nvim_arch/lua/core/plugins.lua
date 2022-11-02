@@ -120,6 +120,15 @@ return require('packer').startup(function(use)
         require("nvim-surround").setup({
             -- Configuration here, or leave empty to use defaults
         })
-    end
-})
+    end })
+
+    use {'folke/zen-mode.nvim',
+        config = function()
+            require("zen-mode").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end}
 end)
+
