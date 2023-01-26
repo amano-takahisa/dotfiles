@@ -4,6 +4,7 @@ helper.py
 *_taka.txt
 *_taka.ipynb
 *_taka.md
+*_taka/
 gitignore/
 .ipynb_checkpoints/
 .vim/
@@ -52,3 +53,5 @@ packer_compiled.lua
 # https://github.com/ohmyzsh/ohmyzsh/pull/9090
 .zcompdump-*
 
+
+.worktree/
