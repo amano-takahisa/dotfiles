@@ -38,3 +38,6 @@ fi
 
 # key swap
 setxkbmap -option caps:ctrl_modifier
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
