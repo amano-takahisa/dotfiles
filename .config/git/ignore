@@ -9,12 +9,15 @@ gitignore/
 .ipynb_checkpoints/
 .vim/
 venv/
+.venv/
 .env/
 .idea/
 out_*/
 tags
 tags.lock
 tags.temp
+
+*.bak
 
 *~Stashed changes
 
