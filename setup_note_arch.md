@@ -266,8 +266,7 @@ git clone git@github.com:amano-takahisa/dotfiles.git $HOME/dotfiles
 Clone dotfiles and make symbolic link.
 ```console
 mkdir -p ~/.config/git
-ln -s ~/dotfiles/.config/git/config ~/.config/git/config
-ln -s ~/dotfiles/.config/git/ignore ~/.config/git/ignore
+ln -s ~/Documents/git/dotfiles/.config/git ~/.config/
 ```
 
 ### Zsh
@@ -279,7 +278,7 @@ sudo pacman -S zsh zsh-completions --needed
 Change default shell to zsh.
 Comfirm current running shell
 ```console
-echo $0
+echo $1
 # or
 # echo $SHELL
 ```
@@ -326,7 +325,7 @@ yay -S git-secrets
 Set `XDG_XXX_HOME` variables.
 https://chiyosuke.blogspot.com/2019/04/blog-post_27.html
 ```bash
-sudo ln -s ~/dotfiles/misc/xdgenv.sh /etc/profile.d/xdgenv.sh 
+sudo ln -s ~/Documents/git/dotfiles/misc/xdgenv.sh /etc/profile.d/xdgenv.sh 
 ```
 
 Install `xdg-user-dirs`.
@@ -450,6 +449,11 @@ rmdir HackGen_NF_v2.7.1
 #### Install
 NeoVim has been installed while installation of Arch.
 
+#### npm
+```bash
+sudo pacman -S npm
+```
+
 #### Config
 ```console
 # ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
@@ -464,6 +468,14 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 In NeoVim command line,
 ```
 :PackerInstall
+```
+
+
+### bash-completion
+#### Install
+
+```bash
+sudo pacman -S bash-completion
 ```
 
 ### xclip
