@@ -63,7 +63,7 @@ require('lspconfig')['rust_analyzer'].setup {
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.bashls.setup{}
 
-require('lspconfig')['sumneko_lua'].setup {
+require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -80,7 +80,7 @@ require('lspconfig')['sumneko_lua'].setup {
             workspace = {
                 -- Make the server aware of Neovim runtime files
                 library = vim.api.nvim_get_runtime_file("", true),
-                -- checkThirdParty = false,
+                checkThirdParty = false,
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {

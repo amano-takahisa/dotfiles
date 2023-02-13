@@ -5,7 +5,7 @@ plug.setup(
     {
         ensure_installed = {
             "pyright",
-            "sumneko_lua",
+            "lua_ls",
             "marksman",
             "rust_analyzer",
             "yamlls",

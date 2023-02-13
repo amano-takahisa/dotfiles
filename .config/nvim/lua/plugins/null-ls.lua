@@ -5,7 +5,7 @@ if not plug_ok then return end
 
 plug.setup({
     sources = {
-        -- plug.builtins.formatting.sumneko_lua,
+        -- plug.builtins.formatting.lua_ls,
         plug.builtins.diagnostics.eslint,
         plug.builtins.completion.spell,
         -- plug.builtins.formatting.isort,
