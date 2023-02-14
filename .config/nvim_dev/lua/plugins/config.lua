@@ -35,6 +35,27 @@ local plugins = {
         }
     },
 
+    -- telescope
+    {
+        "nvim-telescope/telescope.nvim",
+        event = { "VimEnter" },
+        config = function()
+            require("plugins/telescope")
+        end,
+        dependencies = {
+            {"nvim-telescope/telescope-live-grep-args.nvim"},
+        },
+    },
+    {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require"telescope".load_extension("frecency")
+        end,
+        dependencies = {
+            {"kkharji/sqlite.lua"},
+        }
+    },
+
     -- Statusline
     {
         "nvim-lualine/lualine.nvim",
@@ -68,6 +89,17 @@ local plugins = {
         },
     },
 
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        event = "VimEnter",
+        config = function()
+            require("plugins/null-ls")
+        end,
+        dependencies = {
+            {"nvim-lua/plenary.nvim"},
+        },
+    },
+
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
@@ -75,6 +107,14 @@ local plugins = {
         event = { "BufReadPost" },
         config = function()
             require("plugins/nvim-treesitter")
+        end,
+    },
+
+    -- adds indentation guides to all lines (including empty lines).
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("plugins/indent-blankline")
         end,
     },
 
@@ -86,47 +126,25 @@ local plugins = {
             require("plugins/nightfox")
         end,
     },
-    -- adds indentation guides to all lines (including empty lines).
+
+
+    -- Git
     {
-        "lukas-reineke/indent-blankline.nvim",
+        "TimUntersberger/neogit",
+        event = "BufReadPre",
         config = function()
-            require("plugins/indent-blankline")
+            require("plugins/neogit")
         end,
     },
 
-    -- telescope
     {
-        "nvim-telescope/telescope.nvim",
-        event = { "VimEnter" },
+        "dinhhuy258/git.nvim",
+        event = "BufReadPre",
         config = function()
-            require("plugins/telescope")
+            require("plugins/git")
         end,
-        dependencies = {
-            {"nvim-telescope/telescope-live-grep-args.nvim"},
-        },
-    },
-    {
-        "nvim-telescope/telescope-frecency.nvim",
-        config = function()
-            require"telescope".load_extension("frecency")
-        end,
-        dependencies = {
-            {"kkharji/sqlite.lua"},
-        }
-    },
-
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        event = "VimEnter",
-        config = function()
-            require("plugins/null-ls")
-        end,
-        dependencies = {
-            {"nvim-lua/plenary.nvim"},
-        },
     },
 }
 
 
-
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins)

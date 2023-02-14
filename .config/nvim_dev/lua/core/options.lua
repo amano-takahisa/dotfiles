@@ -53,6 +53,4 @@ for k, v in pairs(options) do
 end
 
 -- colorscheme
--- vim.cmd('colorscheme duskfox')
-vim.cmd('colorscheme tokyonight')
-
+-- vim.cmd('colorscheme nightfox')
