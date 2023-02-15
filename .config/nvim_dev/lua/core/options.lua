@@ -53,4 +53,4 @@ for k, v in pairs(options) do
 end
 
 -- colorscheme
--- vim.cmd('colorscheme nightfox')
+vim.cmd('colorscheme nightfox')

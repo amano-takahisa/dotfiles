@@ -36,13 +36,20 @@ local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
 }
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+    capabilities = capabilities,
+}
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities
 }
 require('lspconfig')['tsserver'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
@@ -50,12 +57,16 @@ require('lspconfig')['rust_analyzer'].setup{
     -- Server-specific settings...
     settings = {
         ["rust-analyzer"] = {}
-    }
-}
-require'lspconfig'.dockerls.setup{}
-require'lspconfig'.bashls.setup{}
-require('lspconfig')['lua_ls'].setup {
+    },
     capabilities = capabilities,
+}
+require('lspconfig')['dockerls'].setup{
+    capabilities = capabilities,
+}
+require('lspconfig')['bashls'].setup{
+    capabilities = capabilities,
+}
+require('lspconfig')['lua_ls'].setup {
     on_attach = on_attach,
     flags = lsp_flags,
     settings = {
@@ -79,4 +90,5 @@ require('lspconfig')['lua_ls'].setup {
             },
         },
     },
+    capabilities = capabilities,
 }

@@ -13,15 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
-    -- External package Installer
-    {
-        "williamboman/mason.nvim",
-        event = "BufReadPre",
-        config = function()
-            require("plugins/mason")
-        end,
-    },
-
+    -- #### File browsing ####
     -- Browse the file system and other tree like structures
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -56,12 +48,13 @@ local plugins = {
         }
     },
 
-    -- Statusline
+    -- #### LSP ####
+    -- External package Installer
     {
-        "nvim-lualine/lualine.nvim",
-        event = "VimEnter",
+        "williamboman/mason.nvim",
+        event = "BufReadPre",
         config = function()
-            require("plugins/lualine")
+            require("plugins/mason")
         end,
     },
 
@@ -110,6 +103,50 @@ local plugins = {
         end,
     },
 
+    -- #### Text input support ####
+    -- Auto completion
+    {
+        "hrsh7th/nvim-cmp",
+        event = "VimEnter",
+        config = function()
+            require("plugins/nvim-cmp")
+        end,
+        dependencies = {
+            {"hrsh7th/cmp-buffer"},
+            {"hrsh7th/cmp-nvim-lsp"},
+            {"hrsh7th/cmp-path"},
+            {"hrsh7th/cmp-nvim-lua"},
+            {"f3fora/cmp-spell"},
+        },
+    },
+
+    -- Auto pairs
+    {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("plugins/nvim-autopairs")
+        end,
+    },
+    -- Brackets
+    {
+		"kylechui/nvim-surround",
+		event = "VimEnter",
+		config = function()
+			require("plugins/nvim-surround")
+		end,
+	},
+
+    -- #### UI top ####
+    -- Statusline
+    {
+        "nvim-lualine/lualine.nvim",
+        event = "VimEnter",
+        config = function()
+            require("plugins/lualine")
+        end,
+    },
+
+    -- #### UI contents ####
     -- adds indentation guides to all lines (including empty lines).
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -118,7 +155,7 @@ local plugins = {
         end,
     },
 
-    -- ColorScheme
+    -- Color Scheme
     {
         "EdenEast/nightfox.nvim",
         event = { "BufReadPre", "BufWinEnter" },
@@ -128,6 +165,7 @@ local plugins = {
     },
 
 
+    -- #### Git ####
     -- Git
     {
         "TimUntersberger/neogit",
