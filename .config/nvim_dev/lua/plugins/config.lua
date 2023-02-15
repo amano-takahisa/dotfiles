@@ -48,6 +48,28 @@ local plugins = {
         }
     },
 
+    -- #### Code browsing ####
+    {
+        "simrat39/symbols-outline.nvim",
+        config = function()
+            require("plugins/symbols-outline")
+        end,
+    },
+
+    {
+        "RRethy/vim-illuminate",
+        event = "VimEnter",
+        config = function()
+            require("plugins/vim-illuminate")
+        end,
+    },
+    {
+		"t9md/vim-quickhl",
+		config = function()
+			vim.cmd("source ~/.config/nvim/plugins/vim-quickhl.vim")
+		end,
+	},
+
     -- #### LSP ####
     -- External package Installer
     {
@@ -129,12 +151,12 @@ local plugins = {
     },
     -- Brackets
     {
-		"kylechui/nvim-surround",
-		event = "VimEnter",
-		config = function()
-			require("plugins/nvim-surround")
-		end,
-	},
+        "kylechui/nvim-surround",
+        event = "VimEnter",
+        config = function()
+            require("plugins/nvim-surround")
+        end,
+    },
 
     -- #### UI top ####
     -- Statusline
@@ -159,6 +181,7 @@ local plugins = {
     {
         "EdenEast/nightfox.nvim",
         event = { "BufReadPre", "BufWinEnter" },
+        -- event = { "ColorScheme" },
         config = function()
             require("plugins/nightfox")
         end,
