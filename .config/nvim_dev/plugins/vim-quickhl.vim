@@ -1,3 +1,3 @@
-nnoremap <Space>m <Plug>(quickhl-manual-this)
+nnoremap <Space>j <Plug>(quickhl-cword-toggle)
 nnoremap <Esc><Esc><Esc> <Plug>(quickhl-manual-reset)
 
