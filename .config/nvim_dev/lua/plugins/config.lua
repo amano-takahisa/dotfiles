@@ -70,6 +70,13 @@ local plugins = {
 		end,
 	},
 
+    -- #### Windows ####
+    {
+		"tkmpypy/chowcho.nvim",
+		config = function()
+            require("plugins/chowcho")
+		end,
+	},
     -- #### LSP ####
     -- External package Installer
     {
