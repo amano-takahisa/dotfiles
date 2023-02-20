@@ -9,6 +9,7 @@ require("nvim-treesitter.configs").setup({
 
     highlight = {
         enable = true,
+        disable = {'gitcommit'},
     },
     indent = {
         enable = true
