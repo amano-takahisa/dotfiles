@@ -1,4 +1,7 @@
-require("lualine").setup({
+local plug_ok, plug = pcall(require, "lualine")
+if not plug_ok then return end
+
+plug.setup({
     options = {
         icons_enabled = true,
         theme = 'auto',
@@ -45,4 +48,3 @@ require("lualine").setup({
     inactive_winbar = {},
     extensions = {}
 })
-

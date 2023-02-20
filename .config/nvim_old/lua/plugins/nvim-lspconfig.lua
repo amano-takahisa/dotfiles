@@ -1,6 +1,6 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, opts)
@@ -14,7 +14,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -36,37 +36,35 @@ local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
 }
+-- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
---     capabilities = capabilities,
--- }
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+require('lspconfig')['pyright'].setup {
     capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
 }
-require('lspconfig')['rust_analyzer'].setup{
+require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['rust_analyzer'].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
     -- Server-specific settings...
     settings = {
         ["rust-analyzer"] = {}
-    },
-    capabilities = capabilities,
+    }
 }
-require('lspconfig')['dockerls'].setup{
-    capabilities = capabilities,
-}
-require('lspconfig')['bashls'].setup{
-    capabilities = capabilities,
-}
+
+require'lspconfig'.dockerls.setup{}
+require'lspconfig'.bashls.setup{}
+
 require('lspconfig')['lua_ls'].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
     settings = {
@@ -90,5 +88,4 @@ require('lspconfig')['lua_ls'].setup {
             },
         },
     },
-    capabilities = capabilities,
 }

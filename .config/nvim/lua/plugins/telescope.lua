@@ -1,8 +1,5 @@
-local plug_ok, plug = pcall(require, "telescope")
-if not plug_ok then return end
-
 local lga_actions = require("telescope-live-grep-args.actions")
---
+
 -- shortcut key
 local keymap = vim.keymap.set
 keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
@@ -10,12 +7,11 @@ keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
--- shortcut key
 vim.api.nvim_set_keymap("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
     { noremap = true, silent = true })
 
+require("telescope").setup({
 
-plug.setup {
     pickers = {
         find_files = {
             find_command = {
@@ -51,4 +47,5 @@ plug.setup {
             }
         }
     },
-}
+
+})

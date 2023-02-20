@@ -4,7 +4,10 @@ local keymap = vim.keymap.set
 keymap('n', '<C-n>', ':Neotree toggle<CR>')
 keymap('n', '<C-n>%', ':Neotree focus %<CR>')
 
-require("neo-tree").setup({
+local plug_ok, plug = pcall(require, "neo-tree")
+if not plug_ok then return end
+
+plug.setup({
     close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
     popup_border_style = "rounded",
     enable_git_status = true,
@@ -202,7 +205,4 @@ require("neo-tree").setup({
             }
         }
     }
-
-
-
 })

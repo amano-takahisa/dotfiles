@@ -1,9 +1,9 @@
-local plug_ok, plug = pcall(require, "nvim-treesitter.configs")
-if not plug_ok then return end
-
-
-plug.setup {
-    ensure_installed = { 'python', 'lua', 'markdown' },
+require("nvim-treesitter.configs").setup({
+	-- ensure_installed = "all", -- one of 'all', 'language', or a list of languages
+	ensure_installed = {
+        "bash", "dockerfile", "gitcommit", "gitignore",
+        "json", "markdown", "rust", "python", "rst", "toml", "yaml",
+    },
     sync_install = true,
     auto_install = true,
 
@@ -13,4 +13,4 @@ plug.setup {
     indent = {
         enable = true
     },
-}
+})

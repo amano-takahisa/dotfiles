@@ -1,19 +1,21 @@
-local plug_ok, plug = pcall(require, "null-ls")
-if not plug_ok then return end
-
-
-
-plug.setup({
+local null_ls = require("null-ls")
+null_ls.setup({
     sources = {
-        -- plug.builtins.formatting.lua_ls,
-        plug.builtins.diagnostics.eslint,
-        plug.builtins.completion.spell,
-        -- plug.builtins.formatting.isort,
-        plug.builtins.formatting.autopep8.with({
+        -- Lua
+        null_ls.builtins.formatting.stylua,
+        -- spell check
+        null_ls.builtins.completion.spell,
+        -- null_ls.builtins.diagnostics.cspell,
+        -- null_ls.builtins.code_actions.cspell,
+        -- Python
+        null_ls.builtins.diagnostics.flake8,
+        null_ls.builtins.diagnostics.pylama,
+        null_ls.builtins.formatting.autopep8.with({
             'aggressive',
             'aggressive'
         }),
-        plug.builtins.formatting.yamlfmt,
-
+        -- Markdown
+        null_ls.builtins.diagnostics.markdownlint,
     },
 })
+
