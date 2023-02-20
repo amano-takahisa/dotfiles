@@ -70,6 +70,12 @@ local plugins = {
 		end,
 	},
 
+    -- #### Diff ####
+    {
+		"AndrewRadev/linediff.vim",
+        cmd = { "Linediff" },
+	},
+
     -- #### Windows ####
     {
 		"tkmpypy/chowcho.nvim",
