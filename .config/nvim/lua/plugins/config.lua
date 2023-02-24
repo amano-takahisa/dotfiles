@@ -49,13 +49,20 @@ local plugins = {
     },
 
     -- #### Code browsing ####
+    -- {
+    --     "simrat39/symbols-outline.nvim",
+    --     config = function()
+    --         require("plugins/symbols-outline")
+    --     end,
+    -- },
+
     {
-        "simrat39/symbols-outline.nvim",
+        "stevearc/aerial.nvim",
+        event = "VimEnter",
         config = function()
-            require("plugins/symbols-outline")
+            require("plugins/aerial")
         end,
     },
-
     {
         "RRethy/vim-illuminate",
         event = "VimEnter",
