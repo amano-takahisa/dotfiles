@@ -14,3 +14,4 @@ fi
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
+source /usr/share/nvm/init-nvm.sh
