@@ -46,6 +46,8 @@ local options = {
 
     -- colors
     termguicolors = true,
+    -- termguicolors = true,
+    colorcolumn = "79"
 }
 
 for k, v in pairs(options) do
