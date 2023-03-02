@@ -17,7 +17,7 @@ archinstall
 ```bash
 sudo pacman -Syyu --noconfirm --needed \
     neovim xclip python-neovim wl-clipboard xclip firefox \
-    openssh \
+    openssh git \
     && ssh-keygen -t ed25519 -C "amano.takahisa@gmail.com" \
     && eval "$(ssh-agent -s)" \
     && ssh-add ~/.ssh/id_ed25519 \
@@ -25,7 +25,7 @@ sudo pacman -Syyu --noconfirm --needed \
 ```
 Paste ssh strings copied to a clip board to https://github.com/settings/ssh/new.
 
-Then run `setup_arch.sh` as root.
+Clone dotfiles, and run `setup_arch.sh` as root.
 ```
 sudo ./setup_arch.sh
 ```
