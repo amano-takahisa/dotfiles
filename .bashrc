@@ -15,3 +15,5 @@ if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
 source /usr/share/nvm/init-nvm.sh
+source /usr/share/fzf/completion.bash
+source /usr/share/fzf/key-bindings.bash
