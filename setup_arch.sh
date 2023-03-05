@@ -11,6 +11,9 @@ cd "${USER_HOME}"
 ####### dotfiles #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
 
+####### bin #######
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
+
 ####### bash #######
 sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
 sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
@@ -39,14 +42,14 @@ sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/n
 ####### tmux #######
 pacman -S --noconfirm --needed \
     tmux
-    sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.tmux.conf "${USER_HOME}"/.tmux.conf
+sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.tmux.conf "${USER_HOME}"/.tmux.conf
 
 ####### XDG #######
 pacman -S --noconfirm --needed \
     xdg-user-dirs
-    sudo -u "${USER}" xdg-user-dirs-update
+sudo -u "${USER}" xdg-user-dirs-update
 
-    ln -s "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh
+ln -s "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh
 
 ####### fzf #######
 pacman -S --noconfirm --needed \
@@ -59,11 +62,11 @@ pacman -S --noconfirm --needed \
 ####### Docker #######
 pacman -S --noconfirm --needed \
     docker docker-compose
-    usermod -aG docker "${USER}"
-    systemctl start docker
-    systemctl enable docker
-    pacman -S --noconfirm --needed \
-        docker-buildx
+usermod -aG docker "${USER}"
+systemctl start docker
+systemctl enable docker
+pacman -S --noconfirm --needed \
+    docker-buildx
 
 ####### fd #######
 pacman -S --noconfirm --needed \
@@ -145,8 +148,8 @@ pacman -S --noconfirm --needed \
 ####### Bluetooth #######
 pacman -S --noconfirm --needed \
     bluez  bluez-utils
-    systemctl start bluetooth
-    systemctl enable bluetooth
+systemctl start bluetooth
+systemctl enable bluetooth
 
 ####### sounds #######
 pacman -S --noconfirm --needed \
@@ -162,3 +165,33 @@ sudo -u "${USER}" pip install pre-commit
 cd ${DOTFILES_REPO}
 sudo -u "${USER}" pre-commit install
 cd "${USER_HOME}"
+
+####### Clone repositories #######
+declare -a repos=(
+    "git@github.com:amano-takahisa/mypo.git"
+    "git@github.com:amano-takahisa/gravel.git"
+    "git@github.com:amano-takahisa/poipoi.git"
+    "git@github.com:amano-takahisa/numheader.git"
+)
+
+cd ${USER_HOME}/Documents/git
+for repo in "${repos[@]}"; do
+    sudo -u "${USER}" git clone "${repo}"
+    IFS='/.' read -ra parts <<< "${repo}"
+    cd "${parts[-2]}"
+    sudo -u "${USER}" pre-commit install
+    cd ../
+done
+cd "${USER_HOME}"
+
+####### Clone repositories #######
+sudo -u "${USER}" ln -s "${USER_HOME}"/Documents/git/mypo/utils/po.py \
+    "${USER_HOME}"/bin/po
+
+####### Document viewer #######
+pacman -S --noconfirm --needed \
+    okular
+
+####### Document management #######
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    zotero
