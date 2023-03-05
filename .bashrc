@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #
 # ~/.bashrc
 #
@@ -14,6 +15,15 @@ fi
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
-source /usr/share/nvm/init-nvm.sh
-source /usr/share/fzf/completion.bash
-source /usr/share/fzf/key-bindings.bash
+
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    . /usr/share/nvm/init-nvm.sh
+fi
+
+if [ -f /usr/share/fzf/completion.bash ]; then
+    . /usr/share/fzf/completion.bash
+fi
+
+if [ -f /usr/share/fzf/key-bindings.bash ]; then
+    . /usr/share/fzf/key-bindings.bash
+fi
