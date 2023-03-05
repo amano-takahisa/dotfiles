@@ -27,3 +27,7 @@ fi
 if [ -f /usr/share/fzf/key-bindings.bash ]; then
     . /usr/share/fzf/key-bindings.bash
 fi
+
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    . /usr/share/bash-completion/completions/git
+fi

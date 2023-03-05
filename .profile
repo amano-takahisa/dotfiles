@@ -29,7 +29,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-# set PATH so it includes user's cargo bin if it exists
+# set PATH so it includes user's pyenv bin if it exists
 if [ -d "$HOME/.pyenv/bin" ] ; then
     PATH="$HOME/.pyenv/bin:$PATH"
 fi
