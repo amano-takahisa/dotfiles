@@ -8,10 +8,12 @@
 
 PS1='[\u@\h \W]\$ '
 
+# set alias
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# set secrets
 if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
@@ -20,6 +22,7 @@ if [ -f /usr/share/nvm/init-nvm.sh ]; then
     . /usr/share/nvm/init-nvm.sh
 fi
 
+# set fzf
 if [ -f /usr/share/fzf/completion.bash ]; then
     . /usr/share/fzf/completion.bash
 fi
@@ -31,3 +34,33 @@ fi
 if [ -f /usr/share/bash-completion/completions/git ]; then
     . /usr/share/bash-completion/completions/git
 fi
+
+# pyenv configs
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/takahisa/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/takahisa/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/takahisa/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/takahisa/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# share history among multiple tmux session
+function share_history {
+    history -a
+    history -c
+    history -r
+}
+PROMPT_COMMAND='share_history'
+shopt -u histappend
+export HISTSIZE=9999
