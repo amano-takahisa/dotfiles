@@ -45,7 +45,6 @@ local options = {
     undofile = true,
 
     -- colors
-    termguicolors = true,
     -- termguicolors = true,
     colorcolumn = "79"
 }
