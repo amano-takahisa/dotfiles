@@ -139,7 +139,7 @@ pacman -S --noconfirm --needed \
 
 ####### tools #######
 pacman -S --noconfirm --needed \
-    jq wget
+    jq wget rsync
 
 ####### aws cli #######
 pacman -S --noconfirm --needed \
