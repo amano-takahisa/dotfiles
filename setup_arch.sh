@@ -16,8 +16,10 @@ sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
 
 ####### bash #######
 sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
+rm "${USER_HOME}"/.bashrc
 sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
 sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.profile "${USER_HOME}"/.profile
+rm "${USER_HOME}"/.bash_profile
 sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_profile
 
 ####### zsh #######
