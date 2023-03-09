@@ -15,12 +15,12 @@ sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
 
 ####### bash #######
-sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
 rm "${USER_HOME}"/.bashrc
-sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
-sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.profile "${USER_HOME}"/.profile
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/.profile
 rm "${USER_HOME}"/.bash_profile
-sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_profile
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_profile
 
 ####### zsh #######
 pacman -S --noconfirm --needed \
@@ -39,19 +39,19 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
     git-secrets
 
 ####### neovim #######
-sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
 ####### tmux #######
 pacman -S --noconfirm --needed \
     tmux
-sudo -u "${USER}" ln -s "${DOTFILES_REPO}"/.tmux.conf "${USER_HOME}"/.tmux.conf
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.tmux.conf "${USER_HOME}"/.tmux.conf
 
 ####### XDG #######
 pacman -S --noconfirm --needed \
     xdg-user-dirs
 sudo -u "${USER}" xdg-user-dirs-update
 
-ln -s "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh
+ln -sf "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh
 
 ####### fzf #######
 pacman -S --noconfirm --needed \
@@ -109,7 +109,7 @@ sudo -u "${USER}" pip install pylama
 
 sudo -u "${USER}" paru -S --noconfirm --needed \
     miniconda3
-    ln -s /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+    ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 ####### GIS/RS #######
 pacman -S --noconfirm --needed \
@@ -187,7 +187,7 @@ done
 cd "${USER_HOME}"
 
 ####### Clone repositories #######
-sudo -u "${USER}" ln -s "${USER_HOME}"/Documents/git/mypo/utils/po.py \
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/mypo/utils/po.py \
     "${USER_HOME}"/bin/po
 
 ####### Document viewer #######
