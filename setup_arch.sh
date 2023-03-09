@@ -6,6 +6,8 @@ USER='takahisa'
 USER_HOME=/home/"${USER}"
 DOTFILES_REPO="${USER_HOME}"/Documents/git/dotfiles
 
+PATH="${USER_HOME}/.local/bin:${PATH}"
+
 cd "${USER_HOME}"
 
 ####### dotfiles #######
@@ -165,12 +167,18 @@ pacman -S --noconfirm --needed \
 sudo -u "${USER}" pip install pre-commit
 
 ####### Clone repositories #######
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/Documents/git/
+cd ${USER_HOME}/Documents/git
+sudo -u "${USER}" git clone "git@github.com:amano-takahisa/dotfiles.git"
+cd dotfiles
+sudo -u "${USER}" pre-commit install
+cd "${USER_HOME}"
+
 declare -a repos=(
     "git@github.com:amano-takahisa/mypo.git"
     "git@github.com:amano-takahisa/gravel.git"
     "git@github.com:amano-takahisa/poipoi.git"
     "git@github.com:amano-takahisa/numheader.git"
-    "git@github.com:amano-takahisa/dotfiles.git"
 )
 
 cd ${USER_HOME}/Documents/git
