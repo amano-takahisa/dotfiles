@@ -163,10 +163,6 @@ pacman -S --noconfirm --needed \
 
 ####### pre-commit #######
 sudo -u "${USER}" pip install pre-commit
-sudo -u "${USER}" pip install pre-commit
-cd ${DOTFILES_REPO}
-sudo -u "${USER}" pre-commit install
-cd "${USER_HOME}"
 
 ####### Clone repositories #######
 declare -a repos=(
@@ -174,6 +170,7 @@ declare -a repos=(
     "git@github.com:amano-takahisa/gravel.git"
     "git@github.com:amano-takahisa/poipoi.git"
     "git@github.com:amano-takahisa/numheader.git"
+    "git@github.com:amano-takahisa/dotfiles.git"
 )
 
 cd ${USER_HOME}/Documents/git
