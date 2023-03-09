@@ -106,12 +106,15 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     pyright
 
+pacman -S --noconfirm --needed \
+    pyenv
+
 sudo -u "${USER}" pip install pylama
 
 
 sudo -u "${USER}" paru -S --noconfirm --needed \
     miniconda3
-    ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 ####### GIS/RS #######
 pacman -S --noconfirm --needed \
