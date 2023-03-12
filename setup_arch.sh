@@ -39,6 +39,7 @@ cd "${USER_HOME}"
 ####### git #######
 sudo -u "${USER}" paru -S --noconfirm --needed \
     git-secrets
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/git
 
 ####### neovim #######
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
@@ -205,3 +206,7 @@ pacman -S --noconfirm --needed \
 ####### Document management #######
 sudo -u "${USER}" paru -S --noconfirm --needed \
     zotero
+
+####### Image viewer #######
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    gwenview
