@@ -4,9 +4,9 @@ null_ls.setup({
         -- Lua
         null_ls.builtins.formatting.stylua,
         -- spell check
-        null_ls.builtins.completion.spell,
+        -- null_ls.builtins.completion.spell,
         -- null_ls.builtins.diagnostics.cspell,
-        -- null_ls.builtins.code_actions.cspell,
+        null_ls.builtins.code_actions.cspell,
         -- Python
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.pylama,
@@ -18,4 +18,3 @@ null_ls.setup({
         null_ls.builtins.diagnostics.markdownlint,
     },
 })
-
