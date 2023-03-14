@@ -35,7 +35,7 @@ local options = {
     smartcase = true,
 
     -- indent, tabs
-    smartindent = true,
+    -- smartindent = true,
     expandtab = true,
     shiftwidth = 4,
     tabstop = 4,
@@ -52,4 +52,3 @@ local options = {
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-

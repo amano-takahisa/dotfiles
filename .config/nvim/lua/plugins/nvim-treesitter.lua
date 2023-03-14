@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
         disable = {'gitcommit'},
     },
     indent = {
-        enable = true
+        enable = true,
+        disable = {"python"}
     },
 })
