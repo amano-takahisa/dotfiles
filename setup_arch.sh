@@ -110,7 +110,7 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     pyenv
 
-sudo -u "${USER}" pip install pylama
+sudo -u "${USER}" pip install pylama autopep8
 
 
 sudo -u "${USER}" paru -S --noconfirm --needed \
@@ -195,9 +195,13 @@ for repo in "${repos[@]}"; do
 done
 cd "${USER_HOME}"
 
-####### Clone repositories #######
+####### po #######
 sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/mypo/utils/po.py \
     "${USER_HOME}"/bin/po
+
+####### numheader #######
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/numheader/numheader/numheader.py \
+    "${USER_HOME}"/bin/numheader
 
 ####### Document viewer #######
 pacman -S --noconfirm --needed \
