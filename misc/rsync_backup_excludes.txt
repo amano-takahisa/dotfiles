@@ -1,7 +1,6 @@
 /.cache
 /.cargo
 /.conda
-/.config
 /.docker
 /.gnome
 /.googleearth
