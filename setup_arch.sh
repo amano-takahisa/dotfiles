@@ -214,3 +214,19 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
 ####### Image viewer #######
 sudo -u "${USER}" paru -S --noconfirm --needed \
     gwenview
+
+####### cloud services #######
+# rclone
+pacman -S --noconfirm --needed \
+    rclone fuse2
+# make dir for mount
+sudo -u "${USER}" mkdir "${USER_HOME}"/google_drive
+# to mount the drive
+# rclone mount gd:/ /home/takahisa/google_drive --daemon --vfs-cache-mode full
+# to unmount, run
+# fusermount -u /home/takahisa/google_drive
+
+####### KDE #######
+# show thumbnails in Dolphin
+pacman -S --noconfirm --needed \
+    kdegraphics-thumbnailers
