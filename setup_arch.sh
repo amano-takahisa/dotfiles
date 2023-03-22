@@ -120,7 +120,7 @@ ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 ####### GIS/RS #######
 pacman -S --noconfirm --needed \
     qgis python-yaml python-gdal python-psycopg2
-    sudo -u "${USER}" pip install Jinja2 Pygments owslib
+sudo -u "${USER}" pip install Jinja2 Pygments owslib
 
 ####### Web browser #######
 sudo -u "${USER}" paru -S --noconfirm --needed \
@@ -230,3 +230,9 @@ sudo -u "${USER}" mkdir "${USER_HOME}"/google_drive
 # show thumbnails in Dolphin
 pacman -S --noconfirm --needed \
     kdegraphics-thumbnailers
+
+# ####### speech #######
+# sudo -u "${USER}" paru -S --noconfirm --needed \
+#      speech-dispatcher festival espeak-ng
+#
+# sudo -u "${USER}" pip install TTS
