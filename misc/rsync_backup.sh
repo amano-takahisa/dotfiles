@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -euox pipefail
 # coloring echo
 ERROR_COLOR='\e[0;31m'  # Red
 NC='\e[0m' # No Color
@@ -67,13 +67,15 @@ fi
 echo "${src}"
 echo "${dst}"
 
+host_name="$(uname -n)"
 
-if ! compgen -G "${dst}/backup-*" > /dev/null; then
-    mkdir "${dst}/backup-00000000-000000"
+if ! compgen -G "${dst}/${host_name}-*" > /dev/null; then
+    mkdir "${dst}/${host_name}-00000000-000000"
 fi
 
+
 # shellcheck disable=SC2010
-latestbkup=$(ls "${dst}" | grep backup- | tail -n 1)
+latestbkup=$(ls "${dst}" | grep "${host_name}"- | tail -n 1)
 
 rsync_flag='-avvh'
 
@@ -84,4 +86,4 @@ fi
 cd "${src}"
 rsync "${rsync_flag}" --link-dest="${dst}/${latestbkup}" \
     --exclude-from="${EXCLUDE_FILES}" \
-    "${src}" "${dst}/backup-$(date +%Y%m%d-%H%M%S)"
+    "${src}" "${dst}/${host_name}-$(date +%Y%m%d-%H%M%S)"

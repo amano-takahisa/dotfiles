@@ -4,6 +4,9 @@
 /.docker
 /.gnome
 /.googleearth
+/.config/Slack
+/.config/google-chrome
+/.config/libreoffice
 /.ipython
 /.jupyter
 /.local
