@@ -118,9 +118,13 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
 ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 ####### GIS/RS #######
+# QGIS
 pacman -S --noconfirm --needed \
     qgis python-yaml python-gdal python-psycopg2
 sudo -u "${USER}" pip install Jinja2 Pygments owslib
+# GRASS GIS
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    grass
 
 ####### Web browser #######
 sudo -u "${USER}" paru -S --noconfirm --needed \
