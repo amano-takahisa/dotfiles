@@ -153,6 +153,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     jq wget rsync
 
+# disk management
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    qdirstat
+
 ####### aws cli #######
 pacman -S --noconfirm --needed \
     aws-cli-v2
@@ -219,6 +223,10 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
 sudo -u "${USER}" paru -S --noconfirm --needed \
     gwenview
 
+####### media #######
+pacman -S --noconfirm --needed \
+    vlc
+
 ####### cloud services #######
 # rclone
 pacman -S --noconfirm --needed \
@@ -245,3 +253,8 @@ pacman -S --noconfirm --needed \
 #      speech-dispatcher festival espeak-ng
 #
 # sudo -u "${USER}" pip install TTS
+
+####### Disk management #######
+# czkawka
+pacman -S --noconfirm --needed \
+    czkawka-gui

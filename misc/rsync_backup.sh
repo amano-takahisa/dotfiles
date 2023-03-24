@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euox pipefail
+set -euo pipefail
 # coloring echo
 ERROR_COLOR='\e[0;31m'  # Red
 NC='\e[0m' # No Color
