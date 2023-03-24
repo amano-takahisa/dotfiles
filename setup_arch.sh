@@ -230,6 +230,11 @@ sudo -u "${USER}" mkdir "${USER_HOME}"/google_drive
 # to unmount, run
 # fusermount -u /home/takahisa/google_drive
 
+####### Devices #######
+# Logicool mouse
+pacman -S --noconfirm --needed \
+    solaar
+
 ####### KDE #######
 # show thumbnails in Dolphin
 pacman -S --noconfirm --needed \
