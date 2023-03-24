@@ -49,12 +49,6 @@ local plugins = {
     },
 
     -- #### Code browsing ####
-    -- {
-    --     "simrat39/symbols-outline.nvim",
-    --     config = function()
-    --         require("plugins/symbols-outline")
-    --     end,
-    -- },
 
     {
         "stevearc/aerial.nvim",
@@ -70,12 +64,21 @@ local plugins = {
             require("plugins/vim-illuminate")
         end,
     },
+
     {
 		"t9md/vim-quickhl",
 		config = function()
 			vim.cmd("source ~/.config/nvim/plugins/vim-quickhl.vim")
 		end,
 	},
+
+    -- jump
+    {
+        "phaazon/hop.nvim",
+        config = function()
+            require("plugins/hop")
+        end,
+    },
 
     -- #### Diff ####
     {
