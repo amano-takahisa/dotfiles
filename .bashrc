@@ -35,6 +35,10 @@ if [ -f /usr/share/bash-completion/completions/git ]; then
     . /usr/share/bash-completion/completions/git
 fi
 
+# if [ -f "${HOME}/.cargo/env" ]; then
+#     . "${HOME}/.cargo/env"
+# fi
+
 # pyenv configs
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
