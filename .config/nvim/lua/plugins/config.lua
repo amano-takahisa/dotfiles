@@ -184,9 +184,9 @@ local plugins = {
     -- indentation
     {
         "Vimjas/vim-python-pep8-indent",
-		config = function()
-			vim.cmd("source ~/.config/nvim/plugins/vim-python-pep8-indent.vim")
-		end,
+		-- config = function()
+		-- 	vim.cmd("source ~/.config/nvim/plugins/vim-python-pep8-indent.vim")
+		-- end,
     },
 
     -- #### UI top ####
