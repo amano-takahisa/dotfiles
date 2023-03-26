@@ -117,6 +117,10 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
     miniconda3
 ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
+####### Rust #######
+sudo -u "${USER}" curl --proto '=https' --tlsv1.2 -sSf \
+    https://sh.rustup.rs | sh
+
 ####### GIS/RS #######
 # QGIS
 pacman -S --noconfirm --needed \
@@ -191,6 +195,7 @@ declare -a repos=(
     "git@github.com:amano-takahisa/gravel.git"
     "git@github.com:amano-takahisa/poipoi.git"
     "git@github.com:amano-takahisa/numheader.git"
+    "git@github.com:amano-takahisa/czkawka.git"
 )
 
 cd ${USER_HOME}/Documents/git
@@ -256,5 +261,11 @@ pacman -S --noconfirm --needed \
 
 ####### Disk management #######
 # czkawka
+# use my fork instead of official one
+# pacman -S --noconfirm --needed \
+#     czkawka-gui
 pacman -S --noconfirm --needed \
-    czkawka-gui
+    gtk4
+cd ${USER_HOME}/Documents/git/czkawka
+sudo -u "${USER}" cargo install czkawka_gui
+cd "${USER_HOME}"
