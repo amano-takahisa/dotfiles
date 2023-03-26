@@ -77,7 +77,7 @@ fi
 # shellcheck disable=SC2010
 latestbkup=$(ls "${dst}" | grep "${host_name}"- | tail -n 1)
 
-rsync_flag='-avvh'
+rsync_flag='-avh'
 
 if [[ "${dry_run}" == "true" ]]; then
     rsync_flag="${rsync_flag}"n

@@ -26,6 +26,7 @@
 
 */tmp/
 */.venv/
+*/venv/
 */cache/
 */.mypy_cache/
 */.ipynb_checkpoints/
