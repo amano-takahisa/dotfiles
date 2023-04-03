@@ -41,6 +41,9 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
     git-secrets
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/git
 
+pacman -S --noconfirm --needed \
+    lazygit
+
 ####### neovim #######
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
@@ -269,3 +272,8 @@ pacman -S --noconfirm --needed \
 cd ${USER_HOME}/Documents/git/czkawka
 sudo -u "${USER}" cargo install czkawka_gui
 cd "${USER_HOME}"
+#
+####### Network #######
+# show thumbnails in Dolphin
+pacman -S --noconfirm --needed \
+    lsof
