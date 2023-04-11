@@ -36,3 +36,9 @@ alias ccc='xclip -sel clip'
 
 # rm comfirmation prompt by default
 alias rm='rm -I'
+
+# auto pwd ls after cd
+function cdd() {
+     cd "$1" && pwd && ls -aFv --group-directories-first ;
+}
+export -f cdd
