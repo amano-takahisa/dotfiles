@@ -120,6 +120,12 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
     miniconda3
 ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
+####### R #######
+pacman -S --noconfirm --needed \
+    r
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    rstudio-desktop-bin r-tinytex
+
 ####### Rust #######
 sudo -u "${USER}" curl --proto '=https' --tlsv1.2 -sSf \
     https://sh.rustup.rs | sh
