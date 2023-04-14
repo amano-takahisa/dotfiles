@@ -35,7 +35,11 @@ chsh -s "$(which zsh)" "${USER}"
 sudo -u "${USER}" ZSH="${USER_HOME}/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/zsh
 sudo -u "${USER}" mkdir "${USER_HOME}"/.config/zsh
+
+# zsh theme
+sudo -u "${USER}" git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 ####### package manager #######
 pacman -S --noconfirm --needed \
