@@ -28,6 +28,15 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_p
 pacman -S --noconfirm --needed \
     zsh zsh-completions
 
+# set zsh as default shell
+chsh -s "$(which zsh)" "${USER}"
+
+# ohmyzsh
+sudo -u "${USER}" ZSH="${USER_HOME}/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"
+sudo -u "${USER}" mkdir "${USER_HOME}"/.config/zsh
+
 ####### package manager #######
 pacman -S --noconfirm --needed \
     base-devel
@@ -115,10 +124,12 @@ pacman -S --noconfirm --needed \
 
 sudo -u "${USER}" pip install pylama autopep8
 
-
+# conda environment
 sudo -u "${USER}" paru -S --noconfirm --needed \
     miniconda3
 ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+
+sudo -u "${USER}" /opt/miniconda3/bin/conda init zsh
 
 ####### R #######
 pacman -S --noconfirm --needed \

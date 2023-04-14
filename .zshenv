@@ -9,4 +9,4 @@ export PATH=$HOME/.local/bin:$PATH
 # export ZSH_TMUX_AUTOSTART=true
 
 # Set the configuration path (default: $HOME/.tmux.conf)
-export ZSH_TMUX_CONFIG=$HOME/.config/tmux/.tmux.conf
+# export ZSH_TMUX_CONFIG=$HOME/.config/tmux/.tmux.conf
