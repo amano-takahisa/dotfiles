@@ -34,6 +34,7 @@ tags.temp
 # IPython
 profile_default/
 ipython_config.py
+Untitled.ipynb
 
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
