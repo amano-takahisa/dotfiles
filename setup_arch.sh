@@ -295,6 +295,8 @@ sudo -u "${USER}" cargo install czkawka_gui
 cd "${USER_HOME}"
 #
 ####### Network #######
-# show thumbnails in Dolphin
 pacman -S --noconfirm --needed \
     lsof
+
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    realvnc-vnc-viewer
