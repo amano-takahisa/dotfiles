@@ -10,3 +10,5 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Set the configuration path (default: $HOME/.tmux.conf)
 # export ZSH_TMUX_CONFIG=$HOME/.config/tmux/.tmux.conf
+
+. "$HOME/.cargo/env"
