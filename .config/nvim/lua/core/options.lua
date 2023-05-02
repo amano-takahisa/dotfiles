@@ -43,6 +43,8 @@ local options = {
     -- backup, swap
     swapfile = false,
     undofile = true,
+    -- do not change inode
+    backupcopy = "yes",
 
     -- colors
     -- termguicolors = true,

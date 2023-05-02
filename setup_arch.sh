@@ -137,6 +137,10 @@ ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 sudo -u "${USER}" /opt/miniconda3/bin/conda init zsh
 
+# GPU
+pacman -S --noconfirm --needed \
+    cuda
+
 ####### R #######
 pacman -S --noconfirm --needed \
     r
