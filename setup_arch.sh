@@ -137,9 +137,11 @@ ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 
 sudo -u "${USER}" /opt/miniconda3/bin/conda init zsh
 
-# GPU
-pacman -S --noconfirm --needed \
-    cuda
+# Thonny for raspberry pi pico
+sudo -u "${USER}" paru -S --noconfirm --needed \
+    thonny esptool python-ptyprocess python-build
+# add to uucp group to communicate pico
+usermod -a -G uucp "${USER}"
 
 ####### R #######
 pacman -S --noconfirm --needed \
@@ -299,10 +301,19 @@ pacman -S --noconfirm --needed \
 cd ${USER_HOME}/Documents/git/czkawka
 sudo -u "${USER}" cargo install czkawka_gui
 cd "${USER_HOME}"
-#
+
+pacman -S --noconfirm --needed \
+    partitionmanager
+
 ####### Network #######
 pacman -S --noconfirm --needed \
     lsof
 
 sudo -u "${USER}" paru -S --noconfirm --needed \
     realvnc-vnc-viewer
+
+####### OBS #######
+pacman -S --noconfirm --needed \
+    obs-studio v4l2loopback-dkms linux-headers
+# and follow step 2 of
+# https://wiki.archlinux.org/title/V4l2loopback
