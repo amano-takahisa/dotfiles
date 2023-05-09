@@ -317,3 +317,8 @@ pacman -S --noconfirm --needed \
     obs-studio v4l2loopback-dkms linux-headers
 # and follow step 2 of
 # https://wiki.archlinux.org/title/V4l2loopback
+
+
+####### system monitor #######
+pacman -S --noconfirm --needed \
+    netdata
