@@ -322,3 +322,5 @@ pacman -S --noconfirm --needed \
 ####### system monitor #######
 pacman -S --noconfirm --needed \
     netdata
+systemctl start netdata
+systemctl enable netdata
