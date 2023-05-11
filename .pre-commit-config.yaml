@@ -25,3 +25,4 @@ repos:
           "--exclude=SC1090",
           "--exclude=SC1091"
           ]
+        exclude_types: [zsh]

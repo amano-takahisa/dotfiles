@@ -43,6 +43,11 @@ rm "${USER_HOME}"/.zshrc
 # zsh theme
 sudo -u "${USER}" git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${USER_HOME}/Documents/git/oh-my-zsh/custom/themes/powerlevel10k
 
+# zsh custom
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/misc/omz_custom/* \
+    "${USER_HOME}"/Documents/git/oh-my-zsh/custom/
+
+
 ####### package manager #######
 pacman -S --noconfirm --needed \
     base-devel
