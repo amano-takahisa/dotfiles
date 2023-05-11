@@ -5,6 +5,8 @@
 /.gnome
 /.googleearth
 /.config/Slack
+/.config/rstudio/Cache
+/.config/rstudio/Code Cache
 /.config/google-chrome
 /.config/libreoffice
 /.ipython
@@ -15,7 +17,10 @@
 /.pki
 /.pyenv
 /.yarn
+/.TinyTeX
+/R
 /Downloads
+/Documents/git
 /Zotero/translators
 /google_drive
 /paru
