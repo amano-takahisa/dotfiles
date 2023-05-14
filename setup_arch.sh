@@ -323,9 +323,14 @@ pacman -S --noconfirm --needed \
 # and follow step 2 of
 # https://wiki.archlinux.org/title/V4l2loopback
 
-
 ####### system monitor #######
 pacman -S --noconfirm --needed \
     netdata
 systemctl start netdata
 systemctl enable netdata
+
+####### wine #######
+echo '[multilib]' >> /etc/pacman.conf
+echo 'Include = /etc/pacman.d/mirrorlist'
+pacman -S --noconfirm --needed \
+    wine
