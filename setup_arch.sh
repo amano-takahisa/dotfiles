@@ -334,3 +334,7 @@ echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist'
 pacman -S --noconfirm --needed \
     wine
+
+####### imagemagick #######
+pacman -S --noconfirm --needed \
+    imagemagick
