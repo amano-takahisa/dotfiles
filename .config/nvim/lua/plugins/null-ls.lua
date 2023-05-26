@@ -11,8 +11,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.pylama,
         null_ls.builtins.formatting.autopep8.with({
-            'aggressive',
-            'aggressive'
+            extra_args = {"--aggressive", "--aggressive" },
         }),
         -- Markdown
         null_ls.builtins.diagnostics.markdownlint,
