@@ -11,7 +11,11 @@ null_ls.setup({
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.pylama,
         null_ls.builtins.formatting.autopep8.with({
-            extra_args = {"--aggressive", "--aggressive" },
+            extra_args = {
+                "--aggressive",
+                "--aggressive",
+                -- "--select=W503"
+            },
         }),
         -- Markdown
         null_ls.builtins.diagnostics.markdownlint,
