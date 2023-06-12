@@ -5,10 +5,13 @@
 /.gnome
 /.googleearth
 /.config/Slack
+/.config/google-chrome
+/.config/gtk-3.0
+/.config/gtk-4.0
+/.config/kde.org
+/.config/libreoffice
 /.config/rstudio/Cache
 /.config/rstudio/Code Cache
-/.config/google-chrome
-/.config/libreoffice
 /.ipython
 /.jupyter
 /.local
