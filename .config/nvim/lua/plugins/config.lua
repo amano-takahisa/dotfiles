@@ -93,6 +93,13 @@ local plugins = {
             require("plugins/chowcho")
 		end,
 	},
+
+    {
+		"Pocco81/true-zen.nvim",
+		config = function()
+            require("plugins/true-zen")
+		end,
+	},
     -- #### LSP ####
     -- External package Installer
     {
