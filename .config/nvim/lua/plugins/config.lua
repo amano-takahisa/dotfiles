@@ -229,7 +229,7 @@ local plugins = {
     -- #### Git ####
     -- Git
     {
-        "TimUntersberger/neogit",
+        "NeogitOrg/neogit",
         event = "BufReadPre",
         config = function()
             require("plugins/neogit")
