@@ -9,7 +9,9 @@ gitignore/
 .ipynb_checkpoints/
 .vim/
 venv/
+venv_*/
 .venv/
+.venv_*/
 .env/
 .idea/
 out_*/

@@ -190,6 +190,9 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
         npm
 
+####### node tools #######
+sudo -u "${USER}" npm install markdownlint --save-dev
+npm install -g markdownlint-cli
 ####### tools #######
 pacman -S --noconfirm --needed \
     jq wget rsync

@@ -17,6 +17,7 @@
     root = rev-parse --show-toplevel
     sh = show --color-words='[^[:space:]]'
     st = status --short --branch
+    pushf = push --force-with-lease --force-if-includes
 
 # Do not create merge commit if possible
 [pull]

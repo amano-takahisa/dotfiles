@@ -41,6 +41,8 @@ keymap('n', 'gk', 'k')
 
 -- Clip board
 keymap('v', '"+y', ':!xclip -f -sel clip')
+-- Yank file path and line number
+keymap('n', '<leader>y', [[:let @+=expand("%") . ':' . line(".")<CR>]])
 
 -- Search
 --   Highlight off
