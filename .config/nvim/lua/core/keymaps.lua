@@ -42,7 +42,11 @@ keymap('n', 'gk', 'k')
 -- Clip board
 keymap('v', '"+y', ':!xclip -f -sel clip')
 -- Yank file path and line number
-keymap('n', '<leader>y', [[:let @+=expand("%") . ':' . line(".")<CR>]])
+-- keymap('n', '<leader>y', [[:let @+=expand("%") . ':' . line(".")<CR>]])
+keymap('n', '<leader>y', function()
+  local path = vim.fn.expand('%') .. ':' .. vim.fn.line('.')
+  vim.fn.setreg('+', path)
+end)
 
 -- Search
 --   Highlight off

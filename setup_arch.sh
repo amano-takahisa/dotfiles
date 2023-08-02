@@ -162,7 +162,7 @@ sudo -u "${USER}" curl --proto '=https' --tlsv1.2 -sSf \
 # QGIS
 pacman -S --noconfirm --needed \
     qgis python-yaml python-gdal python-psycopg2
-sudo -u "${USER}" pip install Jinja2 Pygments owslib
+# sudo -u "${USER}" pip install Jinja2 Pygments owslib
 # GRASS GIS
 sudo -u "${USER}" paru -S --noconfirm --needed \
     grass
