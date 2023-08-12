@@ -25,7 +25,11 @@
 # ```
 # and login GitHub and paste copied ssh key to
 # https://github.com/settings/ssh/new
-
+# Then,
+# ```
+# mkdir -p ~/Documents/git \
+#     && git clone "git@github.com:amano-takahisa/dotfiles.git" $_
+# ```
 
 set -euxo pipefail
 
@@ -42,6 +46,34 @@ sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
 
 ####### bin #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
+
+####### Clone repositories #######
+declare -a repos=(
+    "git@github.com:amano-takahisa/mypo.git"
+    "git@github.com:amano-takahisa/gravel.git"
+    "git@github.com:amano-takahisa/poipoi.git"
+    "git@github.com:amano-takahisa/numheader.git"
+    "git@github.com:amano-takahisa/czkawka.git"
+)
+
+cd ${USER_HOME}/Documents/git
+for repo in "${repos[@]}"; do
+    sudo -u "${USER}" git clone "${repo}"
+    IFS='/.' read -ra parts <<< "${repo}"
+    cd "${parts[-2]}"
+    sudo -u "${USER}" pre-commit install
+    cd ../
+done
+cd "${USER_HOME}"
+
+####### po #######
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/mypo/utils/po.py \
+    "${USER_HOME}"/bin/po
+
+####### numheader #######
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/numheader/numheader/numheader.py \
+    "${USER_HOME}"/bin/numheader
+
 
 ####### bash #######
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
@@ -253,39 +285,7 @@ pacman -S --noconfirm --needed \
 ####### pre-commit #######
 sudo -u "${USER}" pip install pre-commit
 
-####### Clone repositories #######
-sudo -u "${USER}" mkdir -p "${USER_HOME}"/Documents/git/
-cd ${USER_HOME}/Documents/git
-sudo -u "${USER}" git clone "git@github.com:amano-takahisa/dotfiles.git"
-cd dotfiles
-sudo -u "${USER}" pre-commit install
-cd "${USER_HOME}"
 
-declare -a repos=(
-    "git@github.com:amano-takahisa/mypo.git"
-    "git@github.com:amano-takahisa/gravel.git"
-    "git@github.com:amano-takahisa/poipoi.git"
-    "git@github.com:amano-takahisa/numheader.git"
-    "git@github.com:amano-takahisa/czkawka.git"
-)
-
-cd ${USER_HOME}/Documents/git
-for repo in "${repos[@]}"; do
-    sudo -u "${USER}" git clone "${repo}"
-    IFS='/.' read -ra parts <<< "${repo}"
-    cd "${parts[-2]}"
-    sudo -u "${USER}" pre-commit install
-    cd ../
-done
-cd "${USER_HOME}"
-
-####### po #######
-sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/mypo/utils/po.py \
-    "${USER_HOME}"/bin/po
-
-####### numheader #######
-sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/numheader/numheader/numheader.py \
-    "${USER_HOME}"/bin/numheader
 
 ####### Document viewer #######
 pacman -S --noconfirm --needed \
