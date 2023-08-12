@@ -75,28 +75,24 @@ sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/numheader/numheader/numhea
     "${USER_HOME}"/bin/numheader
 
 
-####### bash #######
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
-rm "${USER_HOME}"/.bashrc
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/.profile
-rm "${USER_HOME}"/.bash_profile
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_profile
+# ####### bash #######
+# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
+# rm "${USER_HOME}"/.bashrc
+# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
+# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/.profile
+# rm "${USER_HOME}"/.bash_profile
+# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_profile
 
 ####### zsh #######
 pacman -S --noconfirm --needed \
     zsh zsh-completions
 
-# set zsh as default shell
-chsh -s "$(which zsh)" "${USER}"
-
 # ohmyzsh
 sudo -u "${USER}" ZSH="${USER_HOME}/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"
-sudo -u "${USER}" mkdir "${USER_HOME}"/.config/zsh
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/zsh
+sudo -u "${USER}" mkdir "${USER_HOME}"/.config/
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/
 rm "${USER_HOME}"/.zshrc
 
 # zsh theme
