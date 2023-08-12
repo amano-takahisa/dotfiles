@@ -13,7 +13,20 @@
 #   Audio: Pipewire
 #   Network configuration: Use NetworkManager
 #   Timezone: Where you are
+# 
+# Then, install and setup git, firefox, etc.
 #
+# ```
+# sudo pacman -Syyu neovim python-neovim xclip wl-clipboard firefox openssh git
+# ssh-keygen -t ed25519 -C "amano.takahisa@gmail.com" -f ~/.ssh/id_ed25519 -q -N "" \
+#     && eval "$(ssh-agent -s)" \
+#     && ssh-add ~/.ssh/id_ed25519 \
+#     && cat ~/.ssh/id_ed25519.pub | wl-copy
+# ```
+# and login GitHub and paste copied ssh key to
+# https://github.com/settings/ssh/new
+
+
 set -euxo pipefail
 
 USER='takahisa'
@@ -23,10 +36,6 @@ DOTFILES_REPO="${USER_HOME}"/Documents/git/dotfiles
 PATH="${USER_HOME}/.local/bin:${PATH}"
 
 cd "${USER_HOME}"
-
-####### firefox #######
-pacman -S --noconfirm --needed \
-    firefox
 
 ####### dotfiles #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
