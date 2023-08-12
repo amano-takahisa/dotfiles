@@ -1,5 +1,19 @@
 #!/bin/bash
-
+# This script is expectedt to be run just after archinstall.
+# Options for the archinstall is as follows:
+#   Mirrors: Where you are.
+#   Disk configuration:
+#       Use a best-effort default partition layout
+#           btrfs, default structure, BTRFS compression
+#   User account: with sodo
+#   Profile:
+#       Desktop KDE
+#       Graphic driver: All open-source
+#       greeter: sddm
+#   Audio: Pipewire
+#   Network configuration: Use NetworkManager
+#   Timezone: Where you are
+#
 set -euxo pipefail
 
 USER='takahisa'
@@ -9,6 +23,10 @@ DOTFILES_REPO="${USER_HOME}"/Documents/git/dotfiles
 PATH="${USER_HOME}/.local/bin:${PATH}"
 
 cd "${USER_HOME}"
+
+####### firefox #######
+pacman -S --noconfirm --needed \
+    firefox
 
 ####### dotfiles #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
@@ -67,6 +85,8 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     github-cli
 ####### neovim #######
+pacman -S --noconfirm --needed \
+    neovim
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
 ####### tmux #######
