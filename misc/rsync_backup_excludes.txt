@@ -19,6 +19,7 @@
 /.npm
 /.pki
 /.pyenv
+/.wine
 /.yarn
 /.TinyTeX
 /R

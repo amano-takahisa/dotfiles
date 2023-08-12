@@ -64,6 +64,8 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/g
 pacman -S --noconfirm --needed \
     lazygit
 
+pacman -S --noconfirm --needed \
+    github-cli
 ####### neovim #######
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
@@ -177,7 +179,7 @@ sudo -u "${USER}" paru -S --noconfirm --needed \
 
 ####### Office #######
 pacman -S --noconfirm --needed \
-    libreoffice-still
+    libreoffice-still hunspell hunspell-en_us
 
 ####### Desktop utils #######
 # Screen shot
