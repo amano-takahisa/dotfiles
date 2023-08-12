@@ -28,7 +28,9 @@
 # Then,
 # ```
 # mkdir -p ~/Documents/git \
-#     && git clone "git@github.com:amano-takahisa/dotfiles.git" $_
+#     && mkdir -p ~/.config \
+#     && git clone "git@github.com:amano-takahisa/dotfiles.git" ~/Documents/git/dotfiles
+#     && ln -sf ~/Documents/git/dotfiles/.config/git ~/.config/git
 # ```
 
 set -euxo pipefail
@@ -74,15 +76,6 @@ sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/mypo/utils/po.py \
 sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/git/numheader/numheader/numheader.py \
     "${USER_HOME}"/bin/numheader
 
-
-# ####### bash #######
-# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_aliases "${USER_HOME}"/.bash_aliases
-# rm "${USER_HOME}"/.bashrc
-# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bashrc "${USER_HOME}"/.bashrc
-# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/.profile
-# rm "${USER_HOME}"/.bash_profile
-# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.bash_profile "${USER_HOME}"/.bash_profile
-
 ####### zsh #######
 pacman -S --noconfirm --needed \
     zsh zsh-completions
@@ -106,24 +99,22 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/misc/omz_custom/* \
 ####### package manager #######
 pacman -S --noconfirm --needed \
     base-devel
-sudo -u "${USER}" git clone https://aur.archlinux.org/paru.git
-cd paru
-sudo -u "${USER}" makepkg -si --noconfirm
+sudo -u "${USER}" git clone https://aur.archlinux.org/yay.git ${USER_HOME}/Documents/git/yay \
+    && cd yay \
+    && makepkg -si
 cd "${USER_HOME}"
 
 ####### git #######
-sudo -u "${USER}" paru -S --noconfirm --needed \
+sudo -u "${USER}" yay -Yg \
     git-secrets
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/git
 
-pacman -S --noconfirm --needed \
-    lazygit
+# pacman -S --noconfirm --needed \
+#     lazygit
 
 pacman -S --noconfirm --needed \
     github-cli
+
 ####### neovim #######
-pacman -S --noconfirm --needed \
-    neovim
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
 ####### tmux #######
