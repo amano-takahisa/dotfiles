@@ -172,7 +172,7 @@ pacman -S --noconfirm --needed \
     ttf-mplus-nerd ttf-noto-nerd
 # IME
 sudo -u "${USER}" yay -Yg \
-    yay fcitx5-mozc-ut
+    fcitx5-mozc-ut
 pacman -S --noconfirm --needed \
     fcitx5-configtool
 
