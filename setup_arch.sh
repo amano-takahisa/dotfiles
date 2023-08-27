@@ -171,8 +171,8 @@ pacman -S --noconfirm --needed \
     otf-ipafont otf-ipaexfont  ttf-hack-nerd \
     ttf-mplus-nerd ttf-noto-nerd
 # IME
-sudo -u "${USER}" paru -S --noconfirm --needed \
-    fcitx5-mozc-ut
+sudo -u "${USER}" yay -Yg \
+    yay fcitx5-mozc-ut
 pacman -S --noconfirm --needed \
     fcitx5-configtool
 
