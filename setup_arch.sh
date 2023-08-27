@@ -163,6 +163,9 @@ pacman -S --noconfirm --needed \
     ripgrep
 
 ####### Localization #######
+# locale
+echo 'ja_JP.UTF-8 UTF-8' | tee --append /etc/locale.gen
+
 # Fonts
 pacman -S --noconfirm --needed \
     otf-ipafont otf-ipaexfont  ttf-hack-nerd \
