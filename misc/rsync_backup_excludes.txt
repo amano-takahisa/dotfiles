@@ -21,6 +21,7 @@
 /.pyenv
 /.wine
 /.yarn
+/.wine
 /.TinyTeX
 /R
 /Downloads
@@ -28,6 +29,7 @@
 /Zotero/translators
 /google_drive
 /paru
+/studio3t
 /tmp
 
 /.bash_history
