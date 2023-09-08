@@ -7,7 +7,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # tree with ignore some patterns
-alias treee="tree -ahv --dirsfirst  --du -I '.git|__pycache__|.mypy_cache|.eggs|*.egg-info|.virtual_documents'"
+alias treee="tree -ahv --dirsfirst  --du \
+    -I '.git|__pycache__|.mypy_cache|.eggs|*.egg-info|.virtual_documents|venv'"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
