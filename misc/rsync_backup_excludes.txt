@@ -19,6 +19,9 @@
 /.npm
 /.pki
 /.pyenv
+/.rustup
+/.rye
+/.vnc
 /.wine
 /.yarn
 /.wine
