@@ -2,6 +2,7 @@
 
 ```bash
 ./rsync_backup.sh --dst /run/media/takahisa/iodata-ext1t/backups/
+./rsync_backup.sh --dst /run/media/takahisa/PWX/backups/
 ```
 
 ## Remove temporary directory, files
