@@ -1,18 +1,8 @@
--- local alias
 local keymap = vim.keymap.set
 
--- Usage: keymap(<MODE>, <KEY1>, <KEY2>, opts) assigns KEY2 on KEY1.
--- Modes:
---   'n' : normal mode
---   'i' : insert mode
---   'v' : visual mode
---   'x' : visual block mode
---   't' : terminal mode
---   'c' : command mode
-
 -- Leader key
-keymap('n', '<SPACE>', '<Nop>')
-vim.g.mapleader = ' '
+keymap('n', '<Space>', '<Nop>')
+vim.g.mapleader = " "
 
 -- Mode
 --   Exit from terminal mode with Exc Esc.
@@ -51,10 +41,8 @@ end)
 -- Search
 --   Highlight off
 keymap('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>')
---   Move cursor line to center after seach
-keymap('n', 'n', 'nzz')
-keymap('n', 'N', 'Nzz')
-keymap('n', '*', '*zz')
-keymap('n', '#', '#zz')
-
-
+-- Move cursor line to center after seach
+-- keymap('n', 'n', 'nzz')
+-- keymap('n', 'N', 'Nzz')
+-- keymap('n', '*', '*zz')
+-- keymap('n', '#', '#zz')
