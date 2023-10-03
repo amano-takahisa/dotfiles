@@ -3,7 +3,7 @@
     date = short
 	ignoreRevsFile = .git-blame-ignore-revs
 [color "blame"]
-    highlightRecent = 235, 6 month ago, 240, 3 month ago, 243, 1 month ago, 250, 1 week ago, 255, 1 day ago, red
+    highlightRecent = 160, 6 month ago, 166, 3 month ago, 172, 1 month ago, 178, 1 week ago, 184, 1 day ago, 190
 [color]
     ui = auto
 
@@ -71,8 +71,6 @@
 [init]
 	defaultBranch = main
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
