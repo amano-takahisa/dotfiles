@@ -275,6 +275,10 @@ pacman -S --noconfirm --needed \
 ####### pre-commit #######
 sudo -u "${USER}" pip install pre-commit
 
+####### backup #######
+pacman -S --noconfirm --needed \
+    snapper
+
 ####### memo #######
 pacman -S --noconfirm --needed \
     zk
