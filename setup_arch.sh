@@ -13,7 +13,7 @@
 #   Audio: Pipewire
 #   Network configuration: Use NetworkManager
 #   Timezone: Where you are
-# 
+#
 # Then, install and setup git, firefox, etc.
 #
 # ```
@@ -275,7 +275,9 @@ pacman -S --noconfirm --needed \
 ####### pre-commit #######
 sudo -u "${USER}" pip install pre-commit
 
-
+####### memo #######
+pacman -S --noconfirm --needed \
+    zk
 
 ####### Document viewer #######
 pacman -S --noconfirm --needed \
