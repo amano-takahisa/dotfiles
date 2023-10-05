@@ -162,6 +162,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     ripgrep
 
+####### bat #######
+pacman -S --noconfirm --needed \
+    bat
+
 ####### Localization #######
 # locale
 echo 'ja_JP.UTF-8 UTF-8' | tee --append /etc/locale.gen
