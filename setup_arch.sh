@@ -147,7 +147,17 @@ pacman -S --noconfirm --needed \
 # pacman -S --noconfirm --needed \
 #     pyenv
 
-# sudo -u "${USER}" pip install pylama autopep8
+
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/Documents/venvs/neovim
+# # not sure the following works
+# cd "${USER_HOME}"/Documents/venvs/neovim
+# sudo -u "${USER}" python -m venv venv
+# sudo -u "${USER}" source venv/bin/activate
+# sudo -u "${USER}" pip install pynvim
+# cd "${USER_HOME}"
+
+pacman -S --noconfirm --needed \
+    tk
 
 # conda environment
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
@@ -332,6 +342,13 @@ pacman -Syyu --noconfirm --needed \
 ####### imagemagick #######
 pacman -S --noconfirm --needed \
     imagemagick
+
+####### baloo #######
+# stop and disable
+sudo -u "${USER}" balooctl suspend
+sudo -u "${USER}" balooctl disable
+sudo -u "${USER}" balooctl purge
+
 
 ####### zsh #######
 pacman -S --noconfirm --needed \
