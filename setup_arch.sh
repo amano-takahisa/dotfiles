@@ -160,12 +160,11 @@ pacman -S --noconfirm --needed \
     tk
 
 # conda environment
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    miniconda3
-ln -sf /opt/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
-
-sudo -u "${USER}" /opt/miniconda3/bin/conda init zsh
-
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/miniconda3
+sudo -u "${USER}" wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O "${USER_HOME}"/miniconda3/miniconda.sh
+sudo -u "${USER}" bash "${USER_HOME}"/miniconda3/miniconda.sh -b -u -p "${USER_HOME}"/miniconda3
+sudo -u "${USER}" rm -rf "${USER_HOME}"/miniconda3/miniconda.sh
+sudo -u "${USER}" "${USER_HOME}"/miniconda3/bin/conda init zsh
 # Thonny for raspberry pi pico
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     thonny esptool python-ptyprocess python-build
