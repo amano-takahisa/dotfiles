@@ -35,9 +35,11 @@ USER_HOME=/home/"${USER}"
 REPOS_DIR="${USER_HOME}"/Documents/git
 DOTFILES_REPO="${REPOS_DIR}"/dotfiles
 
-PATH="${USER_HOME}/.local/bin:${USER_HOME}/bin:${PATH}"
 
 cd "${USER_HOME}"
+
+####### Environmental Variables ######
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/
 
 ####### gpg key #######
 sudo -u "${USER}" curl -sS https://github.com/web-flow.gpg | sudo -u "${USER}" gpg --import -
@@ -125,17 +127,20 @@ pacman -S --noconfirm --needed \
 ####### Localization #######
 # locale
 echo 'ja_JP.UTF-8 UTF-8' | tee --append /etc/locale.gen
-
+locale-gen
 # Fonts
 pacman -S --noconfirm --needed \
     otf-ipafont otf-ipaexfont  ttf-hack-nerd \
     ttf-mplus-nerd ttf-noto-nerd
 
 # IME
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    --repo mozc fcitx5-mozc-ut
 pacman -S --noconfirm --needed \
-    fcitx5-configtool
+    fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-mozc
+ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
+# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+#       fcitx5-mozc-with-jp-dict
+#     --repo mozc fcitx5-mozc-ut
+# and also mozc-ut is needed.
 
 ####### Python #######
 pacman -S --noconfirm --needed \
