@@ -124,6 +124,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     bat
 
+####### gedit #######
+pacman -S --noconfirm --needed \
+    gedit
+
 ####### Localization #######
 # locale
 echo 'ja_JP.UTF-8 UTF-8' | tee --append /etc/locale.gen
