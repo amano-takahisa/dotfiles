@@ -213,6 +213,11 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     spectacle
 
+####### Document tool #######
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    pandoc-bin
+
+
 ####### Node #######
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     nvm
@@ -229,6 +234,9 @@ pacman -S --noconfirm --needed \
 # disk management
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     qdirstat
+
+pacman -S --noconfirm --needed \
+    dosfstools
 
 ####### aws cli #######
 pacman -S --noconfirm --needed \
@@ -268,10 +276,10 @@ pacman -S --noconfirm --needed \
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     zotero
 # 
-# ####### Image viewer #######
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#     gwenview
-# 
+####### Image viewer #######
+pacman -S --noconfirm --needed \
+    gwenview
+
 ####### media #######
 pacman -S --noconfirm --needed \
     vlc
