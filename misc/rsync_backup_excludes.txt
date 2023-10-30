@@ -31,6 +31,7 @@
 /Documents/git
 /Zotero/translators
 /google_drive
+/miniconda3
 /paru
 /studio3t
 /tmp
