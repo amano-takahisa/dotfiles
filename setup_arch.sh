@@ -272,6 +272,12 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zk "${USER_HOME}"/.config/zk
 pacman -S --noconfirm --needed \
     okular
 
+####### Document OCR #######
+pacman -S --noconfirm --needed \
+    tesseract-data-eng tesseract-data-deu
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    ocrmypdf
+
 # ####### Document management #######
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     zotero
