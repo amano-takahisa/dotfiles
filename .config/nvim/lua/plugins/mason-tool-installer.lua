@@ -36,14 +36,15 @@ return {
             -- 'shfmt',
             -- 'staticcheck',
             -- 'vint',
-            'efm',
-            'lua-language-server',
-            'stylua',
-            'autopep8',
-            'pyright',
-            'tree-sitter-cli',
-            'pylama',
-            'flake8',
+            "efm",
+            "esbonio",
+            "lua-language-server",
+            "stylua",
+            "autopep8",
+            "pyright",
+            "tree-sitter-cli",
+            "pylama",
+            "flake8",
         },
 
         -- if set to true this will check each tool for updates. If updates
@@ -71,5 +72,5 @@ return {
         -- effect when running manually via ':MasonToolsInstall' etc....
         -- Default: nil
         debounce_hours = 5, -- at least 5 hours between attempts to install/update
-    }
+    },
 }

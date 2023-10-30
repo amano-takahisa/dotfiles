@@ -1,4 +1,5 @@
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle! float<CR>")
+vim.keymap.set("n", "<leader>an", "<cmd>AerialNavToggle<CR>")
 return {
     "stevearc/aerial.nvim",
     opts = {
@@ -24,13 +25,21 @@ return {
                 -- This is the config that will be passed to nvim_open_win.
                 -- Change values here to customize the layout
                 local padding = 1
-                conf.zindex= 25
+                conf.zindex = 25
                 conf.anchor = "NE"
                 conf.row = padding
                 conf.col = vim.api.nvim_win_get_width(source_winid) - padding
                 return conf
             end,
         },
+        nav = {
+            -- Jump to symbol in source window when the cursor moves
+            autojump = true,
+            -- Show a preview of the code in the right column, when there are no child symbols
+            preview = true,
+        },
+        -- When true, aerial will automatically close after jumping to a symbol
+        close_on_select = false,
     },
     -- Optional dependencies
     dependencies = {
