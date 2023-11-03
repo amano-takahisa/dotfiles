@@ -1,7 +1,9 @@
 [blame]
     coloring = highlightRecent
     date = short
-	ignoreRevsFile = .git-blame-ignore-revs
+    # ignoreRevsFile = .git-blame-ignore-revs
+    # Instead the above, run following
+    # git config blame.ignoreRevsFile .git-blame-ignore-revs
 [color "blame"]
     highlightRecent = 160, 6 month ago, 166, 3 month ago, 172, 1 month ago, 178, 1 week ago, 184, 1 day ago, 190
 [color]
