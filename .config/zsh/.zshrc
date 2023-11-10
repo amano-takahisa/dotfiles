@@ -135,3 +135,6 @@ unset __conda_setup
 # Zk
 # https://github.com/mickael-menu/zk-nvim#notebook-directory-discovery
 export ZK_NOTEBOOK_DIR="$HOME/Documents/git/zk_notebooks"
+
+# CURL error: error setting certificate verify locations: CAfile: /etc/pki/tls/certs/ca-bundle.crt CApath: none
+export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt

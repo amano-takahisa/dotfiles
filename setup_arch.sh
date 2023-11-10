@@ -152,7 +152,7 @@ pacman -S --noconfirm --needed \
 
 # pacman -S --noconfirm --needed \
 #     pyright
-# 
+#
 # pacman -S --noconfirm --needed \
 #     pyenv
 
@@ -246,6 +246,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     aws-cli-v2
 
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    mountpoint-s3-git
+
+
 ####### Bluetooth #######
 pacman -S --noconfirm --needed \
     bluez  bluez-utils
@@ -262,11 +266,11 @@ pacman -S --noconfirm --needed \
 
 # ####### pre-commit #######
 # sudo -u "${USER}" pip install pre-commit
-# 
+#
 # ####### backup #######
 # pacman -S --noconfirm --needed \
 #     snapper
-# 
+#
 ####### memo #######
 pacman -S --noconfirm --needed \
     zk
@@ -285,7 +289,7 @@ sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean Non
 # ####### Document management #######
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     zotero
-# 
+#
 ####### Image viewer #######
 pacman -S --noconfirm --needed \
     gwenview
@@ -304,7 +308,7 @@ pacman -S --noconfirm --needed \
 # # rclone mount gd:/ /home/takahisa/google_drive --daemon --vfs-cache-mode full
 # # to unmount, run
 # # fusermount -u /home/takahisa/google_drive
-# 
+#
 ####### Devices #######
 # Logicool mouse
 pacman -S --noconfirm --needed \
@@ -354,7 +358,7 @@ pacman -S --noconfirm --needed \
 #     netdata
 # systemctl start netdata
 # systemctl enable netdata
-# 
+#
 ####### wine #######
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
