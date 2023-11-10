@@ -1,3 +1,4 @@
+/.3T
 /.cache
 /.cargo
 /.conda
@@ -13,8 +14,10 @@
 /.config/rstudio/Cache
 /.config/rstudio/Code Cache
 /.ipython
+/.java
 /.jupyter
 /.local
+/.mongodb
 /.mozilla
 /.npm
 /.pki
@@ -30,6 +33,7 @@
 /Downloads
 /Documents/git
 /Zotero/translators
+/go
 /google_drive
 /miniconda3
 /paru
