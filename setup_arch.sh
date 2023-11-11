@@ -245,6 +245,8 @@ pacman -S --noconfirm --needed \
 ####### aws cli #######
 pacman -S --noconfirm --needed \
     aws-cli-v2
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    aws-session-manager-plugin
 
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     mountpoint-s3-git
