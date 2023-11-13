@@ -45,3 +45,4 @@ export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 # fzf
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
+. "$HOME/.cargo/env"
