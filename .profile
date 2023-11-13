@@ -46,3 +46,7 @@ export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 . "$HOME/.cargo/env"
+
+
+# AWS s3 access
+export AWS_REQUEST_PAYER=requester
