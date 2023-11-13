@@ -138,3 +138,7 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/git/zk_notebooks"
 
 # CURL error: error setting certificate verify locations: CAfile: /etc/pki/tls/certs/ca-bundle.crt CApath: none
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
+# AWS s3 access
+export AWS_REQUEST_PAYER=requester
+

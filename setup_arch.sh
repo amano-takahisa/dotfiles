@@ -38,9 +38,6 @@ DOTFILES_REPO="${REPOS_DIR}"/dotfiles
 
 cd "${USER_HOME}"
 
-####### Environmental Variables ######
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/
-
 ####### gpg key #######
 sudo -u "${USER}" curl -sS https://github.com/web-flow.gpg | sudo -u "${USER}" gpg --import -
 
