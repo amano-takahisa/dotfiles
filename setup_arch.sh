@@ -38,6 +38,9 @@ DOTFILES_REPO="${REPOS_DIR}"/dotfiles
 
 cd "${USER_HOME}"
 
+####### Environmental Variables ######
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/
+
 ####### gpg key #######
 sudo -u "${USER}" curl -sS https://github.com/web-flow.gpg | sudo -u "${USER}" gpg --import -
 
@@ -46,6 +49,7 @@ sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
 
 ####### bin #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
+export PATH="/home/takahisa/bin/:${PATH}"
 
 ####### Clone repositories #######
 sudo -u "${USER}" git clone "git@github.com:amano-takahisa/multigit.git" "${USER_HOME}"/Documents/git/multigit
@@ -53,8 +57,6 @@ sudo -u "${USER}" ln -sf "${REPOS_DIR}"/multigit/multigit.py "${USER_HOME}"/bin/
 cd ${USER_HOME}/Documents/git
 sudo -u "${USER}" mg clone -u amano-takahisa
 cd "${USER_HOME}"
-
-
 
 ##### package manager #######
 pacman -S --noconfirm --needed \
@@ -75,7 +77,6 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/
 ####### tmux #######
 pacman -S --noconfirm --needed \
     tmux
-# sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.tmux.conf "${USER_HOME}"/.tmux.conf
 
 ####### XDG #######
 pacman -S --noconfirm --needed \
@@ -191,8 +192,9 @@ sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean Non
 ####### GIS/RS #######
 # QGIS
 pacman -S --noconfirm --needed \
-    qgis python-yaml python-gdal python-psycopg2
-# sudo -u "${USER}" pip install Jinja2 Pygments owslib
+    qgis python-yaml python-gdal python-psycopg2 python-owslib python-pygments python-lxml
+sudo -u "${USER}" pip install Jinja2 --break-sys
+
 # GRASS GIS
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     grass
@@ -218,7 +220,6 @@ pacman -S --noconfirm --needed \
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     pandoc-bin
 
-
 ####### Node #######
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     nvm
@@ -230,7 +231,7 @@ pacman -S --noconfirm --needed \
 # npm install -g markdownlint-cli
 ####### tools #######
 pacman -S --noconfirm --needed \
-    jq wget rsync
+    jq wget rsync less
 
 # disk management
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
@@ -245,9 +246,12 @@ pacman -S --noconfirm --needed \
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     aws-session-manager-plugin
 
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    mountpoint-s3-git
-
+# # mountpoint-s3-git not installable.
+# # Need to run manually.
+# pacman -S --noconfirm --needed \
+#     cmake
+# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+#     mountpoint-s3-git
 
 ####### Bluetooth #######
 pacman -S --noconfirm --needed \
@@ -283,7 +287,7 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     tesseract-data-eng tesseract-data-deu
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    ocrmypdf
+    aur/ocrmypdf
 
 # ####### Document management #######
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
@@ -335,21 +339,21 @@ pacman -S --noconfirm --needed \
 # # cd ${USER_HOME}/Documents/git/czkawka
 # # sudo -u "${USER}" cargo install czkawka_gui
 # # cd "${USER_HOME}"
-
-pacman -S --noconfirm --needed \
-    partitionmanager
-
-####### Network #######
-pacman -S --noconfirm --needed \
-    lsof
-
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    realvnc-vnc-viewer
-
+# 
+# pacman -S --noconfirm --needed \
+#     partitionmanager
+# 
+# ####### Network #######
+# pacman -S --noconfirm --needed \
+#     lsof
+# 
+# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+#     realvnc-vnc-viewer
+# 
 ####### OBS #######
 pacman -S --noconfirm --needed \
     obs-studio v4l2loopback-dkms linux-headers
-# and follow step 2 of
+# # and follow step 2 of
 # https://wiki.archlinux.org/title/V4l2loopback
 
 # ####### system monitor #######
@@ -380,10 +384,12 @@ pacman -S --noconfirm --needed \
     zsh zsh-completions
 
 # ohmyzsh
-sudo -u "${USER}" ZSH="${USER_HOME}/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# need to install manually.
+# 
+# sudo -u "${USER}" ZSH="${USER_HOME}/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"/.zshenv
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/zsh
 rm -f "${USER_HOME}"/.zshrc
 
 # zsh theme
