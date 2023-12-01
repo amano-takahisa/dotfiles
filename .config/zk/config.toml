@@ -74,8 +74,8 @@ colon-tags = true
 [tool]
 
 # Default editor used to open notes.
-# editor = "nvim"
-editor = "gedit"
+editor = "nvim"
+# editor = "gedit"
 
 # Default shell used by aliases and commands.
 shell = "/usr/bin/zsh"
