@@ -28,7 +28,7 @@ template = "default.md"
 id-charset = "alphanum"
 
 # Length of the generated IDs.
-id-length = 4
+id-length = 6
 
 # Letter case for the random IDs.
 id-case = "lower"
@@ -41,24 +41,21 @@ author = "Takahisa"
 
 # GROUP OVERRIDES
 [group.daily]
-paths = ["daily"]
 
 [group.daily.note]
 filename = "{{format-date now}}"
 template = "daily.md"
 
 [group.task]
-paths = ["task"]
 
 [group.task.note]
 filename = "{{format-date now}}"
 template = "task.md"
 
 [group.review]
-paths = ["review"]
 
 [group.review.note]
-filename = "{{id}}-{{slug title}}"
+filename = "{{format-date now}}-{{id}}-{{slug title}}"
 template = "review.md"
 
 
