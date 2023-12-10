@@ -368,7 +368,7 @@ pacman -S --noconfirm --needed \
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syyu --noconfirm --needed \
-    wine
+    wine winetricks kdialog
 
 ####### imagemagick #######
 pacman -S --noconfirm --needed \
