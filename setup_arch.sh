@@ -148,6 +148,8 @@ ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
 pacman -S --noconfirm --needed \
     python-pip
 
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    python38
 # pacman -S --noconfirm --needed \
 #     pyright
 #
