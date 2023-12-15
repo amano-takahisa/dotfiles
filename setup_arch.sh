@@ -174,6 +174,9 @@ sudo -u "${USER}" wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Lin
 sudo -u "${USER}" bash "${USER_HOME}"/miniconda3/miniconda.sh -b -u -p "${USER_HOME}"/miniconda3
 sudo -u "${USER}" rm -rf "${USER_HOME}"/miniconda3/miniconda.sh
 sudo -u "${USER}" "${USER_HOME}"/miniconda3/bin/conda init zsh
+# and run following manually
+# conda config --set auto_activate_base false
+
 # Thonny for raspberry pi pico
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     thonny esptool python-ptyprocess python-build
