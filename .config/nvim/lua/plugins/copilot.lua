@@ -1,4 +1,7 @@
-vim.g.copilot_filetypes = {markdown = true}
+vim.g.copilot_filetypes = {
+    markdown = true,
+    gitcommit = true,
+}
 
 return {
     {
