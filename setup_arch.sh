@@ -78,6 +78,10 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/
 pacman -S --noconfirm --needed \
     tmux
 
+####### wezterm #######
+pacman -S --noconfirm --needed \
+    wezterm libsixel
+
 ####### XDG #######
 pacman -S --noconfirm --needed \
     xdg-user-dirs
