@@ -1,3 +1,4 @@
+if true then return {} end
 return {
     "kkoomen/vim-doge",
     event = "BufRead",
