@@ -1,0 +1,12 @@
+[Desktop Entry]
+# locate this file in /usr/share/applications
+Version=1.0
+Type=Application
+Name=PDF-XChange Editor
+GenericName=PDF Viewer
+Comment=View and Edit PDF files with PDF-XChange Editor with wine
+Icon=/home/takahisa/Documents/program/pdfxchange/icon.png
+Categories=Office;Graphics;Viewer;
+Exec=/home/takahisa/bin/pdfxchange %F
+Terminal=false
+MimeType=application/pdf;application/x-gzpdf;application/x-bzpdf;application/x-wwf;
