@@ -331,6 +331,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     kdegraphics-thumbnailers
 
+# kdeconnect
+pacman -S --noconfirm --needed \
+    kdeconnect sshfs xdg-desktop-portal
+
 # ####### speech #######
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #      speech-dispatcher festival espeak-ng
