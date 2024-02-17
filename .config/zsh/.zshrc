@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#!/usr/bin/zsh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -16,8 +16,6 @@ export ZSH="$HOME/Documents/git/oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="spaceship"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -81,10 +79,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fzf)
-source $ZDOTDIR/plugins/fzf.zsh
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -114,31 +110,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/Documents/git/dotfiles/.config/zsh/.p10k.zsh.
-[[ ! -f ~/Documents/git/dotfiles/.config/zsh/.p10k.zsh ]] || source ~/Documents/git/dotfiles/.config/zsh/.p10k.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/takahisa/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/takahisa/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/takahisa/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/takahisa/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # Zk
 # https://github.com/mickael-menu/zk-nvim#notebook-directory-discovery
 export ZK_NOTEBOOK_DIR="$HOME/Documents/git/zk_notebooks"
-
-# CURL error: error setting certificate verify locations: CAfile: /etc/pki/tls/certs/ca-bundle.crt CApath: none
-export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-
-# AWS s3 access
-export AWS_REQUEST_PAYER=requester
-
