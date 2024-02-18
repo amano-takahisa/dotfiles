@@ -11,13 +11,13 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font 'HackGen35 Console NF'
+config.font = wezterm.font 'HackGen Console NF'
 -- config.font = wezterm.font 'JetBrains Mono NL'
 -- 12324567890,.+-*/=;:<>[]{}()!@#$%^&*~`"'?_|
 -- abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 config.font_size = 8.0
 config.freetype_load_target = "HorizontalLcd"
-config.color_scheme = 'Glacier'
+config.color_scheme = 'MaterialOcean'
 config.window_frame = {
   -- The font used in the tab bar.
   -- Roboto Bold is the default; this font is bundled
