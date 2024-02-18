@@ -184,6 +184,10 @@ pacman -S --noconfirm --needed \
     qgis python-yaml python-gdal python-psycopg2 python-owslib python-pygments python-lxml
 sudo -u "${USER}" pip install Jinja2 --break-sys
 
+# Google Earth
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    google-earth-pro
+
 # GRASS GIS
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     grass
