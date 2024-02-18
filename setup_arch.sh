@@ -8,9 +8,9 @@
 #   User account: with sodo
 #   Profile:
 #       Desktop KDE
-#       Graphic driver: All open-source
+#       Graphic driver: nvidia (proprietary)
 #       greeter: sddm
-#   Audio: Pipewire
+#   Audio: pulseaudio
 #   Network configuration: Use NetworkManager
 #   Timezone: Where you are
 #
@@ -20,13 +20,17 @@
 # sudo pacman -Syyu --noconfirm --needed neovim python-neovim xclip wl-clipboard firefox openssh git github-cli
 # gh auth login -p ssh -h github.com -w
 # ```
+#
 # Then,
-# ```
+#
+# ```bash
 # mkdir -p ~/Documents/git \
 #     && git clone "git@github.com:amano-takahisa/dotfiles.git" ~/Documents/git/dotfiles \
 #     && ln -sf ~/Documents/git/dotfiles/.config/git ~/.config/git
 # ```
 # and run followings with sudo
+#
+# TODO: Looking for a way to call yay command non-interactively.
 
 set -euxo pipefail
 
@@ -37,9 +41,6 @@ DOTFILES_REPO="${REPOS_DIR}"/dotfiles
 
 
 cd "${USER_HOME}"
-
-####### Environmental Variables ######
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.profile "${USER_HOME}"/
 
 ####### gpg key #######
 sudo -u "${USER}" curl -sS https://github.com/web-flow.gpg | sudo -u "${USER}" gpg --import -
@@ -126,10 +127,6 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     bat
 
-####### gedit #######
-pacman -S --noconfirm --needed \
-    gedit
-
 ####### Localization #######
 # locale
 echo 'ja_JP.UTF-8 UTF-8' | tee --append /etc/locale.gen
@@ -139,65 +136,48 @@ pacman -S --noconfirm --needed \
     otf-ipafont otf-ipaexfont  ttf-hack-nerd \
     ttf-mplus-nerd ttf-noto-nerd
 
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    ttf-hackgen
+
 # IME
 pacman -S --noconfirm --needed \
     fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-mozc
 ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#       fcitx5-mozc-with-jp-dict
-#     --repo mozc fcitx5-mozc-ut
-# and also mozc-ut is needed.
 
 ####### Python #######
 pacman -S --noconfirm --needed \
     python-pip
 
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    python38 python310
-# pacman -S --noconfirm --needed \
-#     pyright
-#
-# pacman -S --noconfirm --needed \
-#     pyenv
 
-
-sudo -u "${USER}" mkdir -p "${USER_HOME}"/Documents/venvs/neovim
-# # not sure the following works
-# cd "${USER_HOME}"/Documents/venvs/neovim
-# sudo -u "${USER}" python -m venv venv
-# sudo -u "${USER}" source venv/bin/activate
-# sudo -u "${USER}" pip install pynvim
-# cd "${USER_HOME}"
+# neovim python support
+# Do manually followings as a user
+# ```
+# mkdir -p ~/Documents/venvs/neovim && cd $_
+# python -m venv venv
+# source venv/bin/activate
+# pip install pynvim
+# ```
 
 pacman -S --noconfirm --needed \
     tk
 
-# conda environment
-sudo -u "${USER}" mkdir -p "${USER_HOME}"/miniconda3
-sudo -u "${USER}" wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O "${USER_HOME}"/miniconda3/miniconda.sh
-sudo -u "${USER}" bash "${USER_HOME}"/miniconda3/miniconda.sh -b -u -p "${USER_HOME}"/miniconda3
-sudo -u "${USER}" rm -rf "${USER_HOME}"/miniconda3/miniconda.sh
-sudo -u "${USER}" "${USER_HOME}"/miniconda3/bin/conda init zsh
-sudo -u "${USER}" mkdir -p "${USER_HOME}"/miniconda3
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/conda "${USER_HOME}"/.config/conda
-
-# Thonny for raspberry pi pico
+# # Thonny for raspberry pi pico
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     thonny esptool python-ptyprocess python-build
 # # add to uucp group to communicate pico
 # usermod -a -G uucp "${USER}"
-
-####### R #######
-pacman -S --noconfirm --needed \
-    r
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    rstudio-desktop-bin r-tinytex
-
+# 
+# ####### R #######
+# pacman -S --noconfirm --needed \
+#     r
+# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+#     rstudio-desktop-bin r-tinytex
+# 
 # ####### Rust #######
 # # Need to find a way to run this non-interactive
 # sudo -u "${USER}" curl --proto '=https' --tlsv1.2 -sSf \
 #     https://sh.rustup.rs | sh
-
+# 
 ####### GIS/RS #######
 # QGIS
 pacman -S --noconfirm --needed \
@@ -238,6 +218,7 @@ pacman -S --noconfirm --needed \
 ####### node tools #######
 # sudo -u "${USER}" npm install markdownlint --save-dev
 # npm install -g markdownlint-cli
+#
 ####### tools #######
 pacman -S --noconfirm --needed \
     jq wget rsync less
@@ -249,40 +230,12 @@ sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean Non
 pacman -S --noconfirm --needed \
     dosfstools
 
-####### aws cli #######
-pacman -S --noconfirm --needed \
-    aws-cli-v2
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    aws-session-manager-plugin
-
-# # mountpoint-s3-git not installable.
-# # Need to run manually.
-# pacman -S --noconfirm --needed \
-#     cmake
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#     mountpoint-s3-git
-
 ####### Bluetooth #######
 pacman -S --noconfirm --needed \
     bluez  bluez-utils
 systemctl start bluetooth
 systemctl enable bluetooth
 
-####### sounds #######
-pacman -S --noconfirm --needed \
-    alsa-utils
-
-####### system monitor #######
-pacman -S --noconfirm --needed \
-    ksysguard
-
-# ####### pre-commit #######
-# sudo -u "${USER}" pip install pre-commit
-#
-# ####### backup #######
-# pacman -S --noconfirm --needed \
-#     snapper
-#
 ####### memo #######
 pacman -S --noconfirm --needed \
     zk
@@ -292,35 +245,10 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zk "${USER_HOME}"/.config/zk
 pacman -S --noconfirm --needed \
     okular
 
-####### Document OCR #######
-pacman -S --noconfirm --needed \
-    tesseract-data-eng tesseract-data-deu
-sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-    aur/ocrmypdf
-
-# ####### Document management #######
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#     zotero
-#
-####### Image viewer #######
-pacman -S --noconfirm --needed \
-    gwenview
-
 ####### media #######
 pacman -S --noconfirm --needed \
     vlc
 
-# ####### cloud services #######
-# # rclone
-# pacman -S --noconfirm --needed \
-#     rclone fuse2
-# # make dir for mount
-# sudo -u "${USER}" mkdir "${USER_HOME}"/google_drive
-# # to mount the drive
-# # rclone mount gd:/ /home/takahisa/google_drive --daemon --vfs-cache-mode full
-# # to unmount, run
-# # fusermount -u /home/takahisa/google_drive
-#
 ####### Devices #######
 # Logicool mouse
 pacman -S --noconfirm --needed \
@@ -334,12 +262,6 @@ pacman -S --noconfirm --needed \
 # kdeconnect
 pacman -S --noconfirm --needed \
     kdeconnect sshfs xdg-desktop-portal
-
-# ####### speech #######
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#      speech-dispatcher festival espeak-ng
-#
-# sudo -u "${USER}" pip install TTS
 
 # ####### Disk management #######
 # # czkawka
@@ -355,26 +277,23 @@ pacman -S --noconfirm --needed \
 # 
 # pacman -S --noconfirm --needed \
 #     partitionmanager
-# 
-# ####### Network #######
+
+####### Network #######
+# # if networkmanager is not set in archinstall
+# run manually as a user
+# ```
 # pacman -S --noconfirm --needed \
-#     lsof
-# 
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#     realvnc-vnc-viewer
-# 
+#     networkmanager nm-connection-editor
+# systemctl start NetworkManager.service
+# systemctl enable NetworkManager.service
+# ```
+
 ####### OBS #######
 pacman -S --noconfirm --needed \
     obs-studio v4l2loopback-dkms linux-headers
-# # and follow step 2 of
+# # and follow the instruction in the following page to be able to capture screen.
 # https://wiki.archlinux.org/title/V4l2loopback
 
-# ####### system monitor #######
-# pacman -S --noconfirm --needed \
-#     netdata
-# systemctl start netdata
-# systemctl enable netdata
-#
 ####### wine #######
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
@@ -391,23 +310,34 @@ sudo -u "${USER}" balooctl suspend
 sudo -u "${USER}" balooctl disable
 sudo -u "${USER}" balooctl purge
 
-
 ####### zsh #######
 pacman -S --noconfirm --needed \
     zsh zsh-completions
+# # then, run following as a user manually to switch default shell to zsh.
+# ```
+# chsh -s $(which zsh)
+# ```
 
 # ohmyzsh
 # need to install manually.
-# 
-# sudo -u "${USER}" ZSH="${USER_HOME}/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# ```
+# ZSH="/home/takahisa/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# ```
 
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"/.zshenv
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/zsh
 rm -f "${USER_HOME}"/.zshrc
 
 # zsh theme
-sudo -u "${USER}" git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${USER_HOME}/Documents/git/oh-my-zsh/custom/themes/powerlevel10k
-
-# zsh custom
-sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/misc/omz_custom/* \
-    "${USER_HOME}"/Documents/git/oh-my-zsh/custom/
+# ```
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
+# ```
+# # fzf for zsh
+# ```
+# git clone --depth=1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM}/plugins/fzf-zsh-plugin
+# ```
+# # zsh custom
+# ```
+# ln -sf "${DOTFILES_REPO}"/misc/omz_custom/* 
+#     "${USER_HOME}"/Documents/git/oh-my-zsh/custom/
+# ```
