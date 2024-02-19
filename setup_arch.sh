@@ -75,10 +75,6 @@ sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean Non
 ####### neovim #######
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
-####### tmux #######
-pacman -S --noconfirm --needed \
-    tmux
-
 ####### wezterm #######
 pacman -S --noconfirm --needed \
     wezterm libsixel
