@@ -1,7 +1,5 @@
 # fcitx
-# https://fcitx-im.org/wiki/Setup_Fcitx_5#Environment_variables
+# https://fcitx-im.org/wiki/Special:MyLanguage/Using_Fcitx_5_on_Wayland#KDE_Plasma
 # Locate this file in /etc/profile.d
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
