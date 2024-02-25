@@ -196,6 +196,12 @@ sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean Non
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     slack-desktop
 
+
+####### thinderbird #######
+pacman -S --noconfirm --needed \
+    thunderbird
+
+
 ####### Office #######
 pacman -S --noconfirm --needed \
     libreoffice-still hunspell hunspell-en_us
@@ -222,6 +228,10 @@ pacman -S --noconfirm --needed \
 ####### tools #######
 pacman -S --noconfirm --needed \
     jq wget rsync less
+
+# torrent
+pacman -S --noconfirm --needed \
+    qbittorrent
 
 # disk management
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
