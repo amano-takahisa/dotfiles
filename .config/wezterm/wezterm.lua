@@ -15,7 +15,7 @@ config.font = wezterm.font 'HackGen Console NF'
 -- config.font = wezterm.font 'JetBrains Mono NL'
 -- 12324567890,.+-*/=;:<>[]{}()!@#$%^&*~`"'?_|
 -- abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-config.font_size = 8.0
+config.font_size = 9.0
 config.freetype_load_target = "HorizontalLcd"
 config.color_scheme = 'MaterialOcean'
 config.window_frame = {
