@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment[en_US]=code editor for circuit python
+Comment=code editor for circuit python
+Exec=/home/takahisa/Documents/program/mu/Mu_Editor-1.2.0-x86_64.AppImage
+GenericName[en_US]=code editor
+GenericName=code editor
+MimeType=
+Name[en_US]=Mu code editor
+Name=Mu code editor
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=

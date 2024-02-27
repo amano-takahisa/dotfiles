@@ -48,6 +48,9 @@ sudo -u "${USER}" curl -sS https://github.com/web-flow.gpg | sudo -u "${USER}" g
 ####### dotfiles #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/
 
+####### ssh config #######
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/secrets/.ssh/config "${USER_HOME}"/.ssh/config
+
 ####### bin #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
 export PATH="/home/takahisa/bin/:${PATH}"
@@ -123,6 +126,17 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     bat
 
+####### FUSE #######
+# fuse is required to run appimage
+pacman -S --noconfirm --needed \
+    fuse2 fuse3
+
+####### libxcrypt-compat #######
+# libcrypt.so.1 is required to run appimage
+# libxcrypt-compat provides libcrypt.so.1
+pacman -S --noconfirm --needed \
+    libxcrypt-compat
+
 ####### Localization #######
 # locale
 echo 'ja_JP.UTF-8 UTF-8' | tee --append /etc/locale.gen
@@ -162,6 +176,10 @@ pacman -S --noconfirm --needed \
 #     thonny esptool python-ptyprocess python-build
 # # add to uucp group to communicate pico
 # usermod -a -G uucp "${USER}"
+#
+# # Mu for circuit python
+# # download appimage from the following page
+# # https://codewith.mu/en/download
 # 
 # ####### R #######
 # pacman -S --noconfirm --needed \
