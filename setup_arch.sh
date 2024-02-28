@@ -122,6 +122,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     ripgrep
 
+####### ripgrep-all #######
+pacman -S --noconfirm --needed \
+    ripgrep-all
+
 ####### bat #######
 pacman -S --noconfirm --needed \
     bat
@@ -144,7 +148,7 @@ locale-gen
 # Fonts
 pacman -S --noconfirm --needed \
     otf-ipafont otf-ipaexfont  ttf-hack-nerd \
-    ttf-mplus-nerd ttf-noto-nerd
+    ttf-mplus-nerd ttf-noto-nerd noto-fonts-emoji
 
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     ttf-hackgen
