@@ -43,7 +43,7 @@ author = "Takahisa"
 [group.daily]
 
 [group.daily.note]
-filename = "{{format-date now}}"
+filename = '{{format-date now "year"}}/{{format-date now "%j"}}'
 template = "daily.md"
 
 [group.task]
