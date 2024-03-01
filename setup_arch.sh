@@ -251,6 +251,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     jq wget rsync less
 
+# draw graph
+pacman -S --noconfirm --needed \
+    graphviz
+
 # torrent
 pacman -S --noconfirm --needed \
     qbittorrent
