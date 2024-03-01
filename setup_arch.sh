@@ -126,6 +126,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     ripgrep-all
 
+####### Gwenview #######
+pacman -S --noconfirm --needed \
+    gwenview
+
 ####### bat #######
 pacman -S --noconfirm --needed \
     bat
