@@ -222,6 +222,9 @@ sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean Non
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     slack-desktop
 
+####### VS Code #######
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    visual-studio-code-bin
 
 ####### thinderbird #######
 pacman -S --noconfirm --needed \
