@@ -93,6 +93,10 @@ ln -sf "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh
 pacman -S --noconfirm --needed \
     fzf
 
+####### nvidia #######
+pacman -S --noconfirm --needed \
+    nvidia cuda
+
 ####### zip #######
 pacman -S --noconfirm --needed \
     zip unzip
@@ -336,6 +340,14 @@ pacman -S --noconfirm --needed \
     obs-studio v4l2loopback-dkms linux-headers
 # # and follow the instruction in the following page to be able to capture screen.
 # https://wiki.archlinux.org/title/V4l2loopback
+
+####### openshot #######
+pacman -S --noconfirm --needed \
+    openshot
+
+####### inkscape #######
+pacman -S --noconfirm --needed \
+    inkscape
 
 ####### wine #######
 echo '[multilib]' >> /etc/pacman.conf
