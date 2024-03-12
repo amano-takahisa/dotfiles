@@ -193,11 +193,11 @@ pacman -S --noconfirm --needed \
 # # download appimage from the following page
 # # https://codewith.mu/en/download
 # 
-# ####### R #######
-# pacman -S --noconfirm --needed \
-#     r
-# sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
-#     rstudio-desktop-bin r-tinytex
+####### R #######
+pacman -S --noconfirm --needed \
+    r
+sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
+    rstudio-desktop-bin r-tinytex
 # 
 # ####### Rust #######
 # # Need to find a way to run this non-interactive
