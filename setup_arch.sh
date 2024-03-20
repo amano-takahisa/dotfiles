@@ -210,6 +210,18 @@ pacman -S --noconfirm --needed \
     qgis python-yaml python-gdal python-psycopg2 python-owslib python-pygments python-lxml
 sudo -u "${USER}" pip install Jinja2 --break-sys
 
+# Orfeo Toolbox
+# AUR orfeo-toolbox is not installable.
+# Following official instruction to install.
+# https://www.orfeo-toolbox.org/CookBook/First_Steps.html
+# When use orfeo-toolbox, need to activate the otbenv.profile
+# source ${HOME}/Documents/program/otb/otbenv.profile
+sudo -u "${USER}" mkdir -p ${USER_HOME}/Documents/program/otb
+sudo -u "${USER}" curl https://www.orfeo-toolbox.org/packages/archives/OTB/OTB-9.0.0-Linux.tar.gz \
+    -o ${USER_HOME}/Documents/program/otb/OTB-9.0.0-Linux.tar.gz
+sudo -u "${USER}" tar xf ${USER_HOME}/Documents/program/otb/OTB-9.0.0-Linux.tar.gz \
+    --one-top-level=${USER_HOME}/Documents/program/otb
+
 # Google Earth
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
     google-earth-pro
