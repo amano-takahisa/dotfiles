@@ -221,6 +221,18 @@ sudo -u "${USER}" curl https://www.orfeo-toolbox.org/packages/archives/OTB/OTB-9
     -o ${USER_HOME}/Documents/program/otb/OTB-9.0.0-Linux.tar.gz
 sudo -u "${USER}" tar xf ${USER_HOME}/Documents/program/otb/OTB-9.0.0-Linux.tar.gz \
     --one-top-level=${USER_HOME}/Documents/program/otb
+# To use python bindigs, need to re-buid otb in the python virtual environment.
+# https://www.orfeo-toolbox.org/CookBook-develop/Installation.html#recompiling-python-bindings
+# ```bash
+# source .venv/bin/activate
+# cd ${HOME}/Documents/program/otb/
+# source otbenv.profile
+# sh recompile_bindings.sh
+# ```
+# then, orfeo-toolbox can be used in the python virtual environment.
+# ```python
+# from otbApplication import otb
+# ```
 
 # Google Earth
 sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
