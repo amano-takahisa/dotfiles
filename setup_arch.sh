@@ -168,7 +168,14 @@ ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
 
 ####### Python #######
 pacman -S --noconfirm --needed \
-    python-pip
+    python-pip rye
+# to finish setup rye, run `rye`
+# select:
+# - uv
+# - Python managed by Rye
+# - cpython@3.12 (default)
+# and run
+# rye install ruff
 
 
 # neovim python support
@@ -407,10 +414,12 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.zshenv "${USER_HOME}"/.zshenv
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh "${USER_HOME}"/.config/zsh
 rm -f "${USER_HOME}"/.zshrc
 
-# zsh theme
-# ```
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
-# ```
+# plugins
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/misc/omz_custom/alias.zsh "${USER_HOME}"/Documents/git/oh-my-zsh/custom/alias.zsh
+# rye completion
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/Documents/git/oh-my-zsh/custom/plugins/rye/
+sudo -u "${USER}" rye self completion -s zsh > "${USER_HOME}"/Documents/git/oh-my-zsh/custom/plugins/rye/_rye
+
 # # fzf for zsh
 # ```
 # git clone --depth=1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM}/plugins/fzf-zsh-plugin

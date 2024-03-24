@@ -113,3 +113,6 @@ fi
 # Zk
 # https://github.com/mickael-menu/zk-nvim#notebook-directory-discovery
 export ZK_NOTEBOOK_DIR="$HOME/Documents/git/zk_notebooks"
+
+# Rye
+[[ ! -f $HOME/.rye/env ]] || source $HOME/.rye/env
