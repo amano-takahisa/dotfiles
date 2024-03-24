@@ -346,8 +346,8 @@ pacman -S --noconfirm --needed \
 # # sudo -u "${USER}" cargo install czkawka_gui
 # # cd "${USER_HOME}"
 # 
-# pacman -S --noconfirm --needed \
-#     partitionmanager
+pacman -S --noconfirm --needed \
+    partitionmanager
 
 ####### Network #######
 # # if networkmanager is not set in archinstall
