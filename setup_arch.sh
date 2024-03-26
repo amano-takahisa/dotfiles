@@ -122,6 +122,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     mandoc
 
+####### lazygit #######
+pacman -S --noconfirm --needed \
+    lazygit
+
 ####### ripgrep #######
 pacman -S --noconfirm --needed \
     ripgrep
