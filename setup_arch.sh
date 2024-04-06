@@ -172,7 +172,7 @@ ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
 
 ####### Python #######
 pacman -S --noconfirm --needed \
-    python-pip rye
+    python-pip rye python-uv
 # to finish setup rye, run `rye`
 # select:
 # - uv
