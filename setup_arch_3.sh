@@ -15,6 +15,8 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     slack-desktop \
     ttf-hackgen \
     rstudio-desktop-bin r-tinytex \
+    texlive-bin \
+    texlive-doc \
     google-earth-pro \
     grass \
     google-chrome \
@@ -241,6 +243,10 @@ pacman -S --noconfirm --needed \
 # disk management
 pacman -S --noconfirm --needed \
     dosfstools
+
+####### circuite #######
+pacman -S --noconfirm --needed \
+    kicad kicad-library kicad-library-3d
 
 ####### Bluetooth #######
 pacman -S --noconfirm --needed \
