@@ -176,6 +176,10 @@ sudo -u "${USER}" \
 pacman -S --noconfirm --needed \
     r
 
+####### Fortran #######
+pacman -S --noconfirm --needed \
+    gcc-fortran
+
 # ####### Rust #######
 # # Need to find a way to run this non-interactive
 # sudo -u "${USER}" curl --proto '=https' --tlsv1.2 -sSf \
