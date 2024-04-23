@@ -15,14 +15,11 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     slack-desktop \
     ttf-hackgen \
     rstudio-desktop-bin r-tinytex \
-    texlive-bin \
-    texlive-doc \
     google-earth-pro \
     grass \
     google-chrome \
     slack-desktop \
     visual-studio-code-bin \
-    pandoc-bin \
     nvm \
     qdirstat
 
