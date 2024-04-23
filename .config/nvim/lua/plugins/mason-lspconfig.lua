@@ -35,12 +35,12 @@ return {
                 -- local eslint = require('efmls-configs.linters.eslint')
                 -- local prettier = require('efmls-configs.formatters.prettier')
                 local stylua = require("efmls-configs.formatters.stylua")
-                local flake8 = require("efmls-configs.linters.flake8")
-                local autopep8 = require("efmls-configs.formatters.autopep8")
+                local ruff = require('efmls-configs.formatters.ruff')
+                local isort = require('efmls-configs.formatters.isort')
                 local languages = {
                     -- typescript = { eslint, prettier },
                     lua = { stylua },
-                    python = { autopep8, flake8 },
+                    python = {ruff, isort},
                 }
                 -- Or use the defaults provided by this plugin
                 -- check doc/SUPPORTED_LIST.md for the supported languages

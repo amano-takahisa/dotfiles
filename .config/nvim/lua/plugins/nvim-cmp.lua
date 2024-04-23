@@ -87,6 +87,9 @@ return {
         require("lspconfig")["pyright"].setup({
             capabilities = capabilities,
         })
+        require("lspconfig")["ruff"].setup({
+            capabilities = capabilities,
+        })
         -- ...
     end,
 }
