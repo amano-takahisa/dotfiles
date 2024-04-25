@@ -252,7 +252,7 @@ pacman -S --noconfirm --needed \
 
 ####### Bluetooth #######
 pacman -S --noconfirm --needed \
-    bluez  bluez-utils
+    bluez  bluez-utils bluez-obex
 systemctl start bluetooth
 systemctl enable bluetooth
 
@@ -296,6 +296,10 @@ pacman -S --noconfirm --needed \
 ####### openshot #######
 pacman -S --noconfirm --needed \
     openshot
+
+####### GIMP #######
+pacman -S --noconfirm --needed \
+    gimp
 
 ####### inkscape #######
 pacman -S --noconfirm --needed \
