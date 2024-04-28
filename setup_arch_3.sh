@@ -155,10 +155,11 @@ pacman -S --noconfirm --needed \
 # usermod -a -G uucp "${USER}"
 
 ####### mu #######
+
 sudo -u "${USER}" \
     ln -sf "${DOTFILES_REPO}"/misc/mu.desktop "${USER_HOME}"/.local/share/applications/mu.desktop
 mu_version=1.2.0
-sudo -u "${USER}" mkdir -p "${USER_HOME}"/documents/program/mu
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/Documents/program/mu
 curl -L https://github.com/mu-editor/mu/releases/download/v"${mu_version}"/MuEditor-Linux-"${mu_version}"-x86_64.tar \
     -o "${USER_HOME}"/Documents/program/mu/MuEditor-Linux-"${mu_version}"-x86_64.tar
 sudo -u "${USER}" tar xf "${USER_HOME}"/Documents/program/mu/MuEditor-Linux-"${mu_version}"-x86_64.tar \
@@ -166,7 +167,20 @@ sudo -u "${USER}" tar xf "${USER_HOME}"/Documents/program/mu/MuEditor-Linux-"${m
 sudo -u "${USER}" \
     mv "${USER_HOME}"/Documents/program/mu/Mu_Editor-"${mu_version}"-x86_64.AppImage \
     "${USER_HOME}"/Documents/program/mu/Mu_Editor.AppImage
+
+usermod -a -G uucp uucp "${USER}"
  
+
+####### Network #######
+# avahi is required to resolve .local domain, such as pi.local
+pacman -S --noconfirm --needed \
+    avahi nss-mdns
+
+systemctl enable avahi-daemon.service
+systemctl start avahi-daemon.service
+# and change hosts line in /etc/nsswitch.conf
+# hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
+
 ####### R #######
 # Following packages are installed from AUR.
 # - rstudio-desktop-bin
