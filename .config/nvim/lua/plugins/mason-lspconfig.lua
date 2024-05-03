@@ -35,12 +35,15 @@ return {
                 -- local eslint = require('efmls-configs.linters.eslint')
                 -- local prettier = require('efmls-configs.formatters.prettier')
                 local stylua = require("efmls-configs.formatters.stylua")
-                local ruff = require('efmls-configs.formatters.ruff')
-                local isort = require('efmls-configs.formatters.isort')
+                local ruff = require("efmls-configs.formatters.ruff")
+                local isort = require("efmls-configs.formatters.isort")
+                local jq_linter = require("efmls-configs.linters.jq")
+                local jq_formatter = require("efmls-configs.formatters.jq")
                 local languages = {
                     -- typescript = { eslint, prettier },
                     lua = { stylua },
-                    python = {ruff, isort},
+                    python = { ruff, isort },
+                    json = { jq_linter, jq_formatter },
                 }
                 -- Or use the defaults provided by this plugin
                 -- check doc/SUPPORTED_LIST.md for the supported languages
