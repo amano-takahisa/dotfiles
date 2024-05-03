@@ -155,7 +155,6 @@ pacman -S --noconfirm --needed \
 # usermod -a -G uucp "${USER}"
 
 ####### mu #######
-
 sudo -u "${USER}" \
     ln -sf "${DOTFILES_REPO}"/misc/mu.desktop "${USER_HOME}"/.local/share/applications/mu.desktop
 mu_version=1.2.0
@@ -169,7 +168,10 @@ sudo -u "${USER}" \
     "${USER_HOME}"/Documents/program/mu/Mu_Editor.AppImage
 
 usermod -a -G uucp uucp "${USER}"
- 
+
+####### jupyter #######
+ln -sf "${DOTFILES_REPO}"/.jupyter/lab/user-settings "${USER_HOME}"/.jupyter/lab/user-settings
+ln -sf "${DOTFILES_REPO}"/.jupyter/jupyter_lab_config.py "${USER_HOME}"/.jupyter/jupyter_lab_config.py
 
 ####### Network #######
 # avahi is required to resolve .local domain, such as pi.local
