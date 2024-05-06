@@ -92,8 +92,12 @@ pacman -S --noconfirm --needed \
 ####### lazygit #######
 pacman -S --noconfirm --needed \
     lazygit
-
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/lazygit
+
+####### pandoc #######
+pacman -S --noconfirm --needed \
+    pandoc-cli
+
 ####### ripgrep #######
 pacman -S --noconfirm --needed \
     ripgrep
