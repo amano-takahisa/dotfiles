@@ -14,7 +14,6 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     git-secrets \
     slack-desktop \
     ttf-hackgen \
-    rstudio-desktop-bin r-tinytex \
     google-earth-pro \
     grass \
     google-chrome \
