@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copy following files to the specified directories.
+# - ~/Documents/secrets/
 # Run this with sudo.
 # ```
 # sudo ./setup_arch_1.sh
@@ -10,8 +12,6 @@
 # ```
 # This will open firefox.
 # Login to github.com
-# Then, copy files from my local backups
-# - ~/Documents/secrets/
 
 
 set -euxo pipefail
@@ -24,5 +24,8 @@ DOTFILES_REPO="${REPOS_DIR}"/dotfiles
 cd "${USER_HOME}"
 
 ####### required apps for gh cli login #######
-
 pacman -Syyu --noconfirm --needed firefox openssh git github-cli
+
+####### Set ssh secrets #######
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/secrets/.ssh/id_ed25519 "${USER_HOME}"/.ssh/id_ed25519
+sudo -u "${USER}" ln -sf "${USER_HOME}"/Documents/secrets/.ssh/id_ed25519.pub "${USER_HOME}"/.ssh/id_ed25519.pub
