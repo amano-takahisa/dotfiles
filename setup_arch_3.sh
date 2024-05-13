@@ -95,7 +95,7 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/l
 
 ####### pandoc #######
 pacman -S --noconfirm --needed \
-    pandoc-cli
+    pandoc
 
 ####### ripgrep #######
 pacman -S --noconfirm --needed \
@@ -187,11 +187,13 @@ systemctl start avahi-daemon.service
 # hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
 
 ####### R #######
-# Following packages are installed from AUR.
-# - rstudio-desktop-bin
-# - r-tinytex
+# Use rstudio from container.
 pacman -S --noconfirm --needed \
     r
+
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/config.json "${USER_HOME}"/.config/rstudio/config.json
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/crash-handler.conf "${USER_HOME}"/.config/rstudio/crash-handler.conf
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/rstudio-prefs.json "${USER_HOME}"/.config/rstudio/rstudio-prefs.json
 
 ####### Fortran #######
 pacman -S --noconfirm --needed \

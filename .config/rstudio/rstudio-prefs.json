@@ -1,0 +1,46 @@
+{
+    "default_project_location": "~/Documents/phd/lectures/24s_statistics_with_r",
+    "jobs_tab_visibility": "shown",
+    "document_author": "Takahisa Amano",
+    "initial_working_directory": "~",
+    "panes": {
+        "quadrants": [
+            "Source",
+            "TabSet2",
+            "TabSet1",
+            "Console"
+        ],
+        "tabSet1": [
+            "Environment",
+            "History",
+            "Connections",
+            "Build",
+            "VCS",
+            "Tutorial",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Files",
+            "Plots",
+            "Packages",
+            "Help",
+            "Viewer",
+            "Presentations"
+        ],
+        "hiddenTabSet": [],
+        "console_left_on_top": false,
+        "console_right_on_top": false,
+        "additional_source_columns": 0
+    },
+    "pdf_previewer": "none",
+    "posix_terminal_shell": "bash",
+    "editor_keybindings": "vim",
+    "editor_theme": "Cobalt",
+    "auto_detect_indentation": true,
+    "insert_native_pipe_operator": true,
+    "soft_wrap_r_files": true,
+    "continue_comments_on_newline": true,
+    "copilot_indexing_enabled": true,
+    "copilot_completions_delay": 200,
+    "copilot_enabled": true
+}
