@@ -20,6 +20,7 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     qdirstat \
     slack-desktop \
     ttf-hackgen \
+    udunits \
     visual-studio-code-bin
 
 ####### Config $PATH #######
