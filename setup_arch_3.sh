@@ -11,16 +11,16 @@ cd "${USER_HOME}"
 
 ####### Install packages from AUR #######
 sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
+    deskreen-bin \
     git-secrets \
-    slack-desktop \
-    ttf-hackgen \
+    google-chrome \
     google-earth-pro \
     grass \
-    google-chrome \
-    slack-desktop \
-    visual-studio-code-bin \
     nvm \
-    qdirstat
+    qdirstat \
+    slack-desktop \
+    ttf-hackgen \
+    visual-studio-code-bin
 
 ####### Config $PATH #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
