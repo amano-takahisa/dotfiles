@@ -21,6 +21,7 @@ docker run -ti --rm -u $(id -u ${USER}) \
 ```
 
 Run R Studio Server
+
 ```bash
 docker run --rm \
     --publish 8787:8787 \
@@ -29,6 +30,5 @@ docker run --rm \
     -v $(readlink -f ${HOME}/.config/rstudio/crash-handler.conf):/home/rstudio/.config/rstudio/crash-handler.conf \
     -v $(readlink -f ${HOME}/.config/rstudio/rstudio-prefs.json):/home/rstudio/.config/rstudio/rstudio-prefs.json \
     -e PASSWORD=rstudio \
-    rstudio \
-    & firefox http://localhost:8787
+    rstudio
 ```

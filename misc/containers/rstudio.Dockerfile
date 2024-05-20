@@ -4,5 +4,6 @@ RUN echo 'copilot-enabled=1' >> /etc/rstudio/rsession.conf
 
 # Install additional R packages
 RUN Rscript -e "install.packages(c(\
-  'geoR'\
+  'geoR', \
+  'styler' \
   ), repos='https://cran.rstudio.com')"
