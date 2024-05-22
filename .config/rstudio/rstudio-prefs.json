@@ -41,6 +41,6 @@
     "soft_wrap_r_files": true,
     "continue_comments_on_newline": true,
     "copilot_indexing_enabled": true,
-    "copilot_completions_delay": 200,
+    "copilot_completions_delay": 500,
     "copilot_enabled": true
 }
