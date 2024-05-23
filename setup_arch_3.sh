@@ -159,6 +159,7 @@ pacman -S --noconfirm --needed \
 # usermod -a -G uucp "${USER}"
 
 ####### mu #######
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/.local/share/applications/
 sudo -u "${USER}" \
     ln -sf "${DOTFILES_REPO}"/misc/mu.desktop "${USER_HOME}"/.local/share/applications/mu.desktop
 mu_version=1.2.0
@@ -174,6 +175,7 @@ sudo -u "${USER}" \
 usermod -a -G uucp uucp "${USER}"
 
 ####### jupyter #######
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/.jupyter/lab/
 ln -sf "${DOTFILES_REPO}"/.jupyter/lab/user-settings "${USER_HOME}"/.jupyter/lab/user-settings
 ln -sf "${DOTFILES_REPO}"/.jupyter/jupyter_lab_config.py "${USER_HOME}"/.jupyter/jupyter_lab_config.py
 
@@ -192,6 +194,7 @@ systemctl start avahi-daemon.service
 pacman -S --noconfirm --needed \
     r
 
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/rstudio/
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/config.json "${USER_HOME}"/.config/rstudio/config.json
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/crash-handler.conf "${USER_HOME}"/.config/rstudio/crash-handler.conf
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/rstudio-prefs.json "${USER_HOME}"/.config/rstudio/rstudio-prefs.json
