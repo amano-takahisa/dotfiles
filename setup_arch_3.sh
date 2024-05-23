@@ -172,7 +172,7 @@ sudo -u "${USER}" \
     mv "${USER_HOME}"/Documents/program/mu/Mu_Editor-"${mu_version}"-x86_64.AppImage \
     "${USER_HOME}"/Documents/program/mu/Mu_Editor.AppImage
 
-usermod -a -G uucp uucp "${USER}"
+usermod -a -G uucp "${USER}"
 
 ####### jupyter #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.jupyter/lab/
