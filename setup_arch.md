@@ -120,5 +120,5 @@ Run following to setup Python environment for NeoVim:
 mkdir -p ~/Documents/venvs/neovim && cd $_
 uv venv
 source .venv/bin/activate
-uv pip install pynvim
+uv pip install pynvim neovim
 ```
