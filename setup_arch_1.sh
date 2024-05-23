@@ -27,5 +27,6 @@ cd "${USER_HOME}"
 pacman -Syyu --noconfirm --needed firefox openssh git github-cli
 
 ####### Set ssh secrets #######
+sudo -u "${USER}" mkdir -p "${USER_HOME}"/.ssh/
 sudo -u "${USER}" cp "${USER_HOME}"/Documents/secrets/.ssh/id_ed25519 "${USER_HOME}"/.ssh/id_ed25519
 sudo -u "${USER}" cp "${USER_HOME}"/Documents/secrets/.ssh/id_ed25519.pub "${USER_HOME}"/.ssh/id_ed25519.pub
