@@ -42,5 +42,8 @@
     "continue_comments_on_newline": true,
     "copilot_indexing_enabled": true,
     "copilot_completions_delay": 500,
-    "copilot_enabled": true
+    "copilot_enabled": true,
+    "highlight_r_function_calls": true,
+    "rainbow_parentheses": true,
+    "indent_guides": "rainbowlines"
 }
