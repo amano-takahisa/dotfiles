@@ -340,6 +340,15 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     imagemagick
 
+####### rclone #######
+# Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage
+# run following to set up after installation
+# $ rclone config
+# $ mkdir ~/gdrive
+# $ rclone mount gdrive: ~/gdrive
+pacman -S --noconfirm --needed \
+    rclone
+
 ####### zsh #######
 pacman -S --noconfirm --needed \
     zsh zsh-completions
