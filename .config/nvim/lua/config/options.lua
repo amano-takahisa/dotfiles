@@ -43,7 +43,7 @@ local options = {
     tabstop = 4,
 
     -- backup, swap
-    swapfile = false,
+    swapfile = true,
     undofile = true,
     -- do not change inode
     backupcopy = "yes",
