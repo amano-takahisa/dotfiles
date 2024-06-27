@@ -7,3 +7,6 @@ if vim.fn.filereadable(imeScriptPath) == 1 then
     -- show message
     vim.cmd("source " .. imeScriptPath)
 end
+
+-- remove keymap which conflicts with activation of IME
+vim.keymap.set("i", "<C-Space>", "<Nop>")

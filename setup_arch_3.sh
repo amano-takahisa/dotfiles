@@ -19,6 +19,7 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     nvm \
     qdirstat \
     slack-desktop \
+    teams \
     ttf-hackgen \
     udunits \
     visual-studio-code-bin
@@ -335,6 +336,11 @@ pacman -S --noconfirm --needed \
 # echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 # pacman -Syyu --noconfirm --needed \
 #     wine winetricks kdialog
+
+####### Remmina #######
+# remote desktop client written in GTK+
+# pacman -S --noconfirm --needed \
+#     remmina freerdp
 
 ####### imagemagick #######
 pacman -S --noconfirm --needed \

@@ -9,6 +9,12 @@
 /.config/Deskreen
 /.config/Slack
 /.config/google-chrome
+/.config/chromium
+/.config/gcloud
+/.config/Microsoft
+/.config/obs-studio
+/.config/kdeconnect
+/.config/FortiClient
 /.config/gtk-3.0
 /.config/gtk-4.0
 /.config/kde.org
@@ -38,8 +44,11 @@
 /R
 /Downloads
 /Documents/git
+/Documents/dataset/kaggle/
 /Documents/program/circuitpython
 /Documents/program/otb
+/Documents/program/ubuntu
+/Documents/program/windows
 /Zotero/translators
 /go
 /google_drive
@@ -49,6 +58,7 @@
 /paru
 /studio3t
 /tmp
+/snap
 
 /.bash_history
 /.python_history
