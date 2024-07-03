@@ -148,7 +148,7 @@ ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
 
 ####### Python #######
 pacman -S --noconfirm --needed \
-    python-pip rye python-uv python-hatch
+    python-pip rye python-uv python-hatch ruff
 
 pacman -S --noconfirm --needed \
     tk
