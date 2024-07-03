@@ -150,6 +150,8 @@ ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
 pacman -S --noconfirm --needed \
     python-pip rye python-uv python-hatch ruff
 
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/hatch "${USER_HOME}"/.config/hatch
+
 pacman -S --noconfirm --needed \
     tk
 
@@ -177,8 +179,10 @@ usermod -a -G uucp "${USER}"
 
 ####### jupyter #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.jupyter/lab/
-ln -sf "${DOTFILES_REPO}"/.jupyter/lab/user-settings "${USER_HOME}"/.jupyter/lab/user-settings
-ln -sf "${DOTFILES_REPO}"/.jupyter/jupyter_lab_config.py "${USER_HOME}"/.jupyter/jupyter_lab_config.py
+sudo -u "${USER}" \
+    ln -sf "${DOTFILES_REPO}"/.jupyter/lab/user-settings "${USER_HOME}"/.jupyter/lab/user-settings
+sudo -u "${USER}" \
+    ln -sf "${DOTFILES_REPO}"/.jupyter/jupyter_lab_config.py "${USER_HOME}"/.jupyter/jupyter_lab_config.py
 
 ####### Network #######
 # avahi is required to resolve .local domain, such as pi.local
