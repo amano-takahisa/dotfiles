@@ -218,6 +218,10 @@ pacman -S --noconfirm --needed \
 pacman -S --noconfirm --needed \
     qgis python-yaml python-gdal python-psycopg2 python-owslib python-pygments python-lxml python-jinja
 # sudo -u "${USER}" pip install Jinja2 --break-sys
+#
+# QGIS Plugin development
+pacman -S --noconfirm --needed \
+    qt5-tools
 
 # Orfeo Toolbox
 # AUR orfeo-toolbox is not installable.
