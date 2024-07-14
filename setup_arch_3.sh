@@ -14,6 +14,7 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     deskreen-bin \
     git-secrets \
     google-chrome \
+    google-cloud-cli \
     google-earth-pro \
     grass \
     nvm \
