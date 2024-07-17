@@ -35,16 +35,14 @@ Run `setup_arch_1.sh` with root privileges to install packages required for the 
 ```bash
 sudo ./setup_arch_1.sh
 ```
+
 Then, run the following as a regular user to configure the `github-cli`.
 
 ```bash
 gh auth login
 ```
+
 Follow the [instructions](https://docs.github.com/en/github-cli/github-cli/quickstart) to authenticate.
-
-Run the following to add 
-
-```bash
 
 3. Install `yay` package manager
 
@@ -85,6 +83,7 @@ Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh):
 ```bash
 ZSH="/home/takahisa/Documents/git/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
 Configure zsh:
 
 ```bash
@@ -101,18 +100,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/t
 ```
 
 5.  Setup Python environment
-
-Run `rye` and configure as follows (all defaults):
-
-- uv
-- Python namaged by Rye
-- cpython@3.12 (default)
-
-and run the following commands:
-
-```bash
-rye install ruff
-```
 
 Run following to setup Python environment for NeoVim:
 
