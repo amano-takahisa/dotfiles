@@ -5,7 +5,8 @@ set -euo pipefail
 ERROR_COLOR='\e[0;31m'  # Red
 NC='\e[0m' # No Color
 
-EXCLUDE_FILES="${HOME}"/Documents/git/dotfiles/misc/rsync_backup_excludes.txt
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+EXCLUDE_FILES="${SCRIPT_DIR}"/rsync_backup_excludes.txt
 DEFAULT_SOURCE="${HOME}/"
 
 function usage {
