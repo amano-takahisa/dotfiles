@@ -39,6 +39,7 @@ return {
             "deno",
             "efm",
             "esbonio",
+            "isort",
             "lua-language-server",
             "pylama",
             "pyright",
