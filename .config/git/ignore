@@ -15,6 +15,7 @@ venv_*/
 .env/
 .idea/
 out_*/
+worktree/
 tags
 tags.lock
 tags.temp
