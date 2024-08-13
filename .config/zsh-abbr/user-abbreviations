@@ -1,0 +1,7 @@
+abbr "l"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons"
+abbr "ll"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons"
+abbr "llt"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons --sort=changed"
+abbr "treee"="eza --tree --classify"
+abbr "treel"="eza --tree --classify --long"
+
+abbr "rm"="rm -I"

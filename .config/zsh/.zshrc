@@ -116,3 +116,8 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/git/zk_notebooks"
 
 # Rye
 [[ ! -f $HOME/.rye/env ]] || source $HOME/.rye/env
+
+# activate zsh-abbr
+if [[ -f $HOME/Documents/git/zsh-abbr/zsh-abbr.zsh ]]; then
+  source $HOME/Documents/git/zsh-abbr/zsh-abbr.zsh
+fi

@@ -66,6 +66,17 @@ pacman -S --noconfirm --needed \
 # pacman -S --noconfirm --needed \
 #     nvidia cuda
 
+####### eza #######
+# alternative to ls
+pacman -S --noconfirm --needed \
+    eza
+
+####### zsh-abbr #######
+# expand abbreviations in zsh
+sudo -u "${USER}" git clone git@github.com:olets/zsh-abbr.git ${USER_HOME}/Documents/git/zsh-abbr
+
+sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/zsh-abbr "${USER_HOME}"/.config/zsh-abbr
+
 ####### zip #######
 pacman -S --noconfirm --needed \
     zip unzip
