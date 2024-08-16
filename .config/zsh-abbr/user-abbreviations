@@ -1,7 +1,7 @@
-abbr "l"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons"
-abbr "ll"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons"
-abbr "llt"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons --sort=changed"
-abbr "treee"="eza --tree --classify"
-abbr "treel"="eza --tree --classify --long"
+abbr "l"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons=auto"
+abbr "ll"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons=auto"
+abbr "llt"="eza --long --classify --all --time-style=long-iso --group-directories-first --icons=auto --sort=changed"
+abbr "treee"="eza --tree --classify=auto"
+abbr "treel"="eza --tree --classify=auto --long"
 
 abbr "rm"="rm -I"
