@@ -246,6 +246,10 @@ sudo -u "${USER}" curl https://www.orfeo-toolbox.org/packages/archives/OTB/OTB-9
     -o ${USER_HOME}/Documents/program/otb/OTB-9.0.0-Linux.tar.gz
 sudo -u "${USER}" tar xf ${USER_HOME}/Documents/program/otb/OTB-9.0.0-Linux.tar.gz \
     --one-top-level=${USER_HOME}/Documents/program/otb
+# Following additional pacakges are required to use orfeo-toolbox in python.
+pacman -S --noconfirm --needed \
+    cmake
+
 # To use python bindigs, need to re-buid otb in the python virtual environment.
 # https://www.orfeo-toolbox.org/CookBook-develop/Installation.html#recompiling-python-bindings
 # ```bash
