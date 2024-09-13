@@ -224,6 +224,9 @@ pacman -S --noconfirm --needed \
 # # Need to find a way to run this non-interactive
 # sudo -u "${USER}" curl --proto '=https' --tlsv1.2 -sSf \
 #     https://sh.rustup.rs | sh
+
+pacman -S --noconfirm --needed \
+    rust-analyzer
  
 ####### GIS/RS #######
 # QGIS

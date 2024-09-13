@@ -121,3 +121,9 @@ export ZK_NOTEBOOK_DIR="$HOME/Documents/git/zk_notebooks"
 if [[ -f $HOME/Documents/git/zsh-abbr/zsh-abbr.zsh ]]; then
   source $HOME/Documents/git/zsh-abbr/zsh-abbr.zsh
 fi
+
+# Rust
+# add cargo to path if it's not already there
+if [[ ! $PATH == *"$HOME/.cargo/bin"* ]]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
