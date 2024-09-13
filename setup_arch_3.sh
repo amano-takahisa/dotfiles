@@ -199,6 +199,10 @@ sudo -u "${USER}" \
 
 usermod -a -G uucp "${USER}"
 
+####### Raspberry Pi Imager #######
+pacman -S --noconfirm --needed \
+    rpi-imager
+
 ####### jupyter #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/.jupyter/lab/
 sudo -u "${USER}" \
