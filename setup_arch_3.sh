@@ -39,6 +39,16 @@ cd "${USER_HOME}"
 ####### git #######
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/git "${USER_HOME}"/.config/git
 
+####### additional external repositories #######
+repositories=(
+    'git@github.com:adafruit/Adafruit_CircuitPython_Bundle.git'
+)
+for repository in ${repositories[@]}
+do
+    sudo -u "${USER}" git clone --depth=1 "${repository}" "${USER_HOME}"/Documents/git/$(basename "${repository}" .git)
+done
+
+
 ####### neovim #######
 pacman -S --noconfirm --needed \
     neovim python-neovim xclip wl-clipboard deno
