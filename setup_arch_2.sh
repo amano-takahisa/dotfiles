@@ -22,7 +22,7 @@ sudo -u "${USER}" \
 ##### package manager #######
 pacman -S --noconfirm --needed \
     base-devel
-sudo -u "${USER}" git clone https://aur.archlinux.org/yay-bin.git ${USER_HOME}/Documents/git/yay
+sudo -u "${USER}" git clone https://aur.archlinux.org/yay.git ${USER_HOME}/Documents/git/yay
 cd ${REPOS_DIR}/yay
 sudo -u "${USER}"  makepkg -si
 # <----   HERE root password will be asked. ----> #
