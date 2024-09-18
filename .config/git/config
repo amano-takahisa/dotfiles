@@ -31,6 +31,13 @@
     email = amano.takahisa@gmail.com
     name = Taka
 
+# Use different email and name for work git
+# save follows as ~/Documents/work/git/.gitconfig
+# [user]
+#     email = <work-email@example.com>
+#     name = Taka
+[includeIf "gitdir:~/Documents/work/git/"]
+        path = ~/Documents/work/git/.gitconfig
 # Use vim as a default editor
 [core]
     editor = nvim
