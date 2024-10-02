@@ -11,7 +11,6 @@ cd "${USER_HOME}"
 
 ####### Install packages from AUR #######
 sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
-    deskreen-bin \
     git-secrets \
     google-chrome \
     google-cloud-cli \
