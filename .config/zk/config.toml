@@ -100,6 +100,8 @@ recent = "zk edit --sort created- --created-after 'last two weeks' --interactive
 lucky = "zk list --quiet --format full --sort random --limit 1"
 
 # group notes
+# these settings enable to open target files from Neovim with
+# :e `zk daily`
 daily = 'zk new --print-path --no-input "$ZK_NOTEBOOK_DIR/daily"'
 task = 'zk new --no-input "$ZK_NOTEBOOK_DIR/task"'
 review = 'zk new --no-input "$ZK_NOTEBOOK_DIR/review"'
