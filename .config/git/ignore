@@ -69,6 +69,10 @@ volume/
 
 # python
 __pycache__/
+*.egg-info/
 
 # editor
 .vscode/
+
+# Trashes
+.Trash-*
