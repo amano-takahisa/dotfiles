@@ -219,6 +219,10 @@ systemctl start avahi-daemon.service
 # and change hosts line in /etc/nsswitch.conf
 # hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
 
+# VPN
+pacman -S --noconfirm --needed \
+    tailscale
+
 ####### R #######
 # Use rstudio from container.
 pacman -S --noconfirm --needed \
