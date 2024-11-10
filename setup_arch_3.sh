@@ -50,7 +50,7 @@ done
 
 ####### neovim #######
 pacman -S --noconfirm --needed \
-    neovim python-neovim xclip wl-clipboard deno luarocks
+    neovim python-neovim xclip wl-clipboard deno luarocks lua51
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/nvim "${USER_HOME}"/.config/nvim
 
 ####### wezterm #######
@@ -248,7 +248,6 @@ pacman -S --noconfirm --needed \
 # for Tauri app
 pacman -S --noconfirm --needed \
     webkit2gtk-4.1
-
 
 ####### GIS/RS #######
 # QGIS
