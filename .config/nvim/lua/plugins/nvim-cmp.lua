@@ -1,6 +1,7 @@
 -- if true then return {} end
 return {
     "hrsh7th/nvim-cmp",
+    version = false, -- last release is way too old
     -- load cmp on InsertEnter
     event = "InsertEnter",
     -- these dependencies will only be loaded when cmp loads
@@ -41,7 +42,6 @@ return {
                 -- { name = 'luasnip' }, -- For luasnip users.
                 -- { name = 'ultisnips' }, -- For ultisnips users.
                 -- { name = 'snippy' }, -- For snippy users.
-            }, {
                 {
                     name = "buffer",
                     option = {
