@@ -223,6 +223,10 @@ systemctl start avahi-daemon.service
 pacman -S --noconfirm --needed \
     tailscale
 
+# sftp
+pacman -S --noconfirm --needed \
+    sshfs
+
 ####### R #######
 # Use rstudio from container.
 pacman -S --noconfirm --needed \
