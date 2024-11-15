@@ -47,7 +47,6 @@ do
     sudo -u "${USER}" git clone --depth=1 "${repository}" "${USER_HOME}"/Documents/git/$(basename "${repository}" .git)
 done
 
-
 ####### neovim #######
 pacman -S --noconfirm --needed \
     neovim python-neovim xclip wl-clipboard deno luarocks lua51
@@ -69,6 +68,10 @@ ln -sf "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh
 ####### fzf #######
 pacman -S --noconfirm --needed \
     fzf
+
+####### typescript #######
+pacman -S --noconfirm --needed \
+    pnpm
 
 # ####### nvidia #######
 # FIXME: nvidia conflicts.
