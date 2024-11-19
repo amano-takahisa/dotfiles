@@ -127,3 +127,6 @@ fi
 if [[ ! $PATH == *"$HOME/.cargo/bin"* ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+# Pixi auto completion
+eval "$(pixi completion --shell zsh)"

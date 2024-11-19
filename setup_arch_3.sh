@@ -172,7 +172,7 @@ ln -sf "${DOTFILES_REPO}"/misc/fcitx.sh /etc/profile.d/fcitx.sh
 
 ####### Python #######
 pacman -S --noconfirm --needed \
-    python-pip rye python-uv python-hatch ruff
+    python-pip rye python-uv python-hatch ruff pixi
 
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/hatch "${USER_HOME}"/.config/hatch
 
