@@ -36,8 +36,8 @@
 # [user]
 #     email = <work-email@example.com>
 #     name = Taka
-[includeIf "gitdir:~/Documents/work/git/"]
-        path = ~/Documents/work/git/.gitconfig
+[includeIf "gitdir:~/Documents/work/"]
+        path = ~/Documents/work/.gitconfig
 # Use vim as a default editor
 [core]
     editor = nvim
