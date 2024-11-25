@@ -22,7 +22,9 @@ sudo -u "${USER}" yay -S --noconfirm --sudoloop --needed \
     teams \
     ttf-hackgen \
     udunits \
-    visual-studio-code-bin
+    visual-studio-code-bin \
+    rstudio-server-bin \
+    rstudio-desktop-bin
 
 ####### Config $PATH #######
 sudo -u "${USER}" mkdir -p "${USER_HOME}"/bin/
@@ -239,6 +241,8 @@ sudo -u "${USER}" mkdir -p "${USER_HOME}"/.config/rstudio/
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/config.json "${USER_HOME}"/.config/rstudio/config.json
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/crash-handler.conf "${USER_HOME}"/.config/rstudio/crash-handler.conf
 sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/rstudio/rstudio-prefs.json "${USER_HOME}"/.config/rstudio/rstudio-prefs.json
+mkdir -p /etc/rstudio/
+echo 'copilot-enabled=1' >> /etc/rstudio/rsession.conf
 
 ####### Fortran #######
 pacman -S --noconfirm --needed \
