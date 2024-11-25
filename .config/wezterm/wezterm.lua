@@ -51,5 +51,28 @@ config.colors = {
 		inactive_tab_edge = "#575757",
 	},
 }
+
+local act = wezterm.action
+config.keys = {
+  -- activate pane selection mode with the default alphabet (labels are "a", "s", "d", "f" and so on)
+  { key = '8', mods = 'CTRL', action = act.PaneSelect },
+  -- activate pane selection mode with numeric labels
+  {
+    key = '9',
+    mods = 'CTRL',
+    action = act.PaneSelect {
+      alphabet = '1234567890',
+    },
+  },
+  -- show the pane selection mode, but have it swap the active and selected panes
+  {
+    key = '0',
+    mods = 'CTRL',
+    action = act.PaneSelect {
+      mode = 'SwapWithActive',
+    },
+  },
+}
+
 -- and finally,. return the configuration to wezterm
 return config
