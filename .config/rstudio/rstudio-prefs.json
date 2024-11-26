@@ -45,5 +45,6 @@
     "copilot_enabled": true,
     "highlight_r_function_calls": true,
     "rainbow_parentheses": true,
-    "indent_guides": "rainbowlines"
+    "indent_guides": "rainbowlines",
+    "show_hidden_files": true
 }
