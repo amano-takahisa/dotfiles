@@ -20,6 +20,8 @@ return {
             -- "html",
             -- "javascript",
             -- "jsdoc",
+            "r",
+            "rnoweb",
             "json",
             "lua",
             "luadoc",
