@@ -32,7 +32,7 @@
     name = Taka
 
 # Use different email and name for work git
-# save follows as ~/Documents/work/git/.gitconfig
+# save follows as ~/Documents/work/.gitconfig
 # [user]
 #     email = <work-email@example.com>
 #     name = Taka
