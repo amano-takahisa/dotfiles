@@ -181,6 +181,9 @@ sudo -u "${USER}" ln -sf "${DOTFILES_REPO}"/.config/hatch "${USER_HOME}"/.config
 pacman -S --noconfirm --needed \
     tk
 
+pacman -S --noconfirm --needed \
+    python-pipx
+
 # # Thonny for raspberry pi pico
 # sudo -u "${USER}" echo y | sudo -u "${USER}" yay -S --sudoloop --answerclean None --answerdiff None \
 #     thonny esptool python-ptyprocess python-build
