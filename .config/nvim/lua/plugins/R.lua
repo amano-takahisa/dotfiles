@@ -1,3 +1,4 @@
+if true then return {} end
 return {
         "R-nvim/R.nvim",
         -- Only required if you also set defaults.lazy = true
