@@ -1,5 +1,4 @@
-vim.g.python3_host_prog = "/home/takahisa/Documents/venvs/neovim/.venv/bin/python"
-
+vim.g.python3_host_prog = "/home/takahisa/Documents/venvs/neovim/.pixi/envs/default/bin/python"
 local options = {
         -- UI left
         number = true,
