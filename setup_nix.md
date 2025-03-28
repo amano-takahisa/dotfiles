@@ -109,6 +109,28 @@ Set fish as default
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 ```
+
+dorker is not possible to be installed with nix, so install it with pacman.
+
+```fish
+sudo pacman -S docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+```
+
+Neovim python environment
+
+```fish
+mkdir -p ~/Documents/venvs/neovim
+cd ~/Documents/venvs/neovim
+pixi init
+pixi add pynvim
+pixi add neovim
+```
+
+
 ------------------------------------
 sudo -u "${USER}" xdg-user-dirs-update
 ln -sf "${DOTFILES_REPO}"/misc/xdgenv.sh /etc/profile.d/xdgenv.sh

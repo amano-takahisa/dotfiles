@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  lib = config.lib;
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -18,7 +21,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # dev-tools
+    ##### dev-tools #####
     gcc
     gnumake
     openssh
@@ -35,9 +38,12 @@
     which
     zip
     ##### Neovim #####
+    eslint
     neovim
+    nodePackages.prettier
     python3
     python3Packages.pynvim
+    tree-sitter
     ##### Python #####
     isort
     jq
@@ -59,26 +65,24 @@
   ];
 
   home.file = {
-    ".config/nvim" = {
-      source = /home/takahisa/Documents/git/dotfiles/.config/nvim;
+    ".config/fish/conf.d" = {
+      source = /home/takahisa/Documents/git/dotfiles/.config/fish/conf.d;
       recursive = true;
     };
     ".config/git" = {
       source = /home/takahisa/Documents/git/dotfiles/.config/git;
       recursive = true;
     };
+    ".config/nvim" = {
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/nvim;
+    };
     ".tmux.conf" = {
       source = /home/takahisa/Documents/git/dotfiles/.tmux.conf;
-      recursive = true;
     };
   };
 
   programs.fish = {
                 enable = true;
-                # Initialize Nix in fish
-    # shellInit = ''
-    #   set -x PATH $PATH:/nix/var/nix/profiles/default/bin
-    # '';
     interactiveShellInit = ''
       # Set up Nix environment for fish
       if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
