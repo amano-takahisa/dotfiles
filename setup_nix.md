@@ -70,11 +70,6 @@ nix-shell '<home-manager>' -A install
 nix run home-manager/master -- init
 ```
 
-Then, update home.nix, and run
-
-```bash
-home-manager switch
-```
 
 Copy following config files with Windows file manager.
 
@@ -89,18 +84,18 @@ Search packages from repositories
 nix search nixpkgs firefox
 ```
 
-Run following to be able to use clipboard.
+Then, update home.nix, and run
 
 ```bash
-# not work !!!
-# ln -sf /mnt/wslg/.X11-unix /tmp/.X11-unix && ln -sf /mnt/wslg/runtime-dir/wayland-0* /run/user/$(id -u)
+home-manager switch
 ```
 
-or in fish,
+## Configs outside of Nix
+
+Run following to be able to use clipboard.
 
 ```fish
-# not work !!!
-# ln -sf /mnt/wslg/.X11-unix /tmp/.X11-unix; and ln -sf /mnt/wslg/runtime-dir/wayland-0* /run/user/(id -u)
+ln -sf /mnt/wslg/.X11-unix /tmp/.X11-unix; and ln -sf /mnt/wslg/runtime-dir/wayland-0* /run/user/(id -u)
 ```
 
 Set fish as default
@@ -109,6 +104,18 @@ Set fish as default
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 ```
+
+Neovim python environment
+
+```fish
+mkdir -p ~/Documents/venvs/neovim
+cd ~/Documents/venvs/neovim
+pixi init
+pixi add pynvim
+pixi add neovim
+```
+
+## Packages which are not installed with nix
 
 dorker is not possible to be installed with nix, so install it with pacman.
 
@@ -120,14 +127,10 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 ```
 
-Neovim python environment
+fuse3 is not possible to be installed with nix, so install it with pacman.
 
 ```fish
-mkdir -p ~/Documents/venvs/neovim
-cd ~/Documents/venvs/neovim
-pixi init
-pixi add pynvim
-pixi add neovim
+sudo pacman -S fuse3
 ```
 
 
