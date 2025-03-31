@@ -66,18 +66,22 @@ in
 
   home.file = {
     ".config/fish/conf.d" = {
-      source = /home/takahisa/Documents/git/dotfiles/.config/fish/conf.d;
-      recursive = true;
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/fish/conf.d;
     };
     ".config/git" = {
-      source = /home/takahisa/Documents/git/dotfiles/.config/git;
-      recursive = true;
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/git;
     };
     ".config/nvim" = {
       source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/nvim;
     };
+    ".jupyter/lab/user-settings" = {
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.jupyter/lab/user-settings;
+    };
+    ".jupyter/jupyter_lab_config.py" = {
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.jupyter/jupyter_lab_config.py;
+    };
     ".tmux.conf" = {
-      source = /home/takahisa/Documents/git/dotfiles/.tmux.conf;
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.tmux.conf;
     };
   };
 
