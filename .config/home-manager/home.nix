@@ -62,6 +62,9 @@ in
     wl-clipboard
     xdg-user-dirs
     zk
+    ##### fonts #####
+    hackgen-nf-font
+    font-awesome
   ];
 
   home.file = {
@@ -85,8 +88,12 @@ in
     };
   };
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   programs.fish = {
-                enable = true;
+    enable = true;
     interactiveShellInit = ''
       # Set up Nix environment for fish
       if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
@@ -104,5 +111,7 @@ in
     EDITOR = "nvim";
   };
 
+
+  fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
 }
