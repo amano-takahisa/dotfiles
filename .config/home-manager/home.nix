@@ -105,10 +105,6 @@ in
         fish_add_path $HOME/.nix-profile/bin
       end
     '';
-          };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
   };
 
 
