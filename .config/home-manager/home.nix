@@ -71,6 +71,9 @@ in
     ".config/fish/conf.d" = {
       source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/fish/conf.d;
     };
+    ".config/fish/functions" = {
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/fish/functions;
+    };
     ".config/git" = {
       source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/git;
     };
