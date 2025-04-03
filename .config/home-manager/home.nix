@@ -55,6 +55,18 @@ in
     gh
     git
     lazygit
+    (python3.pkgs.buildPythonApplication {
+      pname = "totaliterm";
+      version = "1.0.0";
+      format = "pyproject";
+      src = /home/takahisa/Documents/git/totaliterm;
+      buildInputs = with pkgs.python3Packages; [hatchling];
+      propagatedBuildInputs = with pkgs.python3.pkgs; [
+        click
+        rich
+        tomlkit
+        ];
+    })
     ##### misc #####
     tmux
     tree
