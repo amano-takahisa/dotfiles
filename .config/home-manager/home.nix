@@ -113,6 +113,7 @@ in
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      fish_vi_key_bindings
       # Set up Nix environment for fish
       if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
