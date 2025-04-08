@@ -33,6 +33,7 @@ in
     fzf
     less
     libsixel
+    diffutils
     nodejs
     sshfs
     which
