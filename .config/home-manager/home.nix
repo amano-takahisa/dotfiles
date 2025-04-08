@@ -92,6 +92,9 @@ in
     ".config/nvim" = {
       source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/nvim;
     };
+    ".config/zk" = {
+      source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.config/zk;
+    };
     ".jupyter/lab/user-settings" = {
       source = lib.file.mkOutOfStoreSymlink /home/takahisa/Documents/git/dotfiles/.jupyter/lab/user-settings;
     };

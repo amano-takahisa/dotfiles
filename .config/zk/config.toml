@@ -75,7 +75,7 @@ editor = "nvim"
 # editor = "gedit"
 
 # Default shell used by aliases and commands.
-shell = "/usr/bin/zsh"
+shell = "/home/takahisa/.nix-profile/bin/fish"
 
 # Pager used to scroll through long output.
 pager = "less -FIRX"
