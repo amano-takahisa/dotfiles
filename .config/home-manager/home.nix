@@ -39,7 +39,6 @@ in
     zip
     ##### Neovim #####
     eslint
-    neovim
     nodePackages.prettier
     python3
     python3Packages.pynvim
