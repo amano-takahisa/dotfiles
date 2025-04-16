@@ -1,3 +1,98 @@
+# Setup Nix on WSL2
+
+https://zenn.dev/asa1984/articles/nixos-is-the-best#%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89
+
+First, download nixos.wsl from the latest release.
+https://github.com/nix-community/NixOS-WSL/releases/latest
+
+Then, double-click on the downloaded file to install it.
+
+In the Windows start menu, search for "NixOS" and start it.
+Then, run the following command.
+
+```bash
+# sudo nix-channel --update
+```
+
+TODO:
+- [ ] wget follows from dotfile repository with `nix-shell -p wget`.
+  - [ ] /etc/nixos/configuration.nix
+
+
+Enable Flakes
+
+```console
+$ sudo nix-shell -p neovim
+# nvim /etc/nixos/configuration.nix
+```
+
+Change default user to `takahisa`.
+
+```nix
+{
+  ...
+  wsl.defaultUser = "takahisa";
+  ...
+}
+```
+
+Add the following line to the file.
+
+```nix
+{
+  ...
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+    };
+  };
+}
+```
+
+Then, run the following command to apply the changes.
+
+```bash
+sudo nixos-rebuild switch
+```
+
+Login to NixOS, and as a user, run the following command.
+
+```bash
+nix-shell -p git gh
+gh auth login --hostname github.com --git-protocol ssh
+```
+
+
+Then, run the following command to create a new repository.
+
+```bash
+git clone git@github.com:amano-takahisa/nix-config.git ~/nix-config
+# template has been generated with following.
+# nix flake init --template github:nix-community/home-manager
+# git config --global user.name "Takahisa Amano"
+# git config --global user.email "amano.takahisa@gmail.com"
+
+# exit from nix shell
+exit
+```
+
+
+```bash
+nix run nix-config#homeConfigurations."takahisa".activationPackage
+```
+
+The above command will create a directory called `~/.config/home-manager` and
+files called `home.nix`, `flake.nix`, and `flake.lock`.
+
+Then, run the following command to apply the changes.
+
+```bash
+home-manager switch
+```
+
+
+
+
 # Setup Arch Linux on WSL2 with Nix
 
 ## Install Arch Linux
