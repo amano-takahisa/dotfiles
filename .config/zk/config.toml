@@ -91,7 +91,7 @@ recents = "--sort created- --created-after 'last two weeks'"
 [alias]
 
 # Edit the last modified note.
-edlast = "zk edit --limit 1 --sort modified- $@"
+edlast = "zk edit --limit 1 --sort modified- $argv"
 
 # Edit the notes selected interactively among the notes created the last two weeks.
 recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
@@ -104,7 +104,7 @@ lucky = "zk list --quiet --format full --sort random --limit 1"
 # :e `zk daily`
 daily = 'zk new --print-path --no-input "$ZK_NOTEBOOK_DIR/daily"'
 # :e `zk touch 'My new note'` in Neovim will create a new note with the title 'My new note', and open it in the editor.
-touch = 'zk new --print-path --no-input --title "$@"'
+touch = 'zk new --print-path --no-input --title "$argv"'
 task = 'zk new --no-input "$ZK_NOTEBOOK_DIR/task"'
 review = 'zk new --no-input "$ZK_NOTEBOOK_DIR/review"'
 
