@@ -28,6 +28,7 @@ in
     ##### basic tool #####
     bat
     eza
+    eog
     fd
     fish
     fzf
