@@ -36,6 +36,7 @@ in
     libsixel
     diffutils
     nodejs
+    rsync
     sshfs
     which
     zip
