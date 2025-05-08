@@ -52,6 +52,7 @@ in
     ripgrep
     ripgrep-all
     ruff
+    uv
     ##### git #####
     gh
     git
