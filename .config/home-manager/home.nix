@@ -70,6 +70,7 @@ in
     })
     ##### misc #####
     tmux
+    htop
     tree
     unzip
     wl-clipboard
