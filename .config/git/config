@@ -15,7 +15,7 @@
 [alias]
     aliases = config --get-regexp '^alias\\.'
     bl = blame --abbrev=6
-    lo = log --graph --all --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ar)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
+    lo = log --graph --all --date=format:'%Y-%m-%d %H:%M' --format='%C(white dim) %h %Creset %s %C(cyan dim)(%ad)%Creset%C(green) <%an>%C(bold yellow)%d%Creset'
     loo = log --stat --graph --decorate --all
     root = rev-parse --show-toplevel
     sh = show --color-words='[^[:space:]]'
@@ -83,3 +83,7 @@
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
+[safe]
+	directory = /eodc/private/boku/modis/software
+	directory = /eodc/private/boku/modis/software/R/bokuModis
+	directory = /eodc/private/boku/modis/software/MATLAB/filter_MARSOP6/nrt_processv3
