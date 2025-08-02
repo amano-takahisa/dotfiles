@@ -14,6 +14,7 @@ venv_*/
 .venv_*/
 .env/
 .idea/
+.devcache/
 out_*/
 worktree/
 tags
