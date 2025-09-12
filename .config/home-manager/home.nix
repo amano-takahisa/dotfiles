@@ -16,7 +16,7 @@ in
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -27,19 +27,20 @@ in
     openssh
     ##### basic tool #####
     bat
-    eza
+    diffutils
     eog
+    eza
     fd
     fish
     fzf
     less
     libsixel
-    diffutils
     nodejs
     rsync
     sshfs
     which
     zip
+    zoxide
     ##### Neovim #####
     eslint
     nodePackages.prettier
