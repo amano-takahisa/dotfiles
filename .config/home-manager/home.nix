@@ -40,7 +40,6 @@ in
     sshfs
     which
     zip
-    zoxide
     ##### Neovim #####
     eslint
     nodePackages.prettier
@@ -113,6 +112,11 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   programs.fish = {
