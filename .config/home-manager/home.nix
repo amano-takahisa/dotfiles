@@ -1,3 +1,7 @@
+# This file defines the Home Manager configuration for a user. It is used to manage
+# user-specific settings and packages in a declarative manner.
+# Run the following command to apply the configuration:
+#   home-manager switch -f /path/to/home.nix
 { config, pkgs, ... }:
 
 let
@@ -132,6 +136,9 @@ in
       if test -d $HOME/.nix-profile/bin
         fish_add_path $HOME/.nix-profile/bin
       end
+
+      # disable automatic title change
+      function fish_title; end
     '';
   };
 
